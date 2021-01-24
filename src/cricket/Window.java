@@ -330,10 +330,10 @@ public class Window extends javax.swing.JFrame {
 
         playersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"MS", "Dhoni", "CSK", "7-7-1981", "Right", "Right arm medium", "India", 7,150,0}
+
             },
             new String [] {
-                "First name", "Last name", "Team", "DOB", "Batting hand", "Bowling skill", "Country", "Jersey no","Runs","Wickets"
+
             }
         ));
         playersScrollPane.setViewportView(playersTable);
@@ -395,10 +395,10 @@ public class Window extends javax.swing.JFrame {
 
         matchesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"CSK", "MI", "15-08-2019", "Chennai", "CSK", "Bat", 191/3, 180/5,"CSK","11 runs"}
+
             },
             new String [] {
-                "Team 1", "Team 2", "Date", "Venue", "Toss Winner", "Toss Decision", "Innings 1", "Innings 2","Winner","Win Margin"
+
             }
         ));
         matchesScrollPane.setViewportView(matchesTable);
@@ -1263,7 +1263,6 @@ public class Window extends javax.swing.JFrame {
         defaultTableModel.addColumn("Tied");
         defaultTableModel.addColumn("Points");
         
-        
         try {
             Statement statement = connection.createStatement();//crating statement object
             String query = "SELECT a.name, b.fname, b.lname, a.coach, a.played, a.wins, a.loss, a.tied, a.points from team a, player b WHERE a.captain=b.player_id ORDER BY a.points desc";
@@ -1290,11 +1289,80 @@ public class Window extends javax.swing.JFrame {
     }//GEN-LAST:event_viewPointsBtnActionPerformed
 
     private void viewPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPlayersBtnActionPerformed
+        DefaultTableModel defaultTableModel = new DefaultTableModel();
+        playersTable.setModel(defaultTableModel);
+        defaultTableModel.addColumn("Name");
+        defaultTableModel.addColumn("Team");
+        defaultTableModel.addColumn("DOB");
+        defaultTableModel.addColumn("Batting Hand");
+        defaultTableModel.addColumn("Bowling Skill");
+        defaultTableModel.addColumn("Country");
+        defaultTableModel.addColumn("Jersey N.o");
+        defaultTableModel.addColumn("Runs");
+        defaultTableModel.addColumn("Wickets");
+
+        try {
+            Statement statement = connection.createStatement();//crating statement object
+            String query = "SELECT a.fname, a.lname, b.name, a.dob, a.batting_hand, a.bowling_skill, a.country, a.jersey_no, a.runs, a.wickets from player a, team b where a.team_id=b.team_id";
+            ResultSet resultSet = statement.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String name = resultSet.getString(1) + " " + resultSet.getString(2);
+                String team = resultSet.getString(3);
+                String dob = resultSet.getString(4);
+                String battingHand = resultSet.getString(5);
+                String bowlingSkill = resultSet.getString(6);
+                String country = resultSet.getString(7);
+                int jerseyNo = resultSet.getInt(8);
+                int runs = resultSet.getInt(9);
+                int wickets =resultSet.getInt(10);
+                defaultTableModel.addRow(new Object[]{name, team, dob, battingHand, bowlingSkill, country, jerseyNo, runs, wickets});
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "playersPanel");
     }//GEN-LAST:event_viewPlayersBtnActionPerformed
 
     private void viewMatchesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchesBtnActionPerformed
+        DefaultTableModel defaultTableModel = new DefaultTableModel();
+        matchesTable.setModel(defaultTableModel);
+        
+        defaultTableModel.addColumn("Team 1");
+        defaultTableModel.addColumn("Team 2");
+        defaultTableModel.addColumn("Match Date");
+        defaultTableModel.addColumn("Venue");
+        defaultTableModel.addColumn("Toss Winner");
+        defaultTableModel.addColumn("Toss Decision");
+        defaultTableModel.addColumn("Innings 1");
+        defaultTableModel.addColumn("Innings 2");
+        defaultTableModel.addColumn("Winner");
+        defaultTableModel.addColumn("Win Margin");
+        try {
+            Statement statement = connection.createStatement();//crating statement object
+            String query = "SELECT a.name, b.name, c.match_date, c.venue, d.name, c.toss_decision, c.innings_1_score, c.innings_2_score, e.name, c.win_margin from team a, team b, match c, team d, team e where a.team_id=c.team_1 and b.team_id=c.team_2 and d.team_id=c.toss_winner and e.team_id=c.winner";
+            ResultSet resultSet = statement.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                System.out.println("HEHE");
+                //Retrieving details from the database and storing it in the String variables
+                String team1 = resultSet.getString(1);
+                String team2 = resultSet.getString(2);
+                String matchDate = resultSet.getString(3);
+                String venue = resultSet.getString(4);
+                String tossWinner = resultSet.getString(5);
+                String tossDecision = resultSet.getString(6);
+                String innings1Score = resultSet.getString(7);
+                String innings2Score = resultSet.getString(8);
+                String winner = resultSet.getString(9);
+                String winMargin = resultSet.getString(10);
+                defaultTableModel.addRow(new Object[]{team1, team2, matchDate, venue, tossWinner, tossDecision, innings1Score, innings2Score, winner, winMargin});
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "matchesPanel");
     }//GEN-LAST:event_viewMatchesBtnActionPerformed

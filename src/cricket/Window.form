@@ -311,8 +311,11 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="playersTable">
                   <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;        {&quot;MS&quot;, &quot;Dhoni&quot;, &quot;CSK&quot;, &quot;7-7-1981&quot;, &quot;Right&quot;, &quot;Right arm medium&quot;, &quot;India&quot;, 7,150,0}&#xa;    },&#xa;    new String [] {&#xa;        &quot;First name&quot;, &quot;Last name&quot;, &quot;Team&quot;, &quot;DOB&quot;, &quot;Batting hand&quot;, &quot;Bowling skill&quot;, &quot;Country&quot;, &quot;Jersey no&quot;,&quot;Runs&quot;,&quot;Wickets&quot;&#xa;    }&#xa;)" type="code"/>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="0" rowCount="0"/>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0"/>
                     </Property>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -414,8 +417,11 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="matchesTable">
                   <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;        {&quot;CSK&quot;, &quot;MI&quot;, &quot;15-08-2019&quot;, &quot;Chennai&quot;, &quot;CSK&quot;, &quot;Bat&quot;, 191/3, 180/5,&quot;CSK&quot;,&quot;11 runs&quot;}&#xa;    },&#xa;    new String [] {&#xa;        &quot;Team 1&quot;, &quot;Team 2&quot;, &quot;Date&quot;, &quot;Venue&quot;, &quot;Toss Winner&quot;, &quot;Toss Decision&quot;, &quot;Innings 1&quot;, &quot;Innings 2&quot;,&quot;Winner&quot;,&quot;Win Margin&quot;&#xa;    }&#xa;)" type="code"/>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="0" rowCount="0"/>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0"/>
                     </Property>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
