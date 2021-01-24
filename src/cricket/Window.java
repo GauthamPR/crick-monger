@@ -1411,8 +1411,7 @@ public class Window extends javax.swing.JFrame {
         try {
             stmt = connection.createStatement();
             stmt.execute(query);
-            CardLayout card = (CardLayout)mainPanel.getLayout();
-            card.show(mainPanel, "playersPanel");
+            viewPlayersBtnActionPerformed(evt);
         } catch (SQLException ex) {
             Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
         }
