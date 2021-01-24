@@ -362,11 +362,11 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                              <Component id="addPlayerBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="addMatchBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="delPlayerBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="delMatchBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="updatePlayerBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="updateMatchBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -384,9 +384,9 @@
                       <Component id="matchesScrollPane" min="-2" pref="108" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPlayerBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="delPlayerBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="updatePlayerBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
@@ -430,17 +430,20 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="addPlayerBtn">
+            <Component class="javax.swing.JButton" name="addMatchBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add match"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMatchBtnActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="delPlayerBtn">
+            <Component class="javax.swing.JButton" name="delMatchBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete match"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="updatePlayerBtn">
+            <Component class="javax.swing.JButton" name="updateMatchBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update match"/>
               </Properties>
@@ -460,35 +463,35 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButton2" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchSubmitBtn" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addMatchGoBackBtn" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="team2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="team1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="venueLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tossWinnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tossDecisionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="innings1ScoreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="innings2ScoreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="winnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="winMarginLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField8" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField10" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchHeadingLabel" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchTeam1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchTeam2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchVenue" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchTossWinner" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchTossDecision" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchInnings1Score" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchInnings2Score" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchWinner" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="addMatchWinMargin" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jComboBox1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -506,160 +509,154 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="team1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTeam1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="team2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTeam2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="venueLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchVenue" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tossWinnerLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTossWinner" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tossDecisionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTossDecision" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="innings1ScoreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchInnings1Score" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="innings2ScoreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchInnings2Score" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="winnerLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchWinner" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="winMarginLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchWinMargin" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="13" max="32767" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="addMatchSubmitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="addMatchHeadingLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ADD MATCH"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="addMatchGoBackBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Go back"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="team1Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Team 1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="team2Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Team 2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="venueLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Venue"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="dateLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Date"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="tossWinnerLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Toss Winner"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
+            <Component class="javax.swing.JLabel" name="tossDecisionLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Toss decision"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
+            <Component class="javax.swing.JLabel" name="innings1ScoreLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Innings 1 score"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
+            <Component class="javax.swing.JLabel" name="innings2ScoreLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Innings 2 score"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
+            <Component class="javax.swing.JLabel" name="winnerLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Winner"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
+            <Component class="javax.swing.JLabel" name="winMarginLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Win margin"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="addMatchSubmitBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMatchSubmitBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
-              </Events>
+            <Component class="javax.swing.JTextField" name="addMatchTeam1">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="addMatchTeam2">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField3">
+            <Component class="javax.swing.JTextField" name="addMatchVenue">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField5">
+            <Component class="javax.swing.JTextField" name="addMatchTossWinner">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField6">
+            <Component class="javax.swing.JTextField" name="addMatchTossDecision">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField7">
+            <Component class="javax.swing.JTextField" name="addMatchInnings1Score">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField8">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
-              </Events>
+            <Component class="javax.swing.JTextField" name="addMatchInnings2Score">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField9">
+            <Component class="javax.swing.JTextField" name="addMatchWinner">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField10">
+            <Component class="javax.swing.JTextField" name="addMatchWinMargin">
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox1">
               <Properties>
@@ -672,9 +669,6 @@
                   </StringArray>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>

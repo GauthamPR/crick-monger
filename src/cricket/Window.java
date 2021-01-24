@@ -67,32 +67,32 @@ public class Window extends javax.swing.JFrame {
         matchesGoBackBtn = new javax.swing.JButton();
         matchesScrollPane = new javax.swing.JScrollPane();
         matchesTable = new javax.swing.JTable();
-        addPlayerBtn = new javax.swing.JButton();
-        delPlayerBtn = new javax.swing.JButton();
-        updatePlayerBtn = new javax.swing.JButton();
+        addMatchBtn = new javax.swing.JButton();
+        delMatchBtn = new javax.swing.JButton();
+        updateMatchBtn = new javax.swing.JButton();
         addMatchPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        addMatchHeadingLabel = new javax.swing.JLabel();
+        addMatchGoBackBtn = new javax.swing.JButton();
+        team1Label = new javax.swing.JLabel();
+        team2Label = new javax.swing.JLabel();
+        venueLabel = new javax.swing.JLabel();
+        dateLabel = new javax.swing.JLabel();
+        tossWinnerLabel = new javax.swing.JLabel();
+        tossDecisionLabel = new javax.swing.JLabel();
+        innings1ScoreLabel = new javax.swing.JLabel();
+        innings2ScoreLabel = new javax.swing.JLabel();
+        winnerLabel = new javax.swing.JLabel();
+        winMarginLabel = new javax.swing.JLabel();
+        addMatchSubmitBtn = new javax.swing.JButton();
+        addMatchTeam1 = new javax.swing.JTextField();
+        addMatchTeam2 = new javax.swing.JTextField();
+        addMatchVenue = new javax.swing.JTextField();
+        addMatchTossWinner = new javax.swing.JTextField();
+        addMatchTossDecision = new javax.swing.JTextField();
+        addMatchInnings1Score = new javax.swing.JTextField();
+        addMatchInnings2Score = new javax.swing.JTextField();
+        addMatchWinner = new javax.swing.JTextField();
+        addMatchWinMargin = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
@@ -403,11 +403,16 @@ public class Window extends javax.swing.JFrame {
         ));
         matchesScrollPane.setViewportView(matchesTable);
 
-        addPlayerBtn.setText("Add match");
+        addMatchBtn.setText("Add match");
+        addMatchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMatchBtnActionPerformed(evt);
+            }
+        });
 
-        delPlayerBtn.setText("Delete match");
+        delMatchBtn.setText("Delete match");
 
-        updatePlayerBtn.setText("Update match");
+        updateMatchBtn.setText("Update match");
 
         javax.swing.GroupLayout matchesPanelLayout = new javax.swing.GroupLayout(matchesPanel);
         matchesPanel.setLayout(matchesPanelLayout);
@@ -423,11 +428,11 @@ public class Window extends javax.swing.JFrame {
                         .addComponent(matchesHeadingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(matchesPanelLayout.createSequentialGroup()
                         .addGap(69, 69, 69)
-                        .addComponent(addPlayerBtn)
+                        .addComponent(addMatchBtn)
                         .addGap(35, 35, 35)
-                        .addComponent(delPlayerBtn)
+                        .addComponent(delMatchBtn)
                         .addGap(18, 18, 18)
-                        .addComponent(updatePlayerBtn)))
+                        .addComponent(updateMatchBtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         matchesPanelLayout.setVerticalGroup(
@@ -440,63 +445,46 @@ public class Window extends javax.swing.JFrame {
                 .addComponent(matchesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addGroup(matchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addPlayerBtn)
-                    .addComponent(delPlayerBtn)
-                    .addComponent(updatePlayerBtn))
+                    .addComponent(addMatchBtn)
+                    .addComponent(delMatchBtn)
+                    .addComponent(updateMatchBtn))
                 .addGap(31, 31, 31))
         );
 
         mainPanel.add(matchesPanel, "matchesPanel");
 
-        jLabel1.setText("ADD MATCH");
+        addMatchHeadingLabel.setText("ADD MATCH");
 
-        jButton1.setText("Go back");
+        addMatchGoBackBtn.setText("Go back");
 
-        jLabel2.setText("Team 1");
+        team1Label.setText("Team 1");
 
-        jLabel3.setText("Team 2");
+        team2Label.setText("Team 2");
 
-        jLabel4.setText("Venue");
+        venueLabel.setText("Venue");
 
-        jLabel5.setText("Date");
+        dateLabel.setText("Date");
 
-        jLabel6.setText("Toss Winner");
+        tossWinnerLabel.setText("Toss Winner");
 
-        jLabel7.setText("Toss decision");
+        tossDecisionLabel.setText("Toss decision");
 
-        jLabel8.setText("Innings 1 score");
+        innings1ScoreLabel.setText("Innings 1 score");
 
-        jLabel9.setText("Innings 2 score");
+        innings2ScoreLabel.setText("Innings 2 score");
 
-        jLabel10.setText("Winner");
+        winnerLabel.setText("Winner");
 
-        jLabel11.setText("Win margin");
+        winMarginLabel.setText("Win margin");
 
-        jButton2.setText("SUBMIT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        addMatchSubmitBtn.setText("SUBMIT");
+        addMatchSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                addMatchSubmitBtnActionPerformed(evt);
             }
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -509,33 +497,33 @@ public class Window extends javax.swing.JFrame {
             .addGroup(addMatchPanelLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
+                    .addComponent(addMatchSubmitBtn)
                     .addGroup(addMatchPanelLayout.createSequentialGroup()
                         .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
+                            .addComponent(addMatchGoBackBtn)
                             .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel11)))
+                                .addComponent(team2Label)
+                                .addComponent(team1Label)
+                                .addComponent(venueLabel)
+                                .addComponent(dateLabel)
+                                .addComponent(tossWinnerLabel)
+                                .addComponent(tossDecisionLabel)
+                                .addComponent(innings1ScoreLabel)
+                                .addComponent(innings2ScoreLabel)
+                                .addComponent(winnerLabel)
+                                .addComponent(winMarginLabel)))
                         .addGap(47, 47, 47)
                         .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField6)
-                            .addComponent(jTextField7)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField9)
-                            .addComponent(jTextField10)
+                            .addComponent(addMatchHeadingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addMatchTeam1)
+                            .addComponent(addMatchTeam2)
+                            .addComponent(addMatchVenue)
+                            .addComponent(addMatchTossWinner)
+                            .addComponent(addMatchTossDecision)
+                            .addComponent(addMatchInnings1Score)
+                            .addComponent(addMatchInnings2Score)
+                            .addComponent(addMatchWinner)
+                            .addComponent(addMatchWinMargin)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -548,52 +536,52 @@ public class Window extends javax.swing.JFrame {
             .addGroup(addMatchPanelLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton1))
+                    .addComponent(addMatchHeadingLabel)
+                    .addComponent(addMatchGoBackBtn))
                 .addGap(25, 25, 25)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(team1Label)
+                    .addComponent(addMatchTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(team2Label)
+                    .addComponent(addMatchTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(venueLabel)
+                    .addComponent(addMatchVenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                    .addComponent(dateLabel)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tossWinnerLabel)
+                    .addComponent(addMatchTossWinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tossDecisionLabel)
+                    .addComponent(addMatchTossDecision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(innings1ScoreLabel)
+                    .addComponent(addMatchInnings1Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(innings2ScoreLabel)
+                    .addComponent(addMatchInnings2Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(winnerLabel)
+                    .addComponent(addMatchWinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(winMarginLabel)
+                    .addComponent(addMatchWinMargin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(addMatchSubmitBtn)
                 .addContainerGap())
         );
 
@@ -1383,21 +1371,9 @@ public class Window extends javax.swing.JFrame {
         card.show(mainPanel, "homePanel");
     }//GEN-LAST:event_matchesGoBackBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    private void addMatchSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchSubmitBtnActionPerformed
+        viewMatchesBtnActionPerformed(evt);
+    }//GEN-LAST:event_addMatchSubmitBtnActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
@@ -1452,6 +1428,11 @@ public class Window extends javax.swing.JFrame {
         card.show(mainPanel, "addTeamPanel");
     }//GEN-LAST:event_addTeamBtnActionPerformed
 
+    private void addMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "addMatchPanel");
+    }//GEN-LAST:event_addMatchBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1488,20 +1469,34 @@ public class Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addMatchBtn;
+    private javax.swing.JButton addMatchGoBackBtn;
+    private javax.swing.JLabel addMatchHeadingLabel;
+    private javax.swing.JTextField addMatchInnings1Score;
+    private javax.swing.JTextField addMatchInnings2Score;
     private javax.swing.JPanel addMatchPanel;
-    private javax.swing.JButton addPlayerBtn;
+    private javax.swing.JButton addMatchSubmitBtn;
+    private javax.swing.JTextField addMatchTeam1;
+    private javax.swing.JTextField addMatchTeam2;
+    private javax.swing.JTextField addMatchTossDecision;
+    private javax.swing.JTextField addMatchTossWinner;
+    private javax.swing.JTextField addMatchVenue;
+    private javax.swing.JTextField addMatchWinMargin;
+    private javax.swing.JTextField addMatchWinner;
     private javax.swing.JPanel addPlayerPanel;
     private javax.swing.JButton addPlayersBtn;
     private javax.swing.JButton addTeamBtn;
     private javax.swing.JPanel addTeamPanel;
+    private javax.swing.JLabel dateLabel;
+    private javax.swing.JButton delMatchBtn;
     private javax.swing.JPanel delMatchPanel;
-    private javax.swing.JButton delPlayerBtn;
     private javax.swing.JPanel delPlayerPanel;
     private javax.swing.JButton delPlayersBtn;
     private javax.swing.JButton delTeamBtn;
     private javax.swing.JPanel delTeamPanel;
     private javax.swing.JPanel homePanel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel innings1ScoreLabel;
+    private javax.swing.JLabel innings2ScoreLabel;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -1509,7 +1504,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1525,9 +1519,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1536,7 +1527,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1547,7 +1537,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -1558,7 +1547,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -1568,13 +1556,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
@@ -1584,7 +1565,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
@@ -1595,7 +1575,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
@@ -1604,11 +1583,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton matchesGoBackBtn;
     private javax.swing.JLabel matchesHeadingLabel;
@@ -1625,15 +1599,22 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JPanel pointsPanel;
     private javax.swing.JScrollPane pointsScrollPane;
     private javax.swing.JTable pointsTable;
+    private javax.swing.JLabel team1Label;
+    private javax.swing.JLabel team2Label;
+    private javax.swing.JLabel tossDecisionLabel;
+    private javax.swing.JLabel tossWinnerLabel;
+    private javax.swing.JButton updateMatchBtn;
     private javax.swing.JPanel updateMatchPanel;
-    private javax.swing.JButton updatePlayerBtn;
     private javax.swing.JPanel updatePlayerPanel;
     private javax.swing.JButton updatePlayersBtn;
     private javax.swing.JButton updateTeamBtn;
     private javax.swing.JPanel updateTeamPanel;
+    private javax.swing.JLabel venueLabel;
     private javax.swing.JButton viewMatchesBtn;
     private javax.swing.JButton viewPlayersBtn;
     private javax.swing.JButton viewPointsBtn;
     private javax.swing.JLabel welcomeLabel;
+    private javax.swing.JLabel winMarginLabel;
+    private javax.swing.JLabel winnerLabel;
     // End of variables declaration//GEN-END:variables
 }
