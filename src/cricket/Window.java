@@ -5,17 +5,29 @@
  */
 package cricket;
 import java.awt.CardLayout;
-
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author GAUTHAM
  */
 public class Window extends javax.swing.JFrame {
 
+    private Connection connection;
     /**
      * Creates new form Window
      */
     public Window() {
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            connection=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","c##project","galloway");
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
     }
 
@@ -248,10 +260,10 @@ public class Window extends javax.swing.JFrame {
 
         pointsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"CSK", "MS Dhoni", "Stefen Fleming", 4, 4, 0, 0, 8}
+
             },
             new String [] {
-                "Team", "Captain", "Coach", "P", "W", "L", "T", "Points"
+
             }
         ));
         pointsScrollPane.setViewportView(pointsTable);
@@ -1239,6 +1251,40 @@ public class Window extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewPointsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPointsBtnActionPerformed
+        
+        DefaultTableModel defaultTableModel = new DefaultTableModel();
+        pointsTable.setModel(defaultTableModel);
+        defaultTableModel.addColumn("Name");
+        defaultTableModel.addColumn("Captain");
+        defaultTableModel.addColumn("Coach");
+        defaultTableModel.addColumn("Played");
+        defaultTableModel.addColumn("Won");
+        defaultTableModel.addColumn("Lost");
+        defaultTableModel.addColumn("Tied");
+        defaultTableModel.addColumn("Points");
+        
+        
+        try {
+            Statement statement = connection.createStatement();//crating statement object
+            String query = "SELECT a.name, b.fname, b.lname, a.coach, a.played, a.wins, a.loss, a.tied, a.points from team a, player b WHERE a.captain=b.player_id ORDER BY a.points desc";
+            ResultSet resultSet = statement.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String name = resultSet.getString(1);
+                String captain = resultSet.getString(2) + " " + resultSet.getString(3);
+                String coach = resultSet.getString(4);
+                int played = resultSet.getInt(5);
+                int wins = resultSet.getInt(6);
+                int loss = resultSet.getInt(7);
+                int tied = resultSet.getInt(8);
+                int points = resultSet.getInt(9);
+                defaultTableModel.addRow(new Object[]{name, captain, coach, played, wins, loss, tied, points});
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "pointsPanel");
     }//GEN-LAST:event_viewPointsBtnActionPerformed
@@ -1261,6 +1307,7 @@ public class Window extends javax.swing.JFrame {
     private void playersGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playersGoBackBtnActionPerformed
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "homePanel");
+        
     }//GEN-LAST:event_playersGoBackBtnActionPerformed
 
     private void matchesGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchesGoBackBtnActionPerformed
