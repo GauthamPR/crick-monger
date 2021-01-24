@@ -97,13 +97,13 @@ public class Window extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         delMatchPanel = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        delMatchHeading = new javax.swing.JLabel();
+        delMatchGoBackButton = new javax.swing.JButton();
+        Team1Label = new javax.swing.JLabel();
+        Team2Label = new javax.swing.JLabel();
+        delMatchTeam1 = new javax.swing.JTextField();
+        delMatchTeam2 = new javax.swing.JTextField();
+        delMatchSubmitBtn = new javax.swing.JButton();
         updateMatchPanel = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
@@ -117,31 +117,31 @@ public class Window extends javax.swing.JFrame {
         jTextField23 = new javax.swing.JTextField();
         jComboBox7 = new javax.swing.JComboBox<>();
         addPlayerPanel = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        addPlayerHeadingLabel = new javax.swing.JLabel();
+        addPlayerGoBackBtn = new javax.swing.JButton();
+        addPlayerFirstNameLabel = new javax.swing.JLabel();
+        addPlayerLastNameLabel = new javax.swing.JLabel();
+        addPlayerTeamLabel = new javax.swing.JLabel();
+        addPlayerDOBLabel = new javax.swing.JLabel();
+        addPlayerBattingHandLabel = new javax.swing.JLabel();
+        addPlayerBowlingSkillLabel = new javax.swing.JLabel();
+        addPlayerCountryLabel = new javax.swing.JLabel();
+        addPlayerJerseyLabel = new javax.swing.JLabel();
+        addPlayerRunsScoredLabel = new javax.swing.JLabel();
+        addPlayerWicketsTakenLabel = new javax.swing.JLabel();
+        addPlayerSubmitBtn = new javax.swing.JButton();
+        addPlayerFirstName = new javax.swing.JTextField();
+        addPlayerLastName = new javax.swing.JTextField();
+        addPlayerTeam = new javax.swing.JTextField();
+        addPlayerBattingHand = new javax.swing.JTextField();
+        addPlayerBowlingSkill = new javax.swing.JTextField();
+        addPlayerCountry = new javax.swing.JTextField();
+        addPlayerJerseyNumber = new javax.swing.JTextField();
+        addPlayerRunsScored = new javax.swing.JTextField();
+        addPlayerWicketsTaken = new javax.swing.JTextField();
+        addPlayerDOBDay = new javax.swing.JComboBox<>();
+        addPlayerDOBMonth = new javax.swing.JComboBox<>();
+        addPlayerDOBYear = new javax.swing.JComboBox<>();
         delPlayerPanel = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
@@ -339,6 +339,11 @@ public class Window extends javax.swing.JFrame {
         playersScrollPane.setViewportView(playersTable);
 
         addPlayersBtn.setText("Add player");
+        addPlayersBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPlayersBtnActionPerformed(evt);
+            }
+        });
 
         delPlayersBtn.setText("Delete player");
 
@@ -411,6 +416,11 @@ public class Window extends javax.swing.JFrame {
         });
 
         delMatchBtn.setText("Delete match");
+        delMatchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delMatchBtnActionPerformed(evt);
+            }
+        });
 
         updateMatchBtn.setText("Update match");
 
@@ -587,15 +597,20 @@ public class Window extends javax.swing.JFrame {
 
         mainPanel.add(addMatchPanel, "addMatchPanel");
 
-        jLabel12.setText("DELETE MATCH");
+        delMatchHeading.setText("DELETE MATCH");
 
-        jButton3.setText("Go back");
+        delMatchGoBackButton.setText("Go back");
 
-        jLabel13.setText("Enter team 1");
+        Team1Label.setText("Enter team 1");
 
-        jLabel14.setText("Enter team 2");
+        Team2Label.setText("Enter team 2");
 
-        jButton4.setText("SUBMIT");
+        delMatchSubmitBtn.setText("SUBMIT");
+        delMatchSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delMatchSubmitBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout delMatchPanelLayout = new javax.swing.GroupLayout(delMatchPanel);
         delMatchPanel.setLayout(delMatchPanelLayout);
@@ -605,19 +620,19 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(delMatchPanelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(jButton3))
+                        .addComponent(delMatchGoBackButton))
                     .addGroup(delMatchPanelLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel13))))
+                            .addComponent(Team2Label)
+                            .addComponent(Team1Label))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addComponent(jLabel12)
+                    .addComponent(delMatchSubmitBtn)
+                    .addComponent(delMatchHeading)
                     .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(delMatchTeam2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                        .addComponent(delMatchTeam1, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addGap(153, 153, 153))
         );
         delMatchPanelLayout.setVerticalGroup(
@@ -625,18 +640,18 @@ public class Window extends javax.swing.JFrame {
             .addGroup(delMatchPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jButton3))
+                    .addComponent(delMatchHeading)
+                    .addComponent(delMatchGoBackButton))
                 .addGap(34, 34, 34)
                 .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Team1Label)
+                    .addComponent(delMatchTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Team2Label)
+                    .addComponent(delMatchTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addComponent(jButton4)
+                .addComponent(delMatchSubmitBtn)
                 .addContainerGap(244, Short.MAX_VALUE))
         );
 
@@ -741,59 +756,59 @@ public class Window extends javax.swing.JFrame {
 
         mainPanel.add(updateMatchPanel, "updateMatchPanel");
 
-        jLabel15.setText("ADD PLAYER");
+        addPlayerHeadingLabel.setText("ADD PLAYER");
 
-        jButton5.setText("Go back");
+        addPlayerGoBackBtn.setText("Go back");
 
-        jLabel16.setText("First name");
+        addPlayerFirstNameLabel.setText("First name");
 
-        jLabel17.setText("Last name");
+        addPlayerLastNameLabel.setText("Last name");
 
-        jLabel18.setText("Team");
+        addPlayerTeamLabel.setText("Team");
 
-        jLabel19.setText("Date of birth");
+        addPlayerDOBLabel.setText("Date of birth");
 
-        jLabel20.setText("Batting hand");
+        addPlayerBattingHandLabel.setText("Batting hand");
 
-        jLabel21.setText("Bowling skill");
+        addPlayerBowlingSkillLabel.setText("Bowling skill");
 
-        jLabel22.setText("Country");
+        addPlayerCountryLabel.setText("Country");
 
-        jLabel23.setText("Jersey number");
+        addPlayerJerseyLabel.setText("Jersey number");
 
-        jLabel24.setText("Runs scored");
+        addPlayerRunsScoredLabel.setText("Runs scored");
 
-        jLabel25.setText("Wickets taken");
+        addPlayerWicketsTakenLabel.setText("Wickets taken");
 
-        jButton6.setText("SUBMIT");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        addPlayerSubmitBtn.setText("SUBMIT");
+        addPlayerSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                addPlayerSubmitBtnActionPerformed(evt);
             }
         });
 
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        addPlayerFirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                addPlayerFirstNameActionPerformed(evt);
             }
         });
 
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
+        addPlayerJerseyNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
+                addPlayerJerseyNumberActionPerformed(evt);
             }
         });
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        addPlayerDOBDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        addPlayerDOBDay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                addPlayerDOBDayActionPerformed(evt);
             }
         });
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addPlayerDOBMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addPlayerDOBYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970" }));
 
         javax.swing.GroupLayout addPlayerPanelLayout = new javax.swing.GroupLayout(addPlayerPanel);
         addPlayerPanel.setLayout(addPlayerPanelLayout);
@@ -802,38 +817,38 @@ public class Window extends javax.swing.JFrame {
             .addGroup(addPlayerPanelLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton6)
+                    .addComponent(addPlayerSubmitBtn)
                     .addGroup(addPlayerPanelLayout.createSequentialGroup()
                         .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton5)
+                            .addComponent(addPlayerGoBackBtn)
                             .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel17)
-                                .addComponent(jLabel16)
-                                .addComponent(jLabel18)
-                                .addComponent(jLabel19)
-                                .addComponent(jLabel20)
-                                .addComponent(jLabel21)
-                                .addComponent(jLabel22)
-                                .addComponent(jLabel23)
-                                .addComponent(jLabel24)
-                                .addComponent(jLabel25)))
+                                .addComponent(addPlayerLastNameLabel)
+                                .addComponent(addPlayerFirstNameLabel)
+                                .addComponent(addPlayerTeamLabel)
+                                .addComponent(addPlayerDOBLabel)
+                                .addComponent(addPlayerBattingHandLabel)
+                                .addComponent(addPlayerBowlingSkillLabel)
+                                .addComponent(addPlayerCountryLabel)
+                                .addComponent(addPlayerJerseyLabel)
+                                .addComponent(addPlayerRunsScoredLabel)
+                                .addComponent(addPlayerWicketsTakenLabel)))
                         .addGap(47, 47, 47)
                         .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField12)
-                            .addComponent(jTextField13)
-                            .addComponent(jTextField14)
-                            .addComponent(jTextField15)
-                            .addComponent(jTextField16)
-                            .addComponent(jTextField17)
-                            .addComponent(jTextField18)
-                            .addComponent(jTextField19)
-                            .addComponent(jTextField20)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(addPlayerHeadingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addPlayerFirstName)
+                            .addComponent(addPlayerLastName)
+                            .addComponent(addPlayerTeam)
+                            .addComponent(addPlayerBattingHand)
+                            .addComponent(addPlayerBowlingSkill)
+                            .addComponent(addPlayerCountry)
+                            .addComponent(addPlayerJerseyNumber)
+                            .addComponent(addPlayerRunsScored)
+                            .addComponent(addPlayerWicketsTaken)
+                            .addComponent(addPlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addPlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addPlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         addPlayerPanelLayout.setVerticalGroup(
@@ -841,52 +856,52 @@ public class Window extends javax.swing.JFrame {
             .addGroup(addPlayerPanelLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(jButton5))
+                    .addComponent(addPlayerHeadingLabel)
+                    .addComponent(addPlayerGoBackBtn))
                 .addGap(25, 25, 25)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerFirstNameLabel)
+                    .addComponent(addPlayerFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerLastNameLabel)
+                    .addComponent(addPlayerLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerTeamLabel)
+                    .addComponent(addPlayerTeam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerDOBLabel)
+                    .addComponent(addPlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addPlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addPlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerBattingHandLabel)
+                    .addComponent(addPlayerBattingHand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerBowlingSkillLabel)
+                    .addComponent(addPlayerBowlingSkill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerCountryLabel)
+                    .addComponent(addPlayerCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerJerseyLabel)
+                    .addComponent(addPlayerJerseyNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerRunsScoredLabel)
+                    .addComponent(addPlayerRunsScored, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerWicketsTakenLabel)
+                    .addComponent(addPlayerWicketsTaken, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(addPlayerSubmitBtn)
                 .addContainerGap())
         );
 
@@ -1334,7 +1349,6 @@ public class Window extends javax.swing.JFrame {
             ResultSet resultSet = statement.executeQuery(query);//executing query and storing result in ResultSet
 
             while (resultSet.next()) {
-                System.out.println("HEHE");
                 //Retrieving details from the database and storing it in the String variables
                 String team1 = resultSet.getString(1);
                 String team2 = resultSet.getString(2);
@@ -1375,21 +1389,46 @@ public class Window extends javax.swing.JFrame {
         viewMatchesBtnActionPerformed(evt);
     }//GEN-LAST:event_addMatchSubmitBtnActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void addPlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerSubmitBtnActionPerformed
+        String fName = addPlayerFirstName.getText().toUpperCase();
+        String lName = addPlayerLastName.getText().toUpperCase();
+        String teamID = addPlayerTeam.getText().toUpperCase();
+        String day = addPlayerDOBDay.getSelectedItem().toString().toUpperCase();
+        String month = addPlayerDOBMonth.getSelectedItem().toString().toUpperCase();
+        String year = addPlayerDOBYear.getSelectedItem().toString().toUpperCase();
+        String battingHand = addPlayerBattingHand.getText().toUpperCase();
+        String bowlingSkill = addPlayerBowlingSkill.getText().toUpperCase();
+        String country = addPlayerCountry.getText().toUpperCase();
+        String jerseyNo = addPlayerJerseyNumber.getText().toUpperCase();
+        String runs = addPlayerRunsScored.getText().toUpperCase();
+        String wickets = addPlayerWicketsTaken.getText().toUpperCase();
+        
+        String date = String.join("-", day, month, year);
+        String query = "INSERT INTO player (FNAME,LNAME,DOB,BATTING_HAND,BOWLING_SKILL,COUNTRY,JERSEY_NO,RUNS,WICKETS,TEAM_ID)"+
+                "VALUES('" + String.join("','", fName, lName, date, battingHand, bowlingSkill, country) + "'," + String.join(",", jerseyNo, runs, wickets, teamID) + ")";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel, "playersPanel");
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_addPlayerSubmitBtnActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void addPlayerFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerFirstNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_addPlayerFirstNameActionPerformed
 
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+    private void addPlayerJerseyNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerJerseyNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
+    }//GEN-LAST:event_addPlayerJerseyNumberActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void addPlayerDOBDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerDOBDayActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_addPlayerDOBDayActionPerformed
 
     private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
         // TODO add your handling code here:
@@ -1433,6 +1472,20 @@ public class Window extends javax.swing.JFrame {
         card.show(mainPanel, "addMatchPanel");
     }//GEN-LAST:event_addMatchBtnActionPerformed
 
+    private void delMatchSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchSubmitBtnActionPerformed
+        viewMatchesBtnActionPerformed(evt);
+    }//GEN-LAST:event_delMatchSubmitBtnActionPerformed
+
+    private void delMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "delMatchPanel");
+    }//GEN-LAST:event_delMatchBtnActionPerformed
+
+    private void addPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayersBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "addPlayerPanel");
+    }//GEN-LAST:event_addPlayersBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1469,6 +1522,8 @@ public class Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Team1Label;
+    private javax.swing.JLabel Team2Label;
     private javax.swing.JButton addMatchBtn;
     private javax.swing.JButton addMatchGoBackBtn;
     private javax.swing.JLabel addMatchHeadingLabel;
@@ -1483,13 +1538,43 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JTextField addMatchVenue;
     private javax.swing.JTextField addMatchWinMargin;
     private javax.swing.JTextField addMatchWinner;
+    private javax.swing.JTextField addPlayerBattingHand;
+    private javax.swing.JLabel addPlayerBattingHandLabel;
+    private javax.swing.JTextField addPlayerBowlingSkill;
+    private javax.swing.JLabel addPlayerBowlingSkillLabel;
+    private javax.swing.JTextField addPlayerCountry;
+    private javax.swing.JLabel addPlayerCountryLabel;
+    private javax.swing.JComboBox<String> addPlayerDOBDay;
+    private javax.swing.JLabel addPlayerDOBLabel;
+    private javax.swing.JComboBox<String> addPlayerDOBMonth;
+    private javax.swing.JComboBox<String> addPlayerDOBYear;
+    private javax.swing.JTextField addPlayerFirstName;
+    private javax.swing.JLabel addPlayerFirstNameLabel;
+    private javax.swing.JButton addPlayerGoBackBtn;
+    private javax.swing.JLabel addPlayerHeadingLabel;
+    private javax.swing.JLabel addPlayerJerseyLabel;
+    private javax.swing.JTextField addPlayerJerseyNumber;
+    private javax.swing.JTextField addPlayerLastName;
+    private javax.swing.JLabel addPlayerLastNameLabel;
     private javax.swing.JPanel addPlayerPanel;
+    private javax.swing.JTextField addPlayerRunsScored;
+    private javax.swing.JLabel addPlayerRunsScoredLabel;
+    private javax.swing.JButton addPlayerSubmitBtn;
+    private javax.swing.JTextField addPlayerTeam;
+    private javax.swing.JLabel addPlayerTeamLabel;
+    private javax.swing.JTextField addPlayerWicketsTaken;
+    private javax.swing.JLabel addPlayerWicketsTakenLabel;
     private javax.swing.JButton addPlayersBtn;
     private javax.swing.JButton addTeamBtn;
     private javax.swing.JPanel addTeamPanel;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JButton delMatchBtn;
+    private javax.swing.JButton delMatchGoBackButton;
+    private javax.swing.JLabel delMatchHeading;
     private javax.swing.JPanel delMatchPanel;
+    private javax.swing.JButton delMatchSubmitBtn;
+    private javax.swing.JTextField delMatchTeam1;
+    private javax.swing.JTextField delMatchTeam2;
     private javax.swing.JPanel delPlayerPanel;
     private javax.swing.JButton delPlayersBtn;
     private javax.swing.JButton delTeamBtn;
@@ -1504,35 +1589,14 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -1556,16 +1620,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
@@ -1582,7 +1636,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton matchesGoBackBtn;
     private javax.swing.JLabel matchesHeadingLabel;
