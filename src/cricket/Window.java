@@ -20,7 +20,7 @@ import javax.swing.JComboBox;
 public class Window extends javax.swing.JFrame {
 
     private Connection connection;
-    private Dictionary teamNames, firstNames, lastNames;
+    private Dictionary teamNames, firstNames, lastNames, playerNames;
     /**
      * Creates new form Window
      */
@@ -206,15 +206,15 @@ public class Window extends javax.swing.JFrame {
         delTeamSubmitBtn = new javax.swing.JButton();
         delTeamName = new javax.swing.JComboBox<>();
         updateTeamPanel = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
-        jTextField36 = new javax.swing.JTextField();
-        jComboBox8 = new javax.swing.JComboBox<>();
-        jComboBox32 = new javax.swing.JComboBox<>();
+        updateTeamHeadingLabel = new javax.swing.JLabel();
+        updateTeamGoBackBtn = new javax.swing.JButton();
+        updateTeamNameLabel = new javax.swing.JLabel();
+        updateTeamFieldChoiceLabel = new javax.swing.JLabel();
+        updateTeamChangeLabel = new javax.swing.JLabel();
+        updateTeamSubmitBtn = new javax.swing.JButton();
+        updateTeamChange = new javax.swing.JTextField();
+        updateTeamFieldChoice = new javax.swing.JComboBox<>();
+        updateTeamName = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -310,6 +310,11 @@ public class Window extends javax.swing.JFrame {
         });
 
         updateTeamBtn.setText("Update team");
+        updateTeamBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateTeamBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pointsPanelLayout = new javax.swing.GroupLayout(pointsPanel);
         pointsPanel.setLayout(pointsPanelLayout);
@@ -1385,27 +1390,37 @@ public class Window extends javax.swing.JFrame {
 
         mainPanel.add(delTeamPanel, "delTeamPanel");
 
-        jLabel45.setText("UPDATE TEAM DETAILS");
+        updateTeamHeadingLabel.setText("UPDATE TEAM DETAILS");
 
-        jButton15.setText("Go back");
-
-        jLabel46.setText("Enter team");
-
-        jLabel47.setText("Choose field to edit");
-
-        jLabel48.setText("Changes");
-
-        jButton16.setText("SUBMIT");
-
-        jTextField36.addActionListener(new java.awt.event.ActionListener() {
+        updateTeamGoBackBtn.setText("Go back");
+        updateTeamGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField36ActionPerformed(evt);
+                updateTeamGoBackBtnActionPerformed(evt);
             }
         });
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        updateTeamNameLabel.setText("Enter team");
 
-        jComboBox32.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        updateTeamFieldChoiceLabel.setText("Choose field to edit");
+
+        updateTeamChangeLabel.setText("Changes");
+
+        updateTeamSubmitBtn.setText("SUBMIT");
+        updateTeamSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateTeamSubmitBtnActionPerformed(evt);
+            }
+        });
+
+        updateTeamChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateTeamChangeActionPerformed(evt);
+            }
+        });
+
+        updateTeamFieldChoice.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Team Name", "Captain", "Coach", "Played", "Wins", "Loss", "Tied", "Points" }));
+
+        updateTeamName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
 
         javax.swing.GroupLayout updateTeamPanelLayout = new javax.swing.GroupLayout(updateTeamPanel);
         updateTeamPanel.setLayout(updateTeamPanelLayout);
@@ -1415,24 +1430,24 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(updateTeamPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton15)
+                        .addComponent(updateTeamGoBackBtn)
                         .addGap(33, 33, 33)
-                        .addComponent(jLabel45))
+                        .addComponent(updateTeamHeadingLabel))
                     .addGroup(updateTeamPanelLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel46)
-                            .addComponent(jLabel47)
-                            .addComponent(jLabel48))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
+                            .addComponent(updateTeamNameLabel)
+                            .addComponent(updateTeamFieldChoiceLabel)
+                            .addComponent(updateTeamChangeLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, Short.MAX_VALUE)
                         .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(updateTeamFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateTeamChange, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateTeamName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(86, 86, 86))
             .addGroup(updateTeamPanelLayout.createSequentialGroup()
                 .addGap(158, 158, 158)
-                .addComponent(jButton16)
+                .addComponent(updateTeamSubmitBtn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         updateTeamPanelLayout.setVerticalGroup(
@@ -1440,22 +1455,22 @@ public class Window extends javax.swing.JFrame {
             .addGroup(updateTeamPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(jButton15))
+                    .addComponent(updateTeamHeadingLabel)
+                    .addComponent(updateTeamGoBackBtn))
                 .addGap(34, 34, 34)
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(jComboBox32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updateTeamNameLabel)
+                    .addComponent(updateTeamName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updateTeamFieldChoiceLabel)
+                    .addComponent(updateTeamFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel48)
-                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updateTeamChangeLabel)
+                    .addComponent(updateTeamChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addComponent(jButton16)
+                .addComponent(updateTeamSubmitBtn)
                 .addContainerGap(285, Short.MAX_VALUE))
         );
 
@@ -1690,9 +1705,9 @@ public class Window extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addTeamSubmitBtnActionPerformed
 
-    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+    private void updateTeamChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamChangeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField36ActionPerformed
+    }//GEN-LAST:event_updateTeamChangeActionPerformed
 
     private void addTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamBtnActionPerformed
         String query = "**unknown";
@@ -1974,6 +1989,90 @@ public class Window extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_delTeamSubmitBtnActionPerformed
 
+    private void updateTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+        
+        teamNames = new Hashtable();
+        updateTeamName.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                updateTeamName.addItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        query = "SELECT player_id, fname, lname FROM player";
+        System.out.println(query);
+        playerNames = new Hashtable();
+        
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                String playerID= resultSet.getString(1);
+                String fName = resultSet.getString(2);
+                String lName = resultSet.getString(3);
+                String playerName = String.join(" ", fName, lName);
+                System.out.println(playerName);
+                playerNames.put(playerName, playerID);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "updateTeamPanel");
+    }//GEN-LAST:event_updateTeamBtnActionPerformed
+
+    private void updateTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "pointsPanel");
+    }//GEN-LAST:event_updateTeamGoBackBtnActionPerformed
+
+    private void updateTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamSubmitBtnActionPerformed
+        String teamName = updateTeamName.getSelectedItem().toString().toUpperCase();
+        String teamID = (String)teamNames.get(teamName);
+        
+        String field = updateTeamFieldChoice.getSelectedItem().toString().toUpperCase();
+        String newValue = updateTeamChange.getText();
+        
+        if(null != field)switch (field) {
+            case "TEAM NAME":
+                field = "name";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "CAPTAIN":
+                field = "captain";
+                newValue = (String)playerNames.get(newValue.toUpperCase());
+                break;
+            case "COACH":
+                field = "coach";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            default:
+                break;
+        }
+        String query = "UPDATE team SET " + field + "="+ newValue +" WHERE team_id=" + teamID;
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPointsBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updateTeamSubmitBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2096,8 +2195,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JPanel homePanel;
     private javax.swing.JLabel innings1ScoreLabel;
     private javax.swing.JLabel innings2ScoreLabel;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -2113,13 +2210,11 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox19;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox32;
     private javax.swing.JComboBox<String> jComboBox33;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -2128,12 +2223,7 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField36;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton matchesGoBackBtn;
     private javax.swing.JLabel matchesHeadingLabel;
@@ -2172,7 +2262,16 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton updatePlayerSubmitBtn;
     private javax.swing.JButton updatePlayersBtn;
     private javax.swing.JButton updateTeamBtn;
+    private javax.swing.JTextField updateTeamChange;
+    private javax.swing.JLabel updateTeamChangeLabel;
+    private javax.swing.JComboBox<String> updateTeamFieldChoice;
+    private javax.swing.JLabel updateTeamFieldChoiceLabel;
+    private javax.swing.JButton updateTeamGoBackBtn;
+    private javax.swing.JLabel updateTeamHeadingLabel;
+    private javax.swing.JComboBox<String> updateTeamName;
+    private javax.swing.JLabel updateTeamNameLabel;
     private javax.swing.JPanel updateTeamPanel;
+    private javax.swing.JButton updateTeamSubmitBtn;
     private javax.swing.JLabel venueLabel;
     private javax.swing.JButton viewMatchesBtn;
     private javax.swing.JButton viewPlayersBtn;

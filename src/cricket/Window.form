@@ -235,6 +235,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update team"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateTeamBtnActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -2424,22 +2427,22 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton15" min="-2" max="-2" attributes="0"/>
+                              <Component id="updateTeamGoBackBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                              <Component id="updateTeamHeadingLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel48" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateTeamNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateTeamFieldChoiceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateTeamChangeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="308" max="32767" attributes="0"/>
+                              <EmptySpace pref="294" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBox8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField36" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                                  <Component id="jComboBox32" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateTeamFieldChoice" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateTeamChange" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Component id="updateTeamName" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -2447,7 +2450,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
-                      <Component id="jButton16" min="-2" max="-2" attributes="0"/>
+                      <Component id="updateTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -2457,75 +2460,85 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateTeamHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateTeamGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox32" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateTeamNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateTeamName" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateTeamFieldChoiceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateTeamFieldChoice" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel48" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField36" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateTeamChangeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateTeamChange" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="jButton16" min="-2" max="-2" attributes="0"/>
+                      <Component id="updateTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="285" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel45">
+            <Component class="javax.swing.JLabel" name="updateTeamHeadingLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="UPDATE TEAM DETAILS"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton15">
+            <Component class="javax.swing.JButton" name="updateTeamGoBackBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Go back"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateTeamGoBackBtnActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel46">
+            <Component class="javax.swing.JLabel" name="updateTeamNameLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Enter team"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel47">
+            <Component class="javax.swing.JLabel" name="updateTeamFieldChoiceLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Choose field to edit"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel48">
+            <Component class="javax.swing.JLabel" name="updateTeamChangeLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Changes"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton16">
+            <Component class="javax.swing.JButton" name="updateTeamSubmitBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField36">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField36ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateTeamSubmitBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox8">
+            <Component class="javax.swing.JTextField" name="updateTeamChange">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateTeamChangeActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="updateTeamFieldChoice">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="8">
+                    <StringItem index="0" value="Team Name"/>
+                    <StringItem index="1" value="Captain"/>
+                    <StringItem index="2" value="Coach"/>
+                    <StringItem index="3" value="Played"/>
+                    <StringItem index="4" value="Wins"/>
+                    <StringItem index="5" value="Loss"/>
+                    <StringItem index="6" value="Tied"/>
+                    <StringItem index="7" value="Points"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -2533,14 +2546,11 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox32">
+            <Component class="javax.swing.JComboBox" name="updateTeamName">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="[No Team]"/>
                   </StringArray>
                 </Property>
               </Properties>
