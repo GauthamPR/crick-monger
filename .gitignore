@@ -1,0 +1,6 @@
+/build
+/out
+.idea
+/nbproject
+/test
+/CricketDB.iml

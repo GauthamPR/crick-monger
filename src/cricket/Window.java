@@ -7,8 +7,12 @@ package cricket;
 import java.awt.CardLayout;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
+import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 /**
  *
  * @author GAUTHAM
@@ -16,6 +20,7 @@ import java.util.logging.Logger;
 public class Window extends javax.swing.JFrame {
 
     private Connection connection;
+    private Dictionary teamNames, firstNames, lastNames, playerNames;
     /**
      * Creates new form Window
      */
@@ -73,49 +78,57 @@ public class Window extends javax.swing.JFrame {
         addMatchPanel = new javax.swing.JPanel();
         addMatchHeadingLabel = new javax.swing.JLabel();
         addMatchGoBackBtn = new javax.swing.JButton();
-        team1Label = new javax.swing.JLabel();
-        team2Label = new javax.swing.JLabel();
-        venueLabel = new javax.swing.JLabel();
-        dateLabel = new javax.swing.JLabel();
-        tossWinnerLabel = new javax.swing.JLabel();
-        tossDecisionLabel = new javax.swing.JLabel();
-        innings1ScoreLabel = new javax.swing.JLabel();
-        innings2ScoreLabel = new javax.swing.JLabel();
-        winnerLabel = new javax.swing.JLabel();
-        winMarginLabel = new javax.swing.JLabel();
+        addMatchTeam1Label = new javax.swing.JLabel();
+        addMatchTeam2Label = new javax.swing.JLabel();
+        addMatchVenueLabel = new javax.swing.JLabel();
+        addMatchDateLabel = new javax.swing.JLabel();
+        addMatchTossWinnerLabel = new javax.swing.JLabel();
+        addMatchTossDecisionLabel = new javax.swing.JLabel();
+        addMatchInnings1Label = new javax.swing.JLabel();
+        addMatchInnings2Label = new javax.swing.JLabel();
+        addMatchWinnerLabel = new javax.swing.JLabel();
+        addMatchWinMarginLabel = new javax.swing.JLabel();
         addMatchSubmitBtn = new javax.swing.JButton();
-        addMatchTeam1 = new javax.swing.JTextField();
-        addMatchTeam2 = new javax.swing.JTextField();
         addMatchVenue = new javax.swing.JTextField();
-        addMatchTossWinner = new javax.swing.JTextField();
-        addMatchTossDecision = new javax.swing.JTextField();
         addMatchInnings1Score = new javax.swing.JTextField();
         addMatchInnings2Score = new javax.swing.JTextField();
-        addMatchWinner = new javax.swing.JTextField();
         addMatchWinMargin = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        addMatchDay = new javax.swing.JComboBox<>();
+        addMatchMonth = new javax.swing.JComboBox<>();
+        addMatchYear = new javax.swing.JComboBox<>();
+        addMatchTeam1 = new javax.swing.JComboBox<>();
+        addMatchTeam2 = new javax.swing.JComboBox<>();
+        addMatchTossWinner = new javax.swing.JComboBox<>();
+        addMatchWinner = new javax.swing.JComboBox<>();
+        addMatchTossDecision = new javax.swing.JComboBox<>();
         delMatchPanel = new javax.swing.JPanel();
         delMatchHeading = new javax.swing.JLabel();
         delMatchGoBackButton = new javax.swing.JButton();
-        Team1Label = new javax.swing.JLabel();
-        Team2Label = new javax.swing.JLabel();
-        delMatchTeam1 = new javax.swing.JTextField();
-        delMatchTeam2 = new javax.swing.JTextField();
+        delMatchTeam1Label = new javax.swing.JLabel();
+        delMatchTeam2Label = new javax.swing.JLabel();
         delMatchSubmitBtn = new javax.swing.JButton();
+        delMatchDateLabel = new javax.swing.JLabel();
+        delMatchDay = new javax.swing.JComboBox<>();
+        delMatchMonth = new javax.swing.JComboBox<>();
+        delMatchYear = new javax.swing.JComboBox<>();
+        delMatchTeam1 = new javax.swing.JComboBox<>();
+        delMatchTeam2 = new javax.swing.JComboBox<>();
         updateMatchPanel = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        updateMatchHeadingLabel = new javax.swing.JLabel();
+        updateMatchGoBackBtn = new javax.swing.JButton();
+        updateMatchTeam1Label = new javax.swing.JLabel();
+        updateMatchTeam2Label = new javax.swing.JLabel();
+        updateMatchFieldChoiceLabel = new javax.swing.JLabel();
+        updateMatchChangeLabel = new javax.swing.JLabel();
+        updateMatchSubmitBtn = new javax.swing.JButton();
+        updateMatchChange = new javax.swing.JTextField();
+        updateMatchFieldChoice = new javax.swing.JComboBox<>();
+        updateMatchTeam1 = new javax.swing.JComboBox<>();
+        updateMatchTeam2 = new javax.swing.JComboBox<>();
+        updateMatcheDateLabel = new javax.swing.JLabel();
+        updateMatchMonth = new javax.swing.JComboBox<>();
+        updateMatchDay = new javax.swing.JComboBox<>();
+        updateMatchYear = new javax.swing.JComboBox<>();
         addPlayerPanel = new javax.swing.JPanel();
         addPlayerHeadingLabel = new javax.swing.JLabel();
         addPlayerGoBackBtn = new javax.swing.JButton();
@@ -132,9 +145,6 @@ public class Window extends javax.swing.JFrame {
         addPlayerSubmitBtn = new javax.swing.JButton();
         addPlayerFirstName = new javax.swing.JTextField();
         addPlayerLastName = new javax.swing.JTextField();
-        addPlayerTeam = new javax.swing.JTextField();
-        addPlayerBattingHand = new javax.swing.JTextField();
-        addPlayerBowlingSkill = new javax.swing.JTextField();
         addPlayerCountry = new javax.swing.JTextField();
         addPlayerJerseyNumber = new javax.swing.JTextField();
         addPlayerRunsScored = new javax.swing.JTextField();
@@ -142,51 +152,69 @@ public class Window extends javax.swing.JFrame {
         addPlayerDOBDay = new javax.swing.JComboBox<>();
         addPlayerDOBMonth = new javax.swing.JComboBox<>();
         addPlayerDOBYear = new javax.swing.JComboBox<>();
+        addPlayerTeam = new javax.swing.JComboBox<>();
+        addPlayerBattingHand = new javax.swing.JComboBox<>();
+        addPlayerBowlingSkill = new javax.swing.JComboBox<>();
         delPlayerPanel = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
+        delPlayerHeadingLabel = new javax.swing.JLabel();
+        delPlayerGoBackBtn = new javax.swing.JButton();
+        delPlayerNameLabel = new javax.swing.JLabel();
+        delPlayerDOBLabel = new javax.swing.JLabel();
+        delPlayerSubmitBtn = new javax.swing.JButton();
+        delPlayerName = new javax.swing.JComboBox<>();
+        delPlayerDOBDay = new javax.swing.JComboBox<>();
+        delPlayerDOBMonth = new javax.swing.JComboBox<>();
+        delPlayerDOBYear = new javax.swing.JComboBox<>();
         updatePlayerPanel = new javax.swing.JPanel();
+        updatePlayerGoBackBtn = new javax.swing.JButton();
+        updatePlayerHeadingLabel = new javax.swing.JLabel();
+        updatePlayerNameLabel = new javax.swing.JLabel();
+        updatePlayerDOBLabel = new javax.swing.JLabel();
+        updatePlayerFieldChoiceLabel = new javax.swing.JLabel();
+        updatePlayerChangeLabel = new javax.swing.JLabel();
+        updatePlayerSubmitBtn = new javax.swing.JButton();
+        updatePlayerName = new javax.swing.JComboBox<>();
+        updatePlayerDOBDay = new javax.swing.JComboBox<>();
+        updatePlayerDOBMonth = new javax.swing.JComboBox<>();
+        updatePlayerDOBYear = new javax.swing.JComboBox<>();
+        updatePlayerFieldChoice = new javax.swing.JComboBox<>();
+        updatePlayerChange = new javax.swing.JTextField();
         addTeamPanel = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField31 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
-        jTextField33 = new javax.swing.JTextField();
+        addTeamHeadingLabel = new javax.swing.JLabel();
+        addTeamGoBackBtn = new javax.swing.JButton();
+        addTeamNameLabel = new javax.swing.JLabel();
+        addTeamCaptainLabel = new javax.swing.JLabel();
+        addTeamCoachLabel = new javax.swing.JLabel();
+        addTeamPlayedLabel = new javax.swing.JLabel();
+        addTeamWinsLabel = new javax.swing.JLabel();
+        addTeamLossLabel = new javax.swing.JLabel();
+        addTeamTiedLabel = new javax.swing.JLabel();
+        addTeamPointsLabel = new javax.swing.JLabel();
+        addTeamSubmitBtn = new javax.swing.JButton();
+        addTeamName = new javax.swing.JTextField();
+        addTeamCoach = new javax.swing.JTextField();
+        addTeamWins = new javax.swing.JTextField();
+        addTeamLoss = new javax.swing.JTextField();
+        addTeamTied = new javax.swing.JTextField();
+        addTeamPoints = new javax.swing.JTextField();
+        addTeamPlayed = new javax.swing.JTextField();
+        addTeamCaptain = new javax.swing.JComboBox<>();
         delTeamPanel = new javax.swing.JPanel();
-        jLabel43 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
-        jLabel44 = new javax.swing.JLabel();
-        jTextField34 = new javax.swing.JTextField();
-        jButton14 = new javax.swing.JButton();
+        delTeamHeadingLabel = new javax.swing.JLabel();
+        delTeamGoBackBtn = new javax.swing.JButton();
+        delTeamTeamNameLabel = new javax.swing.JLabel();
+        delTeamSubmitBtn = new javax.swing.JButton();
+        delTeamName = new javax.swing.JComboBox<>();
         updateTeamPanel = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
-        jTextField35 = new javax.swing.JTextField();
-        jTextField36 = new javax.swing.JTextField();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        updateTeamHeadingLabel = new javax.swing.JLabel();
+        updateTeamGoBackBtn = new javax.swing.JButton();
+        updateTeamNameLabel = new javax.swing.JLabel();
+        updateTeamFieldChoiceLabel = new javax.swing.JLabel();
+        updateTeamChangeLabel = new javax.swing.JLabel();
+        updateTeamSubmitBtn = new javax.swing.JButton();
+        updateTeamChange = new javax.swing.JTextField();
+        updateTeamFieldChoice = new javax.swing.JComboBox<>();
+        updateTeamName = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -222,16 +250,15 @@ public class Window extends javax.swing.JFrame {
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homePanelLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(viewPointsBtn)
-                .addGap(18, 18, 18)
-                .addComponent(viewPlayersBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(viewMatchesBtn)
-                .addGap(51, 51, 51))
-            .addGroup(homePanelLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(welcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addComponent(viewPointsBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewPlayersBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(viewMatchesBtn)))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
         homePanelLayout.setVerticalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,8 +303,18 @@ public class Window extends javax.swing.JFrame {
         });
 
         delTeamBtn.setText("Delete team");
+        delTeamBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delTeamBtnActionPerformed(evt);
+            }
+        });
 
         updateTeamBtn.setText("Update team");
+        updateTeamBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateTeamBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pointsPanelLayout = new javax.swing.GroupLayout(pointsPanel);
         pointsPanel.setLayout(pointsPanelLayout);
@@ -346,8 +383,18 @@ public class Window extends javax.swing.JFrame {
         });
 
         delPlayersBtn.setText("Delete player");
+        delPlayersBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delPlayersBtnActionPerformed(evt);
+            }
+        });
 
         updatePlayersBtn.setText("Update player");
+        updatePlayersBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatePlayersBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout playersPanelLayout = new javax.swing.GroupLayout(playersPanel);
         playersPanel.setLayout(playersPanelLayout);
@@ -367,7 +414,7 @@ public class Window extends javax.swing.JFrame {
                         .addComponent(delPlayersBtn)
                         .addGap(18, 18, 18)
                         .addComponent(updatePlayersBtn)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(236, Short.MAX_VALUE))
             .addComponent(playersScrollPane)
         );
         playersPanelLayout.setVerticalGroup(
@@ -423,12 +470,17 @@ public class Window extends javax.swing.JFrame {
         });
 
         updateMatchBtn.setText("Update match");
+        updateMatchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateMatchBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout matchesPanelLayout = new javax.swing.GroupLayout(matchesPanel);
         matchesPanel.setLayout(matchesPanelLayout);
         matchesPanelLayout.setHorizontalGroup(
             matchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(matchesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
+            .addComponent(matchesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
             .addGroup(matchesPanelLayout.createSequentialGroup()
                 .addGroup(matchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(matchesPanelLayout.createSequentialGroup()
@@ -466,26 +518,31 @@ public class Window extends javax.swing.JFrame {
         addMatchHeadingLabel.setText("ADD MATCH");
 
         addMatchGoBackBtn.setText("Go back");
+        addMatchGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMatchGoBackBtnActionPerformed(evt);
+            }
+        });
 
-        team1Label.setText("Team 1");
+        addMatchTeam1Label.setText("Team 1");
 
-        team2Label.setText("Team 2");
+        addMatchTeam2Label.setText("Team 2");
 
-        venueLabel.setText("Venue");
+        addMatchVenueLabel.setText("Venue");
 
-        dateLabel.setText("Date");
+        addMatchDateLabel.setText("Date");
 
-        tossWinnerLabel.setText("Toss Winner");
+        addMatchTossWinnerLabel.setText("Toss Winner");
 
-        tossDecisionLabel.setText("Toss decision");
+        addMatchTossDecisionLabel.setText("Toss decision");
 
-        innings1ScoreLabel.setText("Innings 1 score");
+        addMatchInnings1Label.setText("Innings 1 score");
 
-        innings2ScoreLabel.setText("Innings 2 score");
+        addMatchInnings2Label.setText("Innings 2 score");
 
-        winnerLabel.setText("Winner");
+        addMatchWinnerLabel.setText("Winner");
 
-        winMarginLabel.setText("Win margin");
+        addMatchWinMarginLabel.setText("Win margin");
 
         addMatchSubmitBtn.setText("SUBMIT");
         addMatchSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -494,11 +551,32 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addMatchDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addMatchMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addMatchYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000" }));
+
+        addMatchTeam1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
+        addMatchTeam1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMatchTeam1ActionPerformed(evt);
+            }
+        });
+
+        addMatchTeam2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
+        addMatchTeam2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMatchTeam2ActionPerformed(evt);
+            }
+        });
+
+        addMatchTossWinner.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
+        addMatchTossWinner.setSelectedItem(addMatchTeam1);
+
+        addMatchWinner.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
+
+        addMatchTossDecision.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bat", "Bowl" }));
 
         javax.swing.GroupLayout addMatchPanelLayout = new javax.swing.GroupLayout(addMatchPanel);
         addMatchPanel.setLayout(addMatchPanelLayout);
@@ -512,34 +590,34 @@ public class Window extends javax.swing.JFrame {
                         .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(addMatchGoBackBtn)
                             .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(team2Label)
-                                .addComponent(team1Label)
-                                .addComponent(venueLabel)
-                                .addComponent(dateLabel)
-                                .addComponent(tossWinnerLabel)
-                                .addComponent(tossDecisionLabel)
-                                .addComponent(innings1ScoreLabel)
-                                .addComponent(innings2ScoreLabel)
-                                .addComponent(winnerLabel)
-                                .addComponent(winMarginLabel)))
+                                .addComponent(addMatchTeam2Label)
+                                .addComponent(addMatchTeam1Label)
+                                .addComponent(addMatchVenueLabel)
+                                .addComponent(addMatchDateLabel)
+                                .addComponent(addMatchTossWinnerLabel)
+                                .addComponent(addMatchTossDecisionLabel)
+                                .addComponent(addMatchInnings1Label)
+                                .addComponent(addMatchInnings2Label)
+                                .addComponent(addMatchWinnerLabel)
+                                .addComponent(addMatchWinMarginLabel)))
                         .addGap(47, 47, 47)
                         .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(addMatchHeadingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(addMatchTeam1)
-                            .addComponent(addMatchTeam2)
                             .addComponent(addMatchVenue)
-                            .addComponent(addMatchTossWinner)
-                            .addComponent(addMatchTossDecision)
                             .addComponent(addMatchInnings1Score)
                             .addComponent(addMatchInnings2Score)
-                            .addComponent(addMatchWinner)
                             .addComponent(addMatchWinMargin)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(addMatchDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addMatchTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addMatchTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addMatchTossWinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addMatchWinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addMatchTossDecision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addMatchMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(addMatchYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(232, Short.MAX_VALUE))
         );
         addMatchPanelLayout.setVerticalGroup(
             addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -550,47 +628,47 @@ public class Window extends javax.swing.JFrame {
                     .addComponent(addMatchGoBackBtn))
                 .addGap(25, 25, 25)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(team1Label)
+                    .addComponent(addMatchTeam1Label)
                     .addComponent(addMatchTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(team2Label)
+                .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addMatchTeam2Label)
                     .addComponent(addMatchTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(venueLabel)
+                    .addComponent(addMatchVenueLabel)
                     .addComponent(addMatchVenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dateLabel)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addMatchDateLabel)
+                    .addComponent(addMatchDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addMatchMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addMatchYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tossWinnerLabel)
+                .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addMatchTossWinnerLabel)
                     .addComponent(addMatchTossWinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tossDecisionLabel)
+                    .addComponent(addMatchTossDecisionLabel)
                     .addComponent(addMatchTossDecision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(innings1ScoreLabel)
+                    .addComponent(addMatchInnings1Label)
                     .addComponent(addMatchInnings1Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(innings2ScoreLabel)
+                    .addComponent(addMatchInnings2Label)
                     .addComponent(addMatchInnings2Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(winnerLabel)
+                    .addComponent(addMatchWinnerLabel)
                     .addComponent(addMatchWinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(winMarginLabel)
+                    .addComponent(addMatchWinMarginLabel)
                     .addComponent(addMatchWinMargin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(addMatchSubmitBtn)
                 .addContainerGap())
         );
@@ -600,10 +678,15 @@ public class Window extends javax.swing.JFrame {
         delMatchHeading.setText("DELETE MATCH");
 
         delMatchGoBackButton.setText("Go back");
+        delMatchGoBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delMatchGoBackButtonActionPerformed(evt);
+            }
+        });
 
-        Team1Label.setText("Enter team 1");
+        delMatchTeam1Label.setText("Enter team 1");
 
-        Team2Label.setText("Enter team 2");
+        delMatchTeam2Label.setText("Enter team 2");
 
         delMatchSubmitBtn.setText("SUBMIT");
         delMatchSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -611,6 +694,18 @@ public class Window extends javax.swing.JFrame {
                 delMatchSubmitBtnActionPerformed(evt);
             }
         });
+
+        delMatchDateLabel.setText("Enter match date");
+
+        delMatchDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        delMatchMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        delMatchYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000" }));
+
+        delMatchTeam1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
+
+        delMatchTeam2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
 
         javax.swing.GroupLayout delMatchPanelLayout = new javax.swing.GroupLayout(delMatchPanel);
         delMatchPanel.setLayout(delMatchPanelLayout);
@@ -624,16 +719,22 @@ public class Window extends javax.swing.JFrame {
                     .addGroup(delMatchPanelLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Team2Label)
-                            .addComponent(Team1Label))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                            .addComponent(delMatchTeam2Label)
+                            .addComponent(delMatchTeam1Label)
+                            .addComponent(delMatchDateLabel))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
                 .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(delMatchSubmitBtn)
                     .addComponent(delMatchHeading)
-                    .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(delMatchTeam2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                        .addComponent(delMatchTeam1, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addGap(153, 153, 153))
+                    .addGroup(delMatchPanelLayout.createSequentialGroup()
+                        .addComponent(delMatchDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(delMatchMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(delMatchYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(delMatchTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delMatchTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         delMatchPanelLayout.setVerticalGroup(
             delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -642,54 +743,70 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(delMatchHeading)
                     .addComponent(delMatchGoBackButton))
-                .addGap(34, 34, 34)
-                .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Team1Label)
+                .addGap(31, 31, 31)
+                .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(delMatchTeam1Label)
                     .addComponent(delMatchTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(delMatchTeam2Label)
+                    .addComponent(delMatchTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(delMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Team2Label)
-                    .addComponent(delMatchTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                    .addComponent(delMatchDateLabel)
+                    .addComponent(delMatchDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delMatchMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delMatchYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addComponent(delMatchSubmitBtn)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
 
         mainPanel.add(delMatchPanel, "delMatchPanel");
 
-        jLabel26.setText("UPDATE MATCH DETAILS");
+        updateMatchHeadingLabel.setText("UPDATE MATCH DETAILS");
 
-        jButton7.setText("Go back");
-
-        jLabel27.setText("Enter team 1");
-
-        jLabel28.setText("Enter team 2");
-
-        jLabel29.setText("Choose field to edit");
-
-        jLabel30.setText("Changes");
-
-        jButton8.setText("SUBMIT");
-
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+        updateMatchGoBackBtn.setText("Go back");
+        updateMatchGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
+                updateMatchGoBackBtnActionPerformed(evt);
             }
         });
 
-        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+        updateMatchTeam1Label.setText("Enter team 1");
+
+        updateMatchTeam2Label.setText("Enter team 2");
+
+        updateMatchFieldChoiceLabel.setText("Choose field to edit");
+
+        updateMatchChangeLabel.setText("Changes");
+
+        updateMatchSubmitBtn.setText("SUBMIT");
+        updateMatchSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField22ActionPerformed(evt);
+                updateMatchSubmitBtnActionPerformed(evt);
             }
         });
 
-        jTextField23.addActionListener(new java.awt.event.ActionListener() {
+        updateMatchChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField23ActionPerformed(evt);
+                updateMatchChangeActionPerformed(evt);
             }
         });
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        updateMatchFieldChoice.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Team 1", "Team 2", "Match Date", "Venue", "Toss Winner", "Toss Decision", "Innings 1 Score", "Innings 2 Score", "Winner", "Win Margin" }));
+
+        updateMatchTeam1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
+
+        updateMatchTeam2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
+
+        updateMatcheDateLabel.setText("Enter match date");
+
+        updateMatchMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        updateMatchDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        updateMatchYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000" }));
 
         javax.swing.GroupLayout updateMatchPanelLayout = new javax.swing.GroupLayout(updateMatchPanel);
         updateMatchPanel.setLayout(updateMatchPanelLayout);
@@ -699,59 +816,67 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(updateMatchPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton7)
+                        .addComponent(updateMatchGoBackBtn)
                         .addGap(33, 33, 33)
-                        .addComponent(jLabel26))
+                        .addComponent(updateMatchHeadingLabel))
                     .addGroup(updateMatchPanelLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(updateMatchChangeLabel)
+                            .addComponent(updateMatchFieldChoiceLabel)
+                            .addComponent(updateMatchTeam1Label)
+                            .addComponent(updateMatchTeam2Label)
                             .addGroup(updateMatchPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(updateMatchPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel28)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateMatchPanelLayout.createSequentialGroup()
-                                .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel29))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
-                                .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(updateMatchPanelLayout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(jButton8)))
-                .addGap(86, 86, 86))
+                                .addComponent(updateMatcheDateLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                                .addComponent(updateMatchDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(12, 12, 12)
+                        .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(updateMatchTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateMatchFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateMatchChange, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateMatchTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateMatchMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(updateMatchYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateMatchPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(updateMatchSubmitBtn)
+                .addGap(217, 217, 217))
         );
         updateMatchPanelLayout.setVerticalGroup(
             updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updateMatchPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(jButton7))
+                    .addComponent(updateMatchHeadingLabel)
+                    .addComponent(updateMatchGoBackBtn))
                 .addGap(34, 34, 34)
                 .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updateMatchTeam1Label)
+                    .addComponent(updateMatchTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel29)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel30)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addComponent(jButton8)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateMatchTeam2Label)
+                    .addComponent(updateMatchTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateMatcheDateLabel)
+                    .addComponent(updateMatchMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateMatchDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateMatchYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateMatchFieldChoiceLabel)
+                    .addComponent(updateMatchFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(updateMatchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateMatchChangeLabel)
+                    .addComponent(updateMatchChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addComponent(updateMatchSubmitBtn)
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
         mainPanel.add(updateMatchPanel, "updateMatchPanel");
@@ -759,6 +884,11 @@ public class Window extends javax.swing.JFrame {
         addPlayerHeadingLabel.setText("ADD PLAYER");
 
         addPlayerGoBackBtn.setText("Go back");
+        addPlayerGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPlayerGoBackBtnActionPerformed(evt);
+            }
+        });
 
         addPlayerFirstNameLabel.setText("First name");
 
@@ -808,7 +938,18 @@ public class Window extends javax.swing.JFrame {
 
         addPlayerDOBMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        addPlayerDOBYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970" }));
+        addPlayerDOBYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000" }));
+        addPlayerDOBYear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPlayerDOBYearActionPerformed(evt);
+            }
+        });
+
+        addPlayerTeam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[NO TEAM]" }));
+
+        addPlayerBattingHand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Right", "Left" }));
+
+        addPlayerBowlingSkill.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "China-Man", "Seam", "Leg Spin" }));
 
         javax.swing.GroupLayout addPlayerPanelLayout = new javax.swing.GroupLayout(addPlayerPanel);
         addPlayerPanel.setLayout(addPlayerPanelLayout);
@@ -837,19 +978,19 @@ public class Window extends javax.swing.JFrame {
                             .addComponent(addPlayerHeadingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(addPlayerFirstName)
                             .addComponent(addPlayerLastName)
-                            .addComponent(addPlayerTeam)
-                            .addComponent(addPlayerBattingHand)
-                            .addComponent(addPlayerBowlingSkill)
                             .addComponent(addPlayerCountry)
                             .addComponent(addPlayerJerseyNumber)
                             .addComponent(addPlayerRunsScored)
                             .addComponent(addPlayerWicketsTaken)
-                            .addComponent(addPlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(addPlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addPlayerTeam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addPlayerBattingHand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addPlayerBowlingSkill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(addPlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(addPlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
         addPlayerPanelLayout.setVerticalGroup(
             addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -877,7 +1018,7 @@ public class Window extends javax.swing.JFrame {
                     .addComponent(addPlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addPlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addPlayerBattingHandLabel)
                     .addComponent(addPlayerBattingHand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -900,124 +1041,236 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addPlayerWicketsTakenLabel)
                     .addComponent(addPlayerWicketsTaken, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(addPlayerSubmitBtn)
                 .addContainerGap())
         );
 
         mainPanel.add(addPlayerPanel, "addPlayerPanel");
 
-        jLabel31.setText("DELETE PLAYER");
+        delPlayerHeadingLabel.setText("DELETE PLAYER");
 
-        jButton9.setText("Go back");
+        delPlayerGoBackBtn.setText("Go back");
+        delPlayerGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delPlayerGoBackBtnActionPerformed(evt);
+            }
+        });
 
-        jLabel32.setText("Enter first name");
+        delPlayerNameLabel.setText("Enter player name");
 
-        jLabel33.setText("Enter last name");
+        delPlayerDOBLabel.setText("Enter date of birth");
 
-        jButton10.setText("SUBMIT");
+        delPlayerSubmitBtn.setText("SUBMIT");
+        delPlayerSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delPlayerSubmitBtnActionPerformed(evt);
+            }
+        });
+
+        delPlayerName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[NO PLAYER]" }));
+
+        delPlayerDOBDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        delPlayerDOBMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        delPlayerDOBYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000" }));
 
         javax.swing.GroupLayout delPlayerPanelLayout = new javax.swing.GroupLayout(delPlayerPanel);
         delPlayerPanel.setLayout(delPlayerPanelLayout);
         delPlayerPanelLayout.setHorizontalGroup(
             delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, delPlayerPanelLayout.createSequentialGroup()
+            .addGroup(delPlayerPanelLayout.createSequentialGroup()
                 .addGroup(delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(delPlayerPanelLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(jButton9))
+                        .addComponent(delPlayerGoBackBtn))
                     .addGroup(delPlayerPanelLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel33)
-                            .addComponent(jLabel32))))
+                            .addComponent(delPlayerDOBLabel)
+                            .addComponent(delPlayerNameLabel))))
                 .addGroup(delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, delPlayerPanelLayout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(delPlayerHeadingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(delPlayerPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                        .addGroup(delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton10)
-                            .addComponent(jLabel31))
-                        .addGap(153, 153, 153))
+                        .addGap(75, 75, 75)
+                        .addComponent(delPlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(delPlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(delPlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(delPlayerPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(138, 138, 138)
+                        .addComponent(delPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(delPlayerPanelLayout.createSequentialGroup()
+                .addGap(264, 264, 264)
+                .addComponent(delPlayerSubmitBtn))
         );
         delPlayerPanelLayout.setVerticalGroup(
             delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(delPlayerPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel31)
-                    .addComponent(jButton9))
+                    .addComponent(delPlayerHeadingLabel)
+                    .addComponent(delPlayerGoBackBtn))
                 .addGap(31, 31, 31)
                 .addGroup(delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(delPlayerNameLabel)
+                    .addComponent(delPlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(delPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(jButton10)
-                .addContainerGap(244, Short.MAX_VALUE))
+                    .addComponent(delPlayerDOBLabel)
+                    .addComponent(delPlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delPlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delPlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(delPlayerSubmitBtn)
+                .addContainerGap(334, Short.MAX_VALUE))
         );
 
         mainPanel.add(delPlayerPanel, "delPlayerPanel");
+
+        updatePlayerGoBackBtn.setText("Go back");
+        updatePlayerGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatePlayerGoBackBtnActionPerformed(evt);
+            }
+        });
+
+        updatePlayerHeadingLabel.setText("UPDATE PLAYER DETAILS");
+
+        updatePlayerNameLabel.setText("Enter name");
+
+        updatePlayerDOBLabel.setText("Enter date of birth");
+
+        updatePlayerFieldChoiceLabel.setText("Choose field to edit");
+
+        updatePlayerChangeLabel.setText("Changes");
+
+        updatePlayerSubmitBtn.setText("SUBMIT");
+        updatePlayerSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatePlayerSubmitBtnActionPerformed(evt);
+            }
+        });
+
+        updatePlayerName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[NO PLAYER]" }));
+
+        updatePlayerDOBDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        updatePlayerDOBMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        updatePlayerDOBYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000" }));
+
+        updatePlayerFieldChoice.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "First Name", "Last Name", "Date Of Birth", "Team ID", "Batting Hand", "Bowling Skill", "Country", "Jersey No", "Runs", "Wickets" }));
 
         javax.swing.GroupLayout updatePlayerPanelLayout = new javax.swing.GroupLayout(updatePlayerPanel);
         updatePlayerPanel.setLayout(updatePlayerPanelLayout);
         updatePlayerPanelLayout.setHorizontalGroup(
             updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGroup(updatePlayerPanelLayout.createSequentialGroup()
+                .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(updatePlayerPanelLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(updatePlayerGoBackBtn)
+                        .addGap(90, 90, 90)
+                        .addComponent(updatePlayerHeadingLabel))
+                    .addGroup(updatePlayerPanelLayout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(updatePlayerPanelLayout.createSequentialGroup()
+                                .addComponent(updatePlayerDOBLabel)
+                                .addGap(58, 58, 58)
+                                .addComponent(updatePlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(updatePlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(updatePlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(updatePlayerPanelLayout.createSequentialGroup()
+                                .addComponent(updatePlayerNameLabel)
+                                .addGap(145, 145, 145)
+                                .addComponent(updatePlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(updatePlayerPanelLayout.createSequentialGroup()
+                                .addComponent(updatePlayerFieldChoiceLabel)
+                                .addGap(99, 99, 99)
+                                .addComponent(updatePlayerFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(updatePlayerPanelLayout.createSequentialGroup()
+                                .addComponent(updatePlayerChangeLabel)
+                                .addGap(132, 132, 132)
+                                .addComponent(updatePlayerChange, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(updatePlayerPanelLayout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(updatePlayerSubmitBtn)))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         updatePlayerPanelLayout.setVerticalGroup(
             updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 422, Short.MAX_VALUE)
+            .addGroup(updatePlayerPanelLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updatePlayerGoBackBtn)
+                    .addComponent(updatePlayerHeadingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updatePlayerNameLabel)
+                    .addComponent(updatePlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(updatePlayerDOBLabel)
+                    .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(updatePlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updatePlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updatePlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updatePlayerFieldChoiceLabel)
+                    .addComponent(updatePlayerFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updatePlayerChangeLabel)
+                    .addComponent(updatePlayerChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(updatePlayerSubmitBtn)
+                .addContainerGap(254, Short.MAX_VALUE))
         );
 
         mainPanel.add(updatePlayerPanel, "updatePlayerPanel");
 
-        jLabel34.setText("ADD TEAM");
+        addTeamHeadingLabel.setText("ADD TEAM");
 
-        jButton11.setText("Go back");
-
-        jLabel35.setText("Name");
-
-        jLabel36.setText("Captain");
-
-        jLabel37.setText("Coach");
-
-        jLabel38.setText("Played");
-
-        jLabel39.setText("Wins");
-
-        jLabel40.setText("Loss");
-
-        jLabel41.setText("Tied");
-
-        jLabel42.setText("Points");
-
-        jButton12.setText("SUBMIT");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        addTeamGoBackBtn.setText("Go back");
+        addTeamGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                addTeamGoBackBtnActionPerformed(evt);
             }
         });
 
-        jTextField26.addActionListener(new java.awt.event.ActionListener() {
+        addTeamNameLabel.setText("Name");
+
+        addTeamCaptainLabel.setText("Captain");
+
+        addTeamCoachLabel.setText("Coach");
+
+        addTeamPlayedLabel.setText("Played");
+
+        addTeamWinsLabel.setText("Wins");
+
+        addTeamLossLabel.setText("Loss");
+
+        addTeamTiedLabel.setText("Tied");
+
+        addTeamPointsLabel.setText("Points");
+
+        addTeamSubmitBtn.setText("SUBMIT");
+        addTeamSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField26ActionPerformed(evt);
+                addTeamSubmitBtnActionPerformed(evt);
             }
         });
 
-        jTextField32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField32ActionPerformed(evt);
-            }
-        });
+        addTeamCaptain.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[UNAVAILABLE]" }));
 
         javax.swing.GroupLayout addTeamPanelLayout = new javax.swing.GroupLayout(addTeamPanel);
         addTeamPanel.setLayout(addTeamPanelLayout);
@@ -1026,86 +1279,105 @@ public class Window extends javax.swing.JFrame {
             .addGroup(addTeamPanelLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton11)
+                    .addComponent(addTeamSubmitBtn)
                     .addGroup(addTeamPanelLayout.createSequentialGroup()
-                        .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel36)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel37)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel40)
-                            .addComponent(jLabel41)
-                            .addComponent(jLabel42))
-                        .addGap(36, 36, 36)))
-                .addGap(47, 47, 47)
-                .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton12)
-                    .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                        .addComponent(jTextField26)
-                        .addComponent(jTextField27)
-                        .addComponent(jTextField28)
-                        .addComponent(jTextField29)
-                        .addComponent(jTextField30)
-                        .addComponent(jTextField31)
-                        .addComponent(jTextField32)
-                        .addComponent(jTextField33)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addTeamGoBackBtn)
+                            .addGroup(addTeamPanelLayout.createSequentialGroup()
+                                .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addTeamCaptainLabel)
+                                    .addComponent(addTeamNameLabel)
+                                    .addComponent(addTeamCoachLabel)
+                                    .addComponent(addTeamPlayedLabel)
+                                    .addComponent(addTeamWinsLabel)
+                                    .addComponent(addTeamLossLabel)
+                                    .addComponent(addTeamTiedLabel)
+                                    .addComponent(addTeamPointsLabel))
+                                .addGap(36, 36, 36)))
+                        .addGap(47, 47, 47)
+                        .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addTeamCaptain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(addTeamHeadingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                                .addComponent(addTeamName)
+                                .addComponent(addTeamCoach)
+                                .addComponent(addTeamWins)
+                                .addComponent(addTeamLoss)
+                                .addComponent(addTeamTied)
+                                .addComponent(addTeamPoints)
+                                .addComponent(addTeamPlayed)))))
+                .addContainerGap(415, Short.MAX_VALUE))
         );
         addTeamPanelLayout.setVerticalGroup(
             addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addTeamPanelLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel34)
-                    .addComponent(jButton11))
+                    .addComponent(addTeamHeadingLabel)
+                    .addComponent(addTeamGoBackBtn))
                 .addGap(25, 25, 25)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addTeamNameLabel)
+                    .addComponent(addTeamName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel36)
-                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addTeamCaptainLabel)
+                    .addComponent(addTeamCaptain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37)
-                    .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addTeamCoachLabel)
+                    .addComponent(addTeamCoach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addTeamPlayedLabel)
+                    .addComponent(addTeamPlayed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addTeamWinsLabel)
+                    .addComponent(addTeamWins, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addTeamLossLabel)
+                    .addComponent(addTeamLoss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41)
-                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addTeamTiedLabel)
+                    .addComponent(addTeamTied, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel42)
-                    .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(jButton12)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(addTeamPointsLabel)
+                    .addComponent(addTeamPoints, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(addTeamSubmitBtn)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         mainPanel.add(addTeamPanel, "addTeamPanel");
 
-        jLabel43.setText("DELETE TEAM");
+        delTeamHeadingLabel.setText("DELETE TEAM");
 
-        jButton13.setText("Go back");
+        delTeamGoBackBtn.setText("Go back");
+        delTeamGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delTeamGoBackBtnActionPerformed(evt);
+            }
+        });
 
-        jLabel44.setText("Enter team");
+        delTeamTeamNameLabel.setText("Enter team");
 
-        jButton14.setText("SUBMIT");
+        delTeamSubmitBtn.setText("SUBMIT");
+        delTeamSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delTeamSubmitBtnActionPerformed(evt);
+            }
+        });
+
+        delTeamName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[NO TEAM]" }));
+        delTeamName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delTeamNameActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout delTeamPanelLayout = new javax.swing.GroupLayout(delTeamPanel);
         delTeamPanel.setLayout(delTeamPanelLayout);
@@ -1117,17 +1389,17 @@ public class Window extends javax.swing.JFrame {
                         .addGroup(delTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(delTeamPanelLayout.createSequentialGroup()
                                 .addGap(35, 35, 35)
-                                .addComponent(jButton13))
+                                .addComponent(delTeamGoBackBtn))
                             .addGroup(delTeamPanelLayout.createSequentialGroup()
                                 .addGap(55, 55, 55)
-                                .addComponent(jLabel44)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                                .addComponent(delTeamTeamNameLabel)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)
                         .addGroup(delTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel43)
-                            .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(delTeamHeadingLabel)
+                            .addComponent(delTeamName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(delTeamPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton14)
+                        .addComponent(delTeamSubmitBtn)
                         .addGap(10, 10, 10)))
                 .addGap(153, 153, 153))
         );
@@ -1136,44 +1408,50 @@ public class Window extends javax.swing.JFrame {
             .addGroup(delTeamPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(delTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel43)
-                    .addComponent(jButton13))
-                .addGap(34, 34, 34)
-                .addGroup(delTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel44)
-                    .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(jButton14)
-                .addContainerGap(281, Short.MAX_VALUE))
+                    .addComponent(delTeamHeadingLabel)
+                    .addComponent(delTeamGoBackBtn))
+                .addGap(31, 31, 31)
+                .addGroup(delTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(delTeamTeamNameLabel)
+                    .addComponent(delTeamName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(delTeamSubmitBtn)
+                .addContainerGap(351, Short.MAX_VALUE))
         );
 
         mainPanel.add(delTeamPanel, "delTeamPanel");
 
-        jLabel45.setText("UPDATE TEAM DETAILS");
+        updateTeamHeadingLabel.setText("UPDATE TEAM DETAILS");
 
-        jButton15.setText("Go back");
-
-        jLabel46.setText("Enter team");
-
-        jLabel47.setText("Choose field to edit");
-
-        jLabel48.setText("Changes");
-
-        jButton16.setText("SUBMIT");
-
-        jTextField35.addActionListener(new java.awt.event.ActionListener() {
+        updateTeamGoBackBtn.setText("Go back");
+        updateTeamGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField35ActionPerformed(evt);
+                updateTeamGoBackBtnActionPerformed(evt);
             }
         });
 
-        jTextField36.addActionListener(new java.awt.event.ActionListener() {
+        updateTeamNameLabel.setText("Enter team");
+
+        updateTeamFieldChoiceLabel.setText("Choose field to edit");
+
+        updateTeamChangeLabel.setText("Changes");
+
+        updateTeamSubmitBtn.setText("SUBMIT");
+        updateTeamSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField36ActionPerformed(evt);
+                updateTeamSubmitBtnActionPerformed(evt);
             }
         });
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        updateTeamChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateTeamChangeActionPerformed(evt);
+            }
+        });
+
+        updateTeamFieldChoice.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Team Name", "Captain", "Coach", "Played", "Wins", "Loss", "Tied", "Points" }));
+
+        updateTeamName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
 
         javax.swing.GroupLayout updateTeamPanelLayout = new javax.swing.GroupLayout(updateTeamPanel);
         updateTeamPanel.setLayout(updateTeamPanelLayout);
@@ -1183,24 +1461,24 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(updateTeamPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton15)
+                        .addComponent(updateTeamGoBackBtn)
                         .addGap(33, 33, 33)
-                        .addComponent(jLabel45))
+                        .addComponent(updateTeamHeadingLabel))
                     .addGroup(updateTeamPanelLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel46)
-                            .addComponent(jLabel47)
-                            .addComponent(jLabel48))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                            .addComponent(updateTeamNameLabel)
+                            .addComponent(updateTeamFieldChoiceLabel)
+                            .addComponent(updateTeamChangeLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, Short.MAX_VALUE)
                         .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(updateTeamFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateTeamChange, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateTeamName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(86, 86, 86))
             .addGroup(updateTeamPanelLayout.createSequentialGroup()
                 .addGap(158, 158, 158)
-                .addComponent(jButton16)
+                .addComponent(updateTeamSubmitBtn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         updateTeamPanelLayout.setVerticalGroup(
@@ -1208,23 +1486,23 @@ public class Window extends javax.swing.JFrame {
             .addGroup(updateTeamPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(jButton15))
+                    .addComponent(updateTeamHeadingLabel)
+                    .addComponent(updateTeamGoBackBtn))
                 .addGap(34, 34, 34)
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updateTeamNameLabel)
+                    .addComponent(updateTeamName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updateTeamFieldChoiceLabel)
+                    .addComponent(updateTeamFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(updateTeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel48)
-                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updateTeamChangeLabel)
+                    .addComponent(updateTeamChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addComponent(jButton16)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addComponent(updateTeamSubmitBtn)
+                .addContainerGap(285, Short.MAX_VALUE))
         );
 
         mainPanel.add(updateTeamPanel, "updateTeamPanel");
@@ -1233,7 +1511,7 @@ public class Window extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1242,7 +1520,7 @@ public class Window extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 422, Short.MAX_VALUE)
+            .addGap(0, 492, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1268,7 +1546,7 @@ public class Window extends javax.swing.JFrame {
         
         try {
             Statement statement = connection.createStatement();//crating statement object
-            String query = "SELECT a.name, b.fname, b.lname, a.coach, a.played, a.wins, a.loss, a.tied, a.points from team a, player b WHERE a.captain=b.player_id ORDER BY a.points desc";
+            String query = "SELECT a.name, b.fname, b.lname, a.coach, a.played, a.wins, a.loss, a.tied, a.points from team a, player b WHERE a.captain=b.player_id OR a.captain=null ORDER BY a.points desc";
             ResultSet resultSet = statement.executeQuery(query);//executing query and storing result in ResultSet
 
             while (resultSet.next()) {
@@ -1386,22 +1664,55 @@ public class Window extends javax.swing.JFrame {
     }//GEN-LAST:event_matchesGoBackBtnActionPerformed
 
     private void addMatchSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchSubmitBtnActionPerformed
-        viewMatchesBtnActionPerformed(evt);
+        String team1Name = addMatchTeam1.getSelectedItem().toString().toUpperCase();
+        String team2Name = addMatchTeam2.getSelectedItem().toString().toUpperCase();
+        String venue = addMatchVenue.getText().toUpperCase();
+        String day = addMatchDay.getSelectedItem().toString().toUpperCase();
+        String month = addMatchMonth.getSelectedItem().toString().toUpperCase();
+        String year = addMatchYear.getSelectedItem().toString().toUpperCase();
+        String tossWinner = addMatchTossWinner.getSelectedItem().toString().toUpperCase();
+        String tossDecision = addMatchTossDecision.getSelectedItem().toString().toUpperCase();
+        String innings1Score = addMatchInnings1Score.getText().toUpperCase();
+        String innings2Score = addMatchInnings2Score.getText().toUpperCase();
+        String winner = addMatchWinner.getSelectedItem().toString().toUpperCase();
+        String winMargin = addMatchWinMargin.getText().toUpperCase();
+        
+        
+        String team1ID = (String)teamNames.get(team1Name);
+        String team2ID = (String)teamNames.get(team2Name);
+        
+        tossWinner = (String)teamNames.get(tossWinner);
+        winner = (String)teamNames.get(winner);
+        
+        String date = String.join("-", day, month, year);
+        String query = "INSERT INTO match (match_date,venue,toss_decision,innings_1_score,innings_2_score,win_margin,team_1,team_2,toss_winner,winner)"+
+                "VALUES('" + String.join("','", date, venue, tossDecision, innings1Score, innings2Score, winMargin) + "'," + String.join(",", team1ID, team2ID, tossWinner, winner) + ")";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewMatchesBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_addMatchSubmitBtnActionPerformed
 
     private void addPlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerSubmitBtnActionPerformed
         String fName = addPlayerFirstName.getText().toUpperCase();
         String lName = addPlayerLastName.getText().toUpperCase();
-        String teamID = addPlayerTeam.getText().toUpperCase();
+        String teamName = addPlayerTeam.getSelectedItem().toString().toUpperCase();
         String day = addPlayerDOBDay.getSelectedItem().toString().toUpperCase();
         String month = addPlayerDOBMonth.getSelectedItem().toString().toUpperCase();
         String year = addPlayerDOBYear.getSelectedItem().toString().toUpperCase();
-        String battingHand = addPlayerBattingHand.getText().toUpperCase();
-        String bowlingSkill = addPlayerBowlingSkill.getText().toUpperCase();
+        String battingHand = addPlayerBattingHand.getSelectedItem().toString().toUpperCase();
+        String bowlingSkill = addPlayerBowlingSkill.getSelectedItem().toString().toUpperCase();
         String country = addPlayerCountry.getText().toUpperCase();
         String jerseyNo = addPlayerJerseyNumber.getText().toUpperCase();
         String runs = addPlayerRunsScored.getText().toUpperCase();
         String wickets = addPlayerWicketsTaken.getText().toUpperCase();
+        
+        String teamID = (String)teamNames.get(teamName);
         
         String date = String.join("-", day, month, year);
         String query = "INSERT INTO player (FNAME,LNAME,DOB,BATTING_HAND,BOWLING_SKILL,COUNTRY,JERSEY_NO,RUNS,WICKETS,TEAM_ID)"+
@@ -1429,61 +1740,590 @@ public class Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_addPlayerDOBDayActionPerformed
 
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+    private void updateMatchChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchChangeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
+    }//GEN-LAST:event_updateMatchChangeActionPerformed
 
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
+    private void addTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamSubmitBtnActionPerformed
+        String teamName = addTeamName.getText().toUpperCase();
+        String coachName = addTeamCoach.getText().toUpperCase();
+        String played = addTeamPlayed.getText().toUpperCase();
+        String wins = addTeamWins.getText().toUpperCase();
+        String loss = addTeamLoss.getText().toUpperCase();
+        String tied = addTeamTied.getText().toUpperCase();
+        String points = addTeamPoints.getText().toUpperCase();
+        String nullString = "null";
+        
+        String query = "INSERT INTO team (NAME,COACH,CAPTAIN,PLAYED,WINS,LOSS,TIED,POINTS)"+
+                "VALUES('" + String.join("','", teamName, coachName) + "'," + String.join(",", nullString, played, wins, loss, tied, points) + ")";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPointsBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_addTeamSubmitBtnActionPerformed
 
-    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+    private void updateTeamChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamChangeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jTextField26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField26ActionPerformed
-
-    private void jTextField32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField32ActionPerformed
-
-    private void jTextField35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField35ActionPerformed
-
-    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField36ActionPerformed
+    }//GEN-LAST:event_updateTeamChangeActionPerformed
 
     private void addTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamBtnActionPerformed
+        String query = "**unknown";
+        Statement stmt;
+        System.out.println(query);
+        
+        teamNames = new Hashtable();
+        addTeamCaptain.setModel(new DefaultComboBoxModel());
+        /*try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                addPlayerTeam.addItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }*/
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "addTeamPanel");
     }//GEN-LAST:event_addTeamBtnActionPerformed
 
     private void addMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+        
+        teamNames = new Hashtable();
+        addMatchTeam1.setModel(new DefaultComboBoxModel());
+        addMatchTeam2.setModel(new DefaultComboBoxModel());
+        addMatchTossWinner.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+            String teamName="", teamID;
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                teamName = resultSet.getString(2);
+                teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                addMatchTeam1.addItem(teamName);
+                addMatchTeam2.addItem(teamName);
+                addMatchTossWinner.addItem(teamName);
+            }
+            addMatchTeam2.setSelectedItem(teamName);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "addMatchPanel");
     }//GEN-LAST:event_addMatchBtnActionPerformed
 
     private void delMatchSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchSubmitBtnActionPerformed
-        viewMatchesBtnActionPerformed(evt);
+        String team1Name = delMatchTeam1.getSelectedItem().toString().toUpperCase();
+        String team2Name = delMatchTeam2.getSelectedItem().toString().toUpperCase();
+        
+        String day = delMatchDay.getSelectedItem().toString().toUpperCase();
+        String month = delMatchMonth.getSelectedItem().toString().toUpperCase();
+        String year = delMatchYear.getSelectedItem().toString().toUpperCase();
+        
+        String team1ID = (String)teamNames.get(team1Name);
+        String team2ID = (String)teamNames.get(team2Name);
+        
+        String date = String.join("-", day, month, year);
+        
+        String query = "DELETE FROM match WHERE team_1=" + team1ID + " AND team_2=" + team2ID + " AND match_date='" + date + "'";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+              viewMatchesBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_delMatchSubmitBtnActionPerformed
 
     private void delMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+        
+        teamNames = new Hashtable();
+        delMatchTeam1.setModel(new DefaultComboBoxModel());
+        delMatchTeam2.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                delMatchTeam1.addItem(teamName);
+                delMatchTeam2.addItem(teamName);
+                delMatchTeam2.setSelectedItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "delMatchPanel");
     }//GEN-LAST:event_delMatchBtnActionPerformed
 
     private void addPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayersBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+        
+        teamNames = new Hashtable();
+        addPlayerTeam.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                addPlayerTeam.addItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "addPlayerPanel");
     }//GEN-LAST:event_addPlayersBtnActionPerformed
+
+    private void updateMatchSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchSubmitBtnActionPerformed
+        String team1Name = updateMatchTeam1.getSelectedItem().toString().toUpperCase();
+        String team2Name = updateMatchTeam2.getSelectedItem().toString().toUpperCase();
+        
+        String team1ID = (String)teamNames.get(team1Name);
+        String team2ID = (String)teamNames.get(team2Name);
+        
+        String day = updatePlayerDOBDay.getSelectedItem().toString().toUpperCase();
+        String month = updatePlayerDOBMonth.getSelectedItem().toString().toUpperCase();
+        String year = updatePlayerDOBYear.getSelectedItem().toString().toUpperCase();
+        
+        String date = String.join("-", day, month, year);
+        
+        String field = updateMatchFieldChoice.getSelectedItem().toString().toUpperCase();
+        String newValue = updateMatchChange.getText();
+        
+        if(null != field)switch (field) {
+            case "TEAM 1":
+                field = "team_1";
+                break;
+            case "TEAM 2":
+                field = "team_2";
+                break;
+            case "MATCH DATE":
+                field = "coach";
+                newValue = "'"+ newValue + "'";
+                break;
+            case "VENUE":
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "TOSS WINNER":
+                field = "toss_winner";
+                newValue = (String)teamNames.get(newValue);
+                break;
+            case "TOSS DECISION":
+                field = "toss_decision";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "INNINGS 1 SCORE":
+                field = "innings_1_score";
+                newValue = "'"+ newValue + "'";
+                break;
+            case "INNINGS 2 SCORE":
+                field = "innings_2_score";
+                newValue = "'"+ newValue + "'";
+                break;
+            case "WIN MARGIN":
+                field = "win_margin";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            default:
+                break;
+        }
+        String query = "UPDATE match SET " + field + "="+ newValue +" WHERE team_1=" + team1ID + " AND team_2=" + team2ID + " AND match_date='" + date + "'";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewMatchesBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updateMatchSubmitBtnActionPerformed
+
+    private void updatePlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "playersPanel");
+    }//GEN-LAST:event_updatePlayerGoBackBtnActionPerformed
+
+    private void addPlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "playersPanel");
+    }//GEN-LAST:event_addPlayerGoBackBtnActionPerformed
+
+    private void addPlayerDOBYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerDOBYearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addPlayerDOBYearActionPerformed
+
+    private void delPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPlayersBtnActionPerformed
+        String query = "SELECT fname, lname FROM player";
+        Statement stmt;
+        System.out.println(query);
+        delPlayerName.setModel(new DefaultComboBoxModel());
+        firstNames = new Hashtable();
+        lastNames = new Hashtable();
+        
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                String fName = resultSet.getString(1);
+                String lName = resultSet.getString(2);
+                String playerName = String.join(" ", fName, lName);
+                System.out.println(playerName);
+                firstNames.put(playerName, fName);
+                lastNames.put(playerName, lName);
+                delPlayerName.addItem(playerName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "delPlayerPanel");
+    }//GEN-LAST:event_delPlayersBtnActionPerformed
+
+    private void delPlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPlayerGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "playersPanel");
+    }//GEN-LAST:event_delPlayerGoBackBtnActionPerformed
+
+    private void delPlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPlayerSubmitBtnActionPerformed
+        String playerName = delPlayerName.getSelectedItem().toString().toUpperCase();
+        String fName = (String)firstNames.get(playerName);
+        String lName = (String)lastNames.get(playerName);
+        
+        String day = delPlayerDOBDay.getSelectedItem().toString().toUpperCase();
+        String month = delPlayerDOBMonth.getSelectedItem().toString().toUpperCase();
+        String year = delPlayerDOBYear.getSelectedItem().toString().toUpperCase();
+        
+        
+        String date = String.join("-", day, month, year);
+        
+        String query = "DELETE FROM PLAYER WHERE fname='" + fName + "' AND lname='" + lName + "' AND dob='" + date + "'";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPlayersBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_delPlayerSubmitBtnActionPerformed
+
+    private void updatePlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayersBtnActionPerformed
+        String query = "SELECT fname, lname FROM player";
+        Statement stmt;
+        System.out.println(query);
+        updatePlayerName.setModel(new DefaultComboBoxModel());
+        firstNames = new Hashtable();
+        lastNames = new Hashtable();
+        
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                String fName = resultSet.getString(1);
+                String lName = resultSet.getString(2);
+                String playerName = String.join(" ", fName, lName);
+                System.out.println(playerName);
+                firstNames.put(playerName, fName);
+                lastNames.put(playerName, lName);
+                updatePlayerName.addItem(playerName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "updatePlayerPanel");
+    }//GEN-LAST:event_updatePlayersBtnActionPerformed
+
+    private void updatePlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerSubmitBtnActionPerformed
+        String playerName = updatePlayerName.getSelectedItem().toString().toUpperCase();
+        String fName = (String)firstNames.get(playerName);
+        String lName = (String)lastNames.get(playerName);
+        
+        String day = updatePlayerDOBDay.getSelectedItem().toString().toUpperCase();
+        String month = updatePlayerDOBMonth.getSelectedItem().toString().toUpperCase();
+        String year = updatePlayerDOBYear.getSelectedItem().toString().toUpperCase();
+        
+        String field = updatePlayerFieldChoice.getSelectedItem().toString().toUpperCase();
+        String newValue = updatePlayerChange.getText();
+        
+        String date = String.join("-", day, month, year);
+        if(null != field)switch (field) {
+            case "FIRST NAME":
+                field = "fname";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "LAST NAME":
+                field = "lname";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "DATE OF BIRTH":
+                field = "dob";
+                newValue = "'"+ newValue + "'";
+                break;
+            case "TEAM ID":
+                field="team_id";
+                break;
+            case "BATTING HAND":
+                field="batting_hand";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "BOWLING SKILL":
+                field="bowling_skill";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "COUNTRY":
+                field="country";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "JERSEY NO":
+                field="jersey_no";
+                break;
+            default:
+                break;
+        }
+        String query = "UPDATE PLAYER SET " + field + "="+ newValue +" WHERE fname='" + fName + "' AND lname='" + lName + "' AND dob='" + date + "'";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPlayersBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updatePlayerSubmitBtnActionPerformed
+
+    private void addTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "pointsPanel");
+    }//GEN-LAST:event_addTeamGoBackBtnActionPerformed
+
+    private void delTeamNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delTeamNameActionPerformed
+
+    private void delTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "pointsPanel");
+    }//GEN-LAST:event_delTeamGoBackBtnActionPerformed
+
+    private void delTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+        
+        teamNames = new Hashtable();
+        delTeamName.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                delTeamName.addItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "delTeamPanel");
+    }//GEN-LAST:event_delTeamBtnActionPerformed
+
+    private void delTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamSubmitBtnActionPerformed
+        String teamName = delTeamName.getSelectedItem().toString().toUpperCase();
+        String teamID = (String)teamNames.get(teamName);
+        String query = "DELETE FROM TEAM WHERE team_id=" + teamID;
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPointsBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_delTeamSubmitBtnActionPerformed
+
+    private void updateTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+        
+        teamNames = new Hashtable();
+        updateTeamName.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                updateTeamName.addItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        query = "SELECT player_id, fname, lname FROM player";
+        System.out.println(query);
+        playerNames = new Hashtable();
+        
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                String playerID= resultSet.getString(1);
+                String fName = resultSet.getString(2);
+                String lName = resultSet.getString(3);
+                String playerName = String.join(" ", fName, lName);
+                System.out.println(playerName);
+                playerNames.put(playerName, playerID);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "updateTeamPanel");
+    }//GEN-LAST:event_updateTeamBtnActionPerformed
+
+    private void updateTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "pointsPanel");
+    }//GEN-LAST:event_updateTeamGoBackBtnActionPerformed
+
+    private void updateTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamSubmitBtnActionPerformed
+        String teamName = updateTeamName.getSelectedItem().toString().toUpperCase();
+        String teamID = (String)teamNames.get(teamName);
+        
+        String field = updateTeamFieldChoice.getSelectedItem().toString().toUpperCase();
+        String newValue = updateTeamChange.getText();
+        
+        if(null != field)switch (field) {
+            case "TEAM NAME":
+                field = "name";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "CAPTAIN":
+                field = "captain";
+                newValue = (String)playerNames.get(newValue.toUpperCase());
+                break;
+            case "COACH":
+                field = "coach";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            default:
+                break;
+        }
+        String query = "UPDATE team SET " + field + "="+ newValue +" WHERE team_id=" + teamID;
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPointsBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updateTeamSubmitBtnActionPerformed
+    private void changeTossWinnerCombo(){
+        addMatchTossWinner.setModel(new DefaultComboBoxModel());
+        addMatchWinner.setModel(new DefaultComboBoxModel());
+        String team1 = (String) addMatchTeam1.getSelectedItem();
+        String team2 = (String) addMatchTeam2.getSelectedItem();
+        addMatchTossWinner.addItem(team1);
+        addMatchTossWinner.addItem(team2);
+        addMatchWinner.addItem(team1);
+        addMatchWinner.addItem(team2);
+    }
+    private void addMatchGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "matchesPanel");
+    }//GEN-LAST:event_addMatchGoBackBtnActionPerformed
+
+    private void addMatchTeam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchTeam1ActionPerformed
+        changeTossWinnerCombo();
+    }//GEN-LAST:event_addMatchTeam1ActionPerformed
+
+    private void addMatchTeam2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchTeam2ActionPerformed
+        changeTossWinnerCombo();
+    }//GEN-LAST:event_addMatchTeam2ActionPerformed
+
+    private void delMatchGoBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchGoBackButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "matchesPanel");
+    }//GEN-LAST:event_delMatchGoBackButtonActionPerformed
+
+    private void updateMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+        
+        teamNames = new Hashtable();
+        updateMatchTeam1.setModel(new DefaultComboBoxModel());
+        updateMatchTeam2.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                updateMatchTeam1.addItem(teamName);
+                updateMatchTeam2.addItem(teamName);
+                updateMatchTeam2.setSelectedItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "updateMatchPanel");
+    }//GEN-LAST:event_updateMatchBtnActionPerformed
+
+    private void updateMatchGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "matchesPanel");
+    }//GEN-LAST:event_updateMatchGoBackBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1521,25 +2361,36 @@ public class Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Team1Label;
-    private javax.swing.JLabel Team2Label;
     private javax.swing.JButton addMatchBtn;
+    private javax.swing.JLabel addMatchDateLabel;
+    private javax.swing.JComboBox<String> addMatchDay;
     private javax.swing.JButton addMatchGoBackBtn;
     private javax.swing.JLabel addMatchHeadingLabel;
+    private javax.swing.JLabel addMatchInnings1Label;
     private javax.swing.JTextField addMatchInnings1Score;
+    private javax.swing.JLabel addMatchInnings2Label;
     private javax.swing.JTextField addMatchInnings2Score;
+    private javax.swing.JComboBox<String> addMatchMonth;
     private javax.swing.JPanel addMatchPanel;
     private javax.swing.JButton addMatchSubmitBtn;
-    private javax.swing.JTextField addMatchTeam1;
-    private javax.swing.JTextField addMatchTeam2;
-    private javax.swing.JTextField addMatchTossDecision;
-    private javax.swing.JTextField addMatchTossWinner;
+    private javax.swing.JComboBox<String> addMatchTeam1;
+    private javax.swing.JLabel addMatchTeam1Label;
+    private javax.swing.JComboBox<String> addMatchTeam2;
+    private javax.swing.JLabel addMatchTeam2Label;
+    private javax.swing.JComboBox<String> addMatchTossDecision;
+    private javax.swing.JLabel addMatchTossDecisionLabel;
+    private javax.swing.JComboBox<String> addMatchTossWinner;
+    private javax.swing.JLabel addMatchTossWinnerLabel;
     private javax.swing.JTextField addMatchVenue;
+    private javax.swing.JLabel addMatchVenueLabel;
     private javax.swing.JTextField addMatchWinMargin;
-    private javax.swing.JTextField addMatchWinner;
-    private javax.swing.JTextField addPlayerBattingHand;
+    private javax.swing.JLabel addMatchWinMarginLabel;
+    private javax.swing.JComboBox<String> addMatchWinner;
+    private javax.swing.JLabel addMatchWinnerLabel;
+    private javax.swing.JComboBox<String> addMatchYear;
+    private javax.swing.JComboBox<String> addPlayerBattingHand;
     private javax.swing.JLabel addPlayerBattingHandLabel;
-    private javax.swing.JTextField addPlayerBowlingSkill;
+    private javax.swing.JComboBox<String> addPlayerBowlingSkill;
     private javax.swing.JLabel addPlayerBowlingSkillLabel;
     private javax.swing.JTextField addPlayerCountry;
     private javax.swing.JLabel addPlayerCountryLabel;
@@ -1559,82 +2410,64 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JTextField addPlayerRunsScored;
     private javax.swing.JLabel addPlayerRunsScoredLabel;
     private javax.swing.JButton addPlayerSubmitBtn;
-    private javax.swing.JTextField addPlayerTeam;
+    private javax.swing.JComboBox<String> addPlayerTeam;
     private javax.swing.JLabel addPlayerTeamLabel;
     private javax.swing.JTextField addPlayerWicketsTaken;
     private javax.swing.JLabel addPlayerWicketsTakenLabel;
     private javax.swing.JButton addPlayersBtn;
     private javax.swing.JButton addTeamBtn;
+    private javax.swing.JComboBox<String> addTeamCaptain;
+    private javax.swing.JLabel addTeamCaptainLabel;
+    private javax.swing.JTextField addTeamCoach;
+    private javax.swing.JLabel addTeamCoachLabel;
+    private javax.swing.JButton addTeamGoBackBtn;
+    private javax.swing.JLabel addTeamHeadingLabel;
+    private javax.swing.JTextField addTeamLoss;
+    private javax.swing.JLabel addTeamLossLabel;
+    private javax.swing.JTextField addTeamName;
+    private javax.swing.JLabel addTeamNameLabel;
     private javax.swing.JPanel addTeamPanel;
-    private javax.swing.JLabel dateLabel;
+    private javax.swing.JTextField addTeamPlayed;
+    private javax.swing.JLabel addTeamPlayedLabel;
+    private javax.swing.JTextField addTeamPoints;
+    private javax.swing.JLabel addTeamPointsLabel;
+    private javax.swing.JButton addTeamSubmitBtn;
+    private javax.swing.JTextField addTeamTied;
+    private javax.swing.JLabel addTeamTiedLabel;
+    private javax.swing.JTextField addTeamWins;
+    private javax.swing.JLabel addTeamWinsLabel;
     private javax.swing.JButton delMatchBtn;
+    private javax.swing.JLabel delMatchDateLabel;
+    private javax.swing.JComboBox<String> delMatchDay;
     private javax.swing.JButton delMatchGoBackButton;
     private javax.swing.JLabel delMatchHeading;
+    private javax.swing.JComboBox<String> delMatchMonth;
     private javax.swing.JPanel delMatchPanel;
     private javax.swing.JButton delMatchSubmitBtn;
-    private javax.swing.JTextField delMatchTeam1;
-    private javax.swing.JTextField delMatchTeam2;
+    private javax.swing.JComboBox<String> delMatchTeam1;
+    private javax.swing.JLabel delMatchTeam1Label;
+    private javax.swing.JComboBox<String> delMatchTeam2;
+    private javax.swing.JLabel delMatchTeam2Label;
+    private javax.swing.JComboBox<String> delMatchYear;
+    private javax.swing.JComboBox<String> delPlayerDOBDay;
+    private javax.swing.JLabel delPlayerDOBLabel;
+    private javax.swing.JComboBox<String> delPlayerDOBMonth;
+    private javax.swing.JComboBox<String> delPlayerDOBYear;
+    private javax.swing.JButton delPlayerGoBackBtn;
+    private javax.swing.JLabel delPlayerHeadingLabel;
+    private javax.swing.JComboBox<String> delPlayerName;
+    private javax.swing.JLabel delPlayerNameLabel;
     private javax.swing.JPanel delPlayerPanel;
+    private javax.swing.JButton delPlayerSubmitBtn;
     private javax.swing.JButton delPlayersBtn;
     private javax.swing.JButton delTeamBtn;
+    private javax.swing.JButton delTeamGoBackBtn;
+    private javax.swing.JLabel delTeamHeadingLabel;
+    private javax.swing.JComboBox<String> delTeamName;
     private javax.swing.JPanel delTeamPanel;
+    private javax.swing.JButton delTeamSubmitBtn;
+    private javax.swing.JLabel delTeamTeamNameLabel;
     private javax.swing.JPanel homePanel;
-    private javax.swing.JLabel innings1ScoreLabel;
-    private javax.swing.JLabel innings2ScoreLabel;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton matchesGoBackBtn;
     private javax.swing.JLabel matchesHeadingLabel;
@@ -1651,22 +2484,52 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JPanel pointsPanel;
     private javax.swing.JScrollPane pointsScrollPane;
     private javax.swing.JTable pointsTable;
-    private javax.swing.JLabel team1Label;
-    private javax.swing.JLabel team2Label;
-    private javax.swing.JLabel tossDecisionLabel;
-    private javax.swing.JLabel tossWinnerLabel;
     private javax.swing.JButton updateMatchBtn;
+    private javax.swing.JTextField updateMatchChange;
+    private javax.swing.JLabel updateMatchChangeLabel;
+    private javax.swing.JComboBox<String> updateMatchDay;
+    private javax.swing.JComboBox<String> updateMatchFieldChoice;
+    private javax.swing.JLabel updateMatchFieldChoiceLabel;
+    private javax.swing.JButton updateMatchGoBackBtn;
+    private javax.swing.JLabel updateMatchHeadingLabel;
+    private javax.swing.JComboBox<String> updateMatchMonth;
     private javax.swing.JPanel updateMatchPanel;
+    private javax.swing.JButton updateMatchSubmitBtn;
+    private javax.swing.JComboBox<String> updateMatchTeam1;
+    private javax.swing.JLabel updateMatchTeam1Label;
+    private javax.swing.JComboBox<String> updateMatchTeam2;
+    private javax.swing.JLabel updateMatchTeam2Label;
+    private javax.swing.JComboBox<String> updateMatchYear;
+    private javax.swing.JLabel updateMatcheDateLabel;
+    private javax.swing.JTextField updatePlayerChange;
+    private javax.swing.JLabel updatePlayerChangeLabel;
+    private javax.swing.JComboBox<String> updatePlayerDOBDay;
+    private javax.swing.JLabel updatePlayerDOBLabel;
+    private javax.swing.JComboBox<String> updatePlayerDOBMonth;
+    private javax.swing.JComboBox<String> updatePlayerDOBYear;
+    private javax.swing.JComboBox<String> updatePlayerFieldChoice;
+    private javax.swing.JLabel updatePlayerFieldChoiceLabel;
+    private javax.swing.JButton updatePlayerGoBackBtn;
+    private javax.swing.JLabel updatePlayerHeadingLabel;
+    private javax.swing.JComboBox<String> updatePlayerName;
+    private javax.swing.JLabel updatePlayerNameLabel;
     private javax.swing.JPanel updatePlayerPanel;
+    private javax.swing.JButton updatePlayerSubmitBtn;
     private javax.swing.JButton updatePlayersBtn;
     private javax.swing.JButton updateTeamBtn;
+    private javax.swing.JTextField updateTeamChange;
+    private javax.swing.JLabel updateTeamChangeLabel;
+    private javax.swing.JComboBox<String> updateTeamFieldChoice;
+    private javax.swing.JLabel updateTeamFieldChoiceLabel;
+    private javax.swing.JButton updateTeamGoBackBtn;
+    private javax.swing.JLabel updateTeamHeadingLabel;
+    private javax.swing.JComboBox<String> updateTeamName;
+    private javax.swing.JLabel updateTeamNameLabel;
     private javax.swing.JPanel updateTeamPanel;
-    private javax.swing.JLabel venueLabel;
+    private javax.swing.JButton updateTeamSubmitBtn;
     private javax.swing.JButton viewMatchesBtn;
     private javax.swing.JButton viewPlayersBtn;
     private javax.swing.JButton viewPointsBtn;
     private javax.swing.JLabel welcomeLabel;
-    private javax.swing.JLabel winMarginLabel;
-    private javax.swing.JLabel winnerLabel;
     // End of variables declaration//GEN-END:variables
 }
