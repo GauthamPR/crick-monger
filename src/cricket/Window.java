@@ -216,6 +216,7 @@ public class Window extends javax.swing.JFrame {
         updateTeamName = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Crick Monger");
 
         mainPanel.setLayout(new java.awt.CardLayout());
 
@@ -787,12 +788,6 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
-        updateMatchChange.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateMatchChangeActionPerformed(evt);
-            }
-        });
-
         updateMatchFieldChoice.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Team 1", "Team 2", "Match Date", "Venue", "Toss Winner", "Toss Decision", "Innings 1 Score", "Innings 2 Score", "Winner", "Win Margin" }));
 
         updateMatchTeam1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[No Team]" }));
@@ -916,33 +911,11 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
-        addPlayerFirstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addPlayerFirstNameActionPerformed(evt);
-            }
-        });
-
-        addPlayerJerseyNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addPlayerJerseyNumberActionPerformed(evt);
-            }
-        });
-
         addPlayerDOBDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        addPlayerDOBDay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addPlayerDOBDayActionPerformed(evt);
-            }
-        });
 
         addPlayerDOBMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
         addPlayerDOBYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000" }));
-        addPlayerDOBYear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addPlayerDOBYearActionPerformed(evt);
-            }
-        });
 
         addPlayerTeam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[NO TEAM]" }));
 
@@ -1372,11 +1345,6 @@ public class Window extends javax.swing.JFrame {
         });
 
         delTeamName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[NO TEAM]" }));
-        delTeamName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delTeamNameActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout delTeamPanelLayout = new javax.swing.GroupLayout(delTeamPanel);
         delTeamPanel.setLayout(delTeamPanelLayout);
@@ -1439,12 +1407,6 @@ public class Window extends javax.swing.JFrame {
         updateTeamSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateTeamSubmitBtnActionPerformed(evt);
-            }
-        });
-
-        updateTeamChange.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateTeamChangeActionPerformed(evt);
             }
         });
 
@@ -2364,34 +2326,6 @@ public class Window extends javax.swing.JFrame {
     private void addMatchTeam2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchTeam2ActionPerformed
         changeTossWinnerCombo();
     }//GEN-LAST:event_addMatchTeam2ActionPerformed
-
-    private void addPlayerFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerFirstNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addPlayerFirstNameActionPerformed
-
-    private void addPlayerJerseyNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerJerseyNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addPlayerJerseyNumberActionPerformed
-
-    private void addPlayerDOBDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerDOBDayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addPlayerDOBDayActionPerformed
-
-    private void updateMatchChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchChangeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updateMatchChangeActionPerformed
-
-    private void updateTeamChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamChangeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updateTeamChangeActionPerformed
-
-    private void addPlayerDOBYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerDOBYearActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addPlayerDOBYearActionPerformed
-
-    private void delTeamNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_delTeamNameActionPerformed
 
     /**
      * @param args the command line arguments

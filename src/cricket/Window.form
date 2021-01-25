@@ -3,6 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Crick Monger"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -1253,9 +1254,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="updateMatchChange">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateMatchChangeActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="updateMatchFieldChoice">
               <Properties>
@@ -1620,18 +1618,12 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="addPlayerFirstName">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPlayerFirstNameActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="addPlayerLastName">
             </Component>
             <Component class="javax.swing.JTextField" name="addPlayerCountry">
             </Component>
             <Component class="javax.swing.JTextField" name="addPlayerJerseyNumber">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPlayerJerseyNumberActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="addPlayerRunsScored">
             </Component>
@@ -1675,9 +1667,6 @@
                   </StringArray>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPlayerDOBDayActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -1753,9 +1742,6 @@
                   </StringArray>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPlayerDOBYearActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -2621,9 +2607,6 @@
                   </StringArray>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delTeamNameActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -2740,9 +2723,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="updateTeamChange">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateTeamChangeActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="updateTeamFieldChoice">
               <Properties>
