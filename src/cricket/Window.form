@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="633" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="664" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -35,7 +35,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="500" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="492" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -73,7 +73,7 @@
                               <Component id="viewMatchesBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="212" max="32767" attributes="0"/>
+                      <EmptySpace pref="259" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -227,6 +227,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete team"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delTeamBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="updateTeamBtn">
               <Properties>
@@ -262,7 +265,7 @@
                               <Component id="updatePlayersBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="206" max="32767" attributes="0"/>
+                      <EmptySpace pref="236" max="32767" attributes="0"/>
                   </Group>
                   <Component id="playersScrollPane" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -512,7 +515,7 @@
                       <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="231" max="32767" attributes="0"/>
+                      <EmptySpace pref="265" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -807,7 +810,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="185" max="32767" attributes="0"/>
+                      <EmptySpace pref="201" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="delMatchSubmitBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="delMatchHeading" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -821,7 +824,7 @@
                           <Component id="jComboBox13" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox14" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="89" max="32767" attributes="0"/>
+                      <EmptySpace pref="105" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -995,7 +998,7 @@
                                   <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="221" max="32767" attributes="0"/>
+                                      <EmptySpace pref="246" max="32767" attributes="0"/>
                                       <Component id="jComboBox18" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1869,7 +1872,7 @@
                               <Component id="updatePlayerSubmitBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="133" max="32767" attributes="0"/>
+                      <EmptySpace pref="167" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1907,7 +1910,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="updatePlayerSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="248" max="32767" attributes="0"/>
+                      <EmptySpace pref="254" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2087,16 +2090,16 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="10">
-                    <StringItem index="0" value="fname"/>
-                    <StringItem index="1" value="lname"/>
-                    <StringItem index="2" value="DOB"/>
-                    <StringItem index="3" value="team_id"/>
-                    <StringItem index="4" value="batting_hand"/>
-                    <StringItem index="5" value="bowling_skill"/>
-                    <StringItem index="6" value="country"/>
-                    <StringItem index="7" value="jersey_no"/>
-                    <StringItem index="8" value="runs"/>
-                    <StringItem index="9" value="wickets"/>
+                    <StringItem index="0" value="First Name"/>
+                    <StringItem index="1" value="Last Name"/>
+                    <StringItem index="2" value="Date Of Birth"/>
+                    <StringItem index="3" value="Team ID"/>
+                    <StringItem index="4" value="Batting Hand"/>
+                    <StringItem index="5" value="Bowling Skill"/>
+                    <StringItem index="6" value="Country"/>
+                    <StringItem index="7" value="Jersey No"/>
+                    <StringItem index="8" value="Runs"/>
+                    <StringItem index="9" value="Wickets"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -2121,41 +2124,41 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButton12" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jButton11" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addTeamGoBackBtn" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addTeamCaptainLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addTeamNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addTeamCoachLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addTeamPlayedLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addTeamWinsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addTeamLossLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addTeamTiedLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addTeamPointsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jComboBox30" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addTeamCaptain" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel34" alignment="0" pref="64" max="32767" attributes="0"/>
-                                      <Component id="jTextField26" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField28" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField29" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField30" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField31" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField32" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField33" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamHeadingLabel" alignment="0" pref="64" max="32767" attributes="0"/>
+                                      <Component id="addTeamName" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamCoach" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamWins" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamLoss" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamTied" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamPoints" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamPlayed" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="409" max="32767" attributes="0"/>
+                      <EmptySpace pref="415" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2164,143 +2167,137 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField26" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamName" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox30" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamCaptainLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamCaptain" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField28" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamCoachLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamCoach" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField33" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamPlayedLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamPlayed" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField29" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamWinsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamWins" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField30" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamLossLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamLoss" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField31" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamTiedLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamTied" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField32" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamPointsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamPoints" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton12" min="-2" max="-2" attributes="0"/>
+                      <Component id="addTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="108" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel34">
+            <Component class="javax.swing.JLabel" name="addTeamHeadingLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ADD TEAM"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton11">
+            <Component class="javax.swing.JButton" name="addTeamGoBackBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Go back"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addTeamGoBackBtnActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel35">
+            <Component class="javax.swing.JLabel" name="addTeamNameLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel36">
+            <Component class="javax.swing.JLabel" name="addTeamCaptainLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Captain"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel37">
+            <Component class="javax.swing.JLabel" name="addTeamCoachLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Coach"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel38">
+            <Component class="javax.swing.JLabel" name="addTeamPlayedLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Played"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel39">
+            <Component class="javax.swing.JLabel" name="addTeamWinsLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Wins"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel40">
+            <Component class="javax.swing.JLabel" name="addTeamLossLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Loss"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel41">
+            <Component class="javax.swing.JLabel" name="addTeamTiedLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tied"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel42">
+            <Component class="javax.swing.JLabel" name="addTeamPointsLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Points"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton12">
+            <Component class="javax.swing.JButton" name="addTeamSubmitBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton12ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addTeamSubmitBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField26">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField26ActionPerformed"/>
-              </Events>
+            <Component class="javax.swing.JTextField" name="addTeamName">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField28">
+            <Component class="javax.swing.JTextField" name="addTeamCoach">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField29">
+            <Component class="javax.swing.JTextField" name="addTeamWins">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField30">
+            <Component class="javax.swing.JTextField" name="addTeamLoss">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField31">
+            <Component class="javax.swing.JTextField" name="addTeamTied">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField32">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField32ActionPerformed"/>
-              </Events>
+            <Component class="javax.swing.JTextField" name="addTeamPoints">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField33">
+            <Component class="javax.swing.JTextField" name="addTeamPlayed">
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox30">
+            <Component class="javax.swing.JComboBox" name="addTeamCaptain">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="[UNAVAILABLE]"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -2326,22 +2323,22 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="jButton13" min="-2" max="-2" attributes="0"/>
+                                      <Component id="delTeamGoBackBtn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
+                                      <Component id="delTeamTeamNameLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="282" max="32767" attributes="0"/>
+                              <EmptySpace pref="291" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox31" min="-2" max="-2" attributes="0"/>
+                                  <Component id="delTeamHeadingLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="delTeamName" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jButton14" min="-2" max="-2" attributes="0"/>
+                              <Component id="delTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2354,53 +2351,59 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delTeamHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delTeamGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox31" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delTeamTeamNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delTeamName" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jButton14" min="-2" max="-2" attributes="0"/>
+                      <Component id="delTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="351" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel43">
+            <Component class="javax.swing.JLabel" name="delTeamHeadingLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="DELETE TEAM"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton13">
+            <Component class="javax.swing.JButton" name="delTeamGoBackBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Go back"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delTeamGoBackBtnActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel44">
+            <Component class="javax.swing.JLabel" name="delTeamTeamNameLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Enter team"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton14">
+            <Component class="javax.swing.JButton" name="delTeamSubmitBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delTeamSubmitBtnActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox31">
+            <Component class="javax.swing.JComboBox" name="delTeamName">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="[NO TEAM]"/>
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delTeamNameActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -2432,7 +2435,7 @@
                                   <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel48" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="291" max="32767" attributes="0"/>
+                              <EmptySpace pref="308" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jComboBox8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextField36" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
