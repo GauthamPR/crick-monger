@@ -147,9 +147,9 @@ public class Window extends javax.swing.JFrame {
         addPlayerDOBDay = new javax.swing.JComboBox<>();
         addPlayerDOBMonth = new javax.swing.JComboBox<>();
         addPlayerDOBYear = new javax.swing.JComboBox<>();
-        jComboBox20 = new javax.swing.JComboBox<>();
-        jComboBox34 = new javax.swing.JComboBox<>();
-        jComboBox35 = new javax.swing.JComboBox<>();
+        addPlayerTeam = new javax.swing.JComboBox<>();
+        addPlayerBattingHand = new javax.swing.JComboBox<>();
+        addPlayerBowlingSkill = new javax.swing.JComboBox<>();
         delPlayerPanel = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
@@ -879,11 +879,11 @@ public class Window extends javax.swing.JFrame {
 
         addPlayerDOBYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970" }));
 
-        jComboBox20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addPlayerTeam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox34.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addPlayerBattingHand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox35.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addPlayerBowlingSkill.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout addPlayerPanelLayout = new javax.swing.GroupLayout(addPlayerPanel);
         addPlayerPanel.setLayout(addPlayerPanelLayout);
@@ -917,9 +917,9 @@ public class Window extends javax.swing.JFrame {
                             .addComponent(addPlayerRunsScored)
                             .addComponent(addPlayerWicketsTaken)
                             .addComponent(addPlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(addPlayerTeam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addPlayerBattingHand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addPlayerBowlingSkill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(addPlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -944,7 +944,7 @@ public class Window extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addPlayerTeamLabel)
-                    .addComponent(jComboBox20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerTeam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addPlayerDOBLabel)
@@ -954,11 +954,11 @@ public class Window extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addPlayerBattingHandLabel)
-                    .addComponent(jComboBox34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerBattingHand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addPlayerBowlingSkillLabel)
-                    .addComponent(jComboBox35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addPlayerBowlingSkill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addPlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addPlayerCountryLabel)
@@ -1571,12 +1571,12 @@ public class Window extends javax.swing.JFrame {
     private void addPlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerSubmitBtnActionPerformed
         String fName = addPlayerFirstName.getText().toUpperCase();
         String lName = addPlayerLastName.getText().toUpperCase();
-        String teamID = addPlayerTeam.getText().toUpperCase();
+        String teamID = addPlayerTeam.getSelectedItem().toString().toUpperCase();
         String day = addPlayerDOBDay.getSelectedItem().toString().toUpperCase();
         String month = addPlayerDOBMonth.getSelectedItem().toString().toUpperCase();
         String year = addPlayerDOBYear.getSelectedItem().toString().toUpperCase();
-        String battingHand = addPlayerBattingHand.getText().toUpperCase();
-        String bowlingSkill = addPlayerBowlingSkill.getText().toUpperCase();
+        String battingHand = addPlayerBattingHand.getSelectedItem().toString().toUpperCase();
+        String bowlingSkill = addPlayerBowlingSkill.getSelectedItem().toString().toUpperCase();
         String country = addPlayerCountry.getText().toUpperCase();
         String jerseyNo = addPlayerJerseyNumber.getText().toUpperCase();
         String runs = addPlayerRunsScored.getText().toUpperCase();
@@ -1707,7 +1707,9 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton addMatchSubmitBtn;
     private javax.swing.JTextField addMatchVenue;
     private javax.swing.JTextField addMatchWinMargin;
+    private javax.swing.JComboBox<String> addPlayerBattingHand;
     private javax.swing.JLabel addPlayerBattingHandLabel;
+    private javax.swing.JComboBox<String> addPlayerBowlingSkill;
     private javax.swing.JLabel addPlayerBowlingSkillLabel;
     private javax.swing.JTextField addPlayerCountry;
     private javax.swing.JLabel addPlayerCountryLabel;
@@ -1727,6 +1729,7 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JTextField addPlayerRunsScored;
     private javax.swing.JLabel addPlayerRunsScoredLabel;
     private javax.swing.JButton addPlayerSubmitBtn;
+    private javax.swing.JComboBox<String> addPlayerTeam;
     private javax.swing.JLabel addPlayerTeamLabel;
     private javax.swing.JTextField addPlayerWicketsTaken;
     private javax.swing.JLabel addPlayerWicketsTakenLabel;
@@ -1770,7 +1773,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox18;
     private javax.swing.JComboBox<String> jComboBox19;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox20;
     private javax.swing.JComboBox<String> jComboBox21;
     private javax.swing.JComboBox<String> jComboBox22;
     private javax.swing.JComboBox<String> jComboBox23;
@@ -1785,8 +1787,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox31;
     private javax.swing.JComboBox<String> jComboBox32;
     private javax.swing.JComboBox<String> jComboBox33;
-    private javax.swing.JComboBox<String> jComboBox34;
-    private javax.swing.JComboBox<String> jComboBox35;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;

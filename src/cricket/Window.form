@@ -1237,9 +1237,9 @@
                                   <Component id="addPlayerRunsScored" alignment="0" max="32767" attributes="0"/>
                                   <Component id="addPlayerWicketsTaken" alignment="0" max="32767" attributes="0"/>
                                   <Component id="addPlayerDOBDay" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox20" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox34" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox35" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addPlayerTeam" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addPlayerBattingHand" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addPlayerBowlingSkill" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1272,7 +1272,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="addPlayerTeamLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addPlayerTeam" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -1284,12 +1284,12 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="addPlayerBattingHandLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox34" min="-2" max="-2" attributes="0"/>
+                          <Component id="addPlayerBattingHand" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="addPlayerBowlingSkillLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox35" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addPlayerBowlingSkill" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -1495,7 +1495,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox20">
+            <Component class="javax.swing.JComboBox" name="addPlayerTeam">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -1510,7 +1510,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox34">
+            <Component class="javax.swing.JComboBox" name="addPlayerBattingHand">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -1525,7 +1525,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox35">
+            <Component class="javax.swing.JComboBox" name="addPlayerBowlingSkill">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
