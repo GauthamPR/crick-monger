@@ -12,7 +12,6 @@ import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 /**
  *
  * @author GAUTHAM
@@ -1546,7 +1545,11 @@ public class Window extends javax.swing.JFrame {
         
         try {
             Statement statement = connection.createStatement();//crating statement object
-            String query = "SELECT a.name, b.fname, b.lname, a.coach, a.played, a.wins, a.loss, a.tied, a.points from team a, player b WHERE a.captain=b.player_id OR a.captain=null ORDER BY a.points desc";
+            String query = "SELECT A.NAME,B.FNAME,B.LNAME,A.COACH,A.PLAYED,A.WINS,A.LOSS,A.TIED,A.POINTS " +
+                    "FROM TEAM A " +
+                    "LEFT OUTER JOIN PLAYER B " +
+                    "ON A.CAPTAIN = B.PLAYER_ID "+
+                    "ORDER BY A.POINTS DESC";
             ResultSet resultSet = statement.executeQuery(query);//executing query and storing result in ResultSet
 
             while (resultSet.next()) {
@@ -1559,6 +1562,10 @@ public class Window extends javax.swing.JFrame {
                 int loss = resultSet.getInt(7);
                 int tied = resultSet.getInt(8);
                 int points = resultSet.getInt(9);
+
+                if("null null".equals(captain)){
+                    captain = "[NONE]";
+                }
                 defaultTableModel.addRow(new Object[]{name, captain, coach, played, wins, loss, tied, points});
             }
         } catch (SQLException throwables) {
@@ -1568,6 +1575,193 @@ public class Window extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "pointsPanel");
     }//GEN-LAST:event_viewPointsBtnActionPerformed
+
+    private void pointsGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointsGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "homePanel");
+    }//GEN-LAST:event_pointsGoBackBtnActionPerformed
+
+    private void addTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamBtnActionPerformed
+        String query = "**unknown";
+        Statement stmt;
+        System.out.println(query);
+
+        teamNames = new Hashtable();
+        addTeamCaptain.setModel(new DefaultComboBoxModel());
+        /*try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                addPlayerTeam.addItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }*/
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "addTeamPanel");
+    }//GEN-LAST:event_addTeamBtnActionPerformed
+
+    private void addTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "pointsPanel");
+    }//GEN-LAST:event_addTeamGoBackBtnActionPerformed
+
+    private void addTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamSubmitBtnActionPerformed
+        String teamName = addTeamName.getText().toUpperCase();
+        String coachName = addTeamCoach.getText().toUpperCase();
+        String played = addTeamPlayed.getText().toUpperCase();
+        String wins = addTeamWins.getText().toUpperCase();
+        String loss = addTeamLoss.getText().toUpperCase();
+        String tied = addTeamTied.getText().toUpperCase();
+        String points = addTeamPoints.getText().toUpperCase();
+        String nullString = "''";
+
+        String query = "INSERT INTO team (NAME,COACH,CAPTAIN,PLAYED,WINS,LOSS,TIED,POINTS)"+
+                "VALUES('" + String.join("','", teamName, coachName) + "'," + String.join(",", nullString, played, wins, loss, tied, points) + ")";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPointsBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_addTeamSubmitBtnActionPerformed
+
+    private void delTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+
+        teamNames = new Hashtable();
+        delTeamName.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                delTeamName.addItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "delTeamPanel");
+    }//GEN-LAST:event_delTeamBtnActionPerformed
+
+    private void delTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "pointsPanel");
+    }//GEN-LAST:event_delTeamGoBackBtnActionPerformed
+
+    private void delTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamSubmitBtnActionPerformed
+        String teamName = delTeamName.getSelectedItem().toString().toUpperCase();
+        String teamID = (String)teamNames.get(teamName);
+        String query = "DELETE FROM TEAM WHERE team_id=" + teamID;
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPointsBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_delTeamSubmitBtnActionPerformed
+
+    private void updateTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+
+        teamNames = new Hashtable();
+        updateTeamName.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                updateTeamName.addItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        query = "SELECT player_id, fname, lname FROM player";
+        System.out.println(query);
+        playerNames = new Hashtable();
+
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                String playerID= resultSet.getString(1);
+                String fName = resultSet.getString(2);
+                String lName = resultSet.getString(3);
+                String playerName = String.join(" ", fName, lName);
+                System.out.println(playerName);
+                playerNames.put(playerName, playerID);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "updateTeamPanel");
+    }//GEN-LAST:event_updateTeamBtnActionPerformed
+
+    private void updateTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "pointsPanel");
+    }//GEN-LAST:event_updateTeamGoBackBtnActionPerformed
+
+    private void updateTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamSubmitBtnActionPerformed
+        String teamName = updateTeamName.getSelectedItem().toString().toUpperCase();
+        String teamID = (String)teamNames.get(teamName);
+
+        String field = updateTeamFieldChoice.getSelectedItem().toString().toUpperCase();
+        String newValue = updateTeamChange.getText();
+
+        if(null != field)switch (field) {
+            case "TEAM NAME":
+                field = "name";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "CAPTAIN":
+                field = "captain";
+                newValue = (String)playerNames.get(newValue.toUpperCase());
+                break;
+            case "COACH":
+                field = "coach";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            default:
+                break;
+        }
+        String query = "UPDATE team SET " + field + "="+ newValue +" WHERE team_id=" + teamID;
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPointsBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updateTeamSubmitBtnActionPerformed
 
     private void viewPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPlayersBtnActionPerformed
         DefaultTableModel defaultTableModel = new DefaultTableModel();
@@ -1584,7 +1778,10 @@ public class Window extends javax.swing.JFrame {
 
         try {
             Statement statement = connection.createStatement();//crating statement object
-            String query = "SELECT a.fname, a.lname, b.name, a.dob, a.batting_hand, a.bowling_skill, a.country, a.jersey_no, a.runs, a.wickets from player a, team b where a.team_id=b.team_id";
+            String query = "SELECT A.FNAME,A.LNAME,B.NAME,A.DOB,A.BATTING_HAND,A.BOWLING_SKILL,A.COUNTRY,A.JERSEY_NO,A.RUNS,A.WICKETS " +
+                    "FROM PLAYER A " +
+                    "LEFT OUTER JOIN TEAM B " +
+                    "ON A.TEAM_ID = B.TEAM_ID";
             ResultSet resultSet = statement.executeQuery(query);//executing query and storing result in ResultSet
 
             while (resultSet.next()) {
@@ -1607,6 +1804,221 @@ public class Window extends javax.swing.JFrame {
         card.show(mainPanel, "playersPanel");
     }//GEN-LAST:event_viewPlayersBtnActionPerformed
 
+    private void playersGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playersGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "homePanel");
+
+    }//GEN-LAST:event_playersGoBackBtnActionPerformed
+
+    private void addPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayersBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+
+        teamNames = new Hashtable();
+        addPlayerTeam.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                String teamName = resultSet.getString(2);
+                String teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                addPlayerTeam.addItem(teamName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "addPlayerPanel");
+    }//GEN-LAST:event_addPlayersBtnActionPerformed
+
+    private void addPlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "playersPanel");
+    }//GEN-LAST:event_addPlayerGoBackBtnActionPerformed
+
+    private void addPlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerSubmitBtnActionPerformed
+        String fName = addPlayerFirstName.getText().toUpperCase();
+        String lName = addPlayerLastName.getText().toUpperCase();
+        String teamName = addPlayerTeam.getSelectedItem().toString().toUpperCase();
+        String day = addPlayerDOBDay.getSelectedItem().toString().toUpperCase();
+        String month = addPlayerDOBMonth.getSelectedItem().toString().toUpperCase();
+        String year = addPlayerDOBYear.getSelectedItem().toString().toUpperCase();
+        String battingHand = addPlayerBattingHand.getSelectedItem().toString().toUpperCase();
+        String bowlingSkill = addPlayerBowlingSkill.getSelectedItem().toString().toUpperCase();
+        String country = addPlayerCountry.getText().toUpperCase();
+        String jerseyNo = addPlayerJerseyNumber.getText().toUpperCase();
+        String runs = addPlayerRunsScored.getText().toUpperCase();
+        String wickets = addPlayerWicketsTaken.getText().toUpperCase();
+
+        String teamID = (String)teamNames.get(teamName);
+
+        String date = String.join("-", day, month, year);
+        String query = "INSERT INTO player (FNAME,LNAME,DOB,BATTING_HAND,BOWLING_SKILL,COUNTRY,JERSEY_NO,RUNS,WICKETS,TEAM_ID)"+
+                "VALUES('" + String.join("','", fName, lName, date, battingHand, bowlingSkill, country) + "'," + String.join(",", jerseyNo, runs, wickets, teamID) + ")";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPlayersBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_addPlayerSubmitBtnActionPerformed
+
+    private void delPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPlayersBtnActionPerformed
+        String query = "SELECT fname, lname FROM player";
+        Statement stmt;
+        System.out.println(query);
+        delPlayerName.setModel(new DefaultComboBoxModel());
+        firstNames = new Hashtable();
+        lastNames = new Hashtable();
+
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                String fName = resultSet.getString(1);
+                String lName = resultSet.getString(2);
+                String playerName = String.join(" ", fName, lName);
+                System.out.println(playerName);
+                firstNames.put(playerName, fName);
+                lastNames.put(playerName, lName);
+                delPlayerName.addItem(playerName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "delPlayerPanel");
+    }//GEN-LAST:event_delPlayersBtnActionPerformed
+
+    private void delPlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPlayerGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "playersPanel");
+    }//GEN-LAST:event_delPlayerGoBackBtnActionPerformed
+
+    private void delPlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPlayerSubmitBtnActionPerformed
+        String playerName = delPlayerName.getSelectedItem().toString().toUpperCase();
+        String fName = (String)firstNames.get(playerName);
+        String lName = (String)lastNames.get(playerName);
+
+        String day = delPlayerDOBDay.getSelectedItem().toString().toUpperCase();
+        String month = delPlayerDOBMonth.getSelectedItem().toString().toUpperCase();
+        String year = delPlayerDOBYear.getSelectedItem().toString().toUpperCase();
+
+
+        String date = String.join("-", day, month, year);
+
+        String query = "DELETE FROM PLAYER WHERE fname='" + fName + "' AND lname='" + lName + "' AND dob='" + date + "'";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPlayersBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_delPlayerSubmitBtnActionPerformed
+
+    private void updatePlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayersBtnActionPerformed
+        String query = "SELECT fname, lname FROM player";
+        Statement stmt;
+        System.out.println(query);
+        updatePlayerName.setModel(new DefaultComboBoxModel());
+        firstNames = new Hashtable();
+        lastNames = new Hashtable();
+
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                String fName = resultSet.getString(1);
+                String lName = resultSet.getString(2);
+                String playerName = String.join(" ", fName, lName);
+                System.out.println(playerName);
+                firstNames.put(playerName, fName);
+                lastNames.put(playerName, lName);
+                updatePlayerName.addItem(playerName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "updatePlayerPanel");
+    }//GEN-LAST:event_updatePlayersBtnActionPerformed
+
+    private void updatePlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "playersPanel");
+    }//GEN-LAST:event_updatePlayerGoBackBtnActionPerformed
+
+    private void updatePlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerSubmitBtnActionPerformed
+        String playerName = updatePlayerName.getSelectedItem().toString().toUpperCase();
+        String fName = (String)firstNames.get(playerName);
+        String lName = (String)lastNames.get(playerName);
+
+        String day = updatePlayerDOBDay.getSelectedItem().toString().toUpperCase();
+        String month = updatePlayerDOBMonth.getSelectedItem().toString().toUpperCase();
+        String year = updatePlayerDOBYear.getSelectedItem().toString().toUpperCase();
+
+        String field = updatePlayerFieldChoice.getSelectedItem().toString().toUpperCase();
+        String newValue = updatePlayerChange.getText();
+
+        String date = String.join("-", day, month, year);
+        if(null != field)switch (field) {
+            case "FIRST NAME":
+                field = "fname";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "LAST NAME":
+                field = "lname";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "DATE OF BIRTH":
+                field = "dob";
+                newValue = "'"+ newValue + "'";
+                break;
+            case "TEAM ID":
+                field="team_id";
+                break;
+            case "BATTING HAND":
+                field="batting_hand";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "BOWLING SKILL":
+                field="bowling_skill";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "COUNTRY":
+                field="country";
+                newValue = "'"+ newValue.toUpperCase() + "'";
+                break;
+            case "JERSEY NO":
+                field="jersey_no";
+                break;
+            default:
+                break;
+        }
+        String query = "UPDATE PLAYER SET " + field + "="+ newValue +" WHERE fname='" + fName + "' AND lname='" + lName + "' AND dob='" + date + "'";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPlayersBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updatePlayerSubmitBtnActionPerformed
+
     private void viewMatchesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMatchesBtnActionPerformed
         DefaultTableModel defaultTableModel = new DefaultTableModel();
         matchesTable.setModel(defaultTableModel);
@@ -1623,7 +2035,16 @@ public class Window extends javax.swing.JFrame {
         defaultTableModel.addColumn("Win Margin");
         try {
             Statement statement = connection.createStatement();//crating statement object
-            String query = "SELECT a.name, b.name, c.match_date, c.venue, d.name, c.toss_decision, c.innings_1_score, c.innings_2_score, e.name, c.win_margin from team a, team b, match c, team d, team e where a.team_id=c.team_1 and b.team_id=c.team_2 and d.team_id=c.toss_winner and e.team_id=c.winner";
+            String query = "SELECT A.NAME,B.NAME,C.MATCH_DATE,C.VENUE,D.NAME AS TOSS_WINNER,C.TOSS_DECISION,C.INNINGS_1_SCORE,C.INNINGS_2_SCORE,E.NAME AS WINNER,C.WIN_MARGIN " +
+                    "FROM TEAM A " +
+                    "LEFT OUTER JOIN MATCH C " +
+                    "ON A.TEAM_ID = C.TEAM_1 " +
+                    "LEFT OUTER JOIN TEAM B " +
+                    "ON B.TEAM_ID = C.TEAM_2 " +
+                    "LEFT OUTER JOIN TEAM D " +
+                    "ON D.TEAM_ID = C.TOSS_WINNER " +
+                    "LEFT OUTER JOIN TEAM E " +
+                    "ON E.TEAM_ID = C.WINNER";
             ResultSet resultSet = statement.executeQuery(query);//executing query and storing result in ResultSet
 
             while (resultSet.next()) {
@@ -1647,21 +2068,46 @@ public class Window extends javax.swing.JFrame {
         card.show(mainPanel, "matchesPanel");
     }//GEN-LAST:event_viewMatchesBtnActionPerformed
 
-    private void pointsGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointsGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "homePanel");
-    }//GEN-LAST:event_pointsGoBackBtnActionPerformed
-
-    private void playersGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playersGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "homePanel");
-        
-    }//GEN-LAST:event_playersGoBackBtnActionPerformed
 
     private void matchesGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchesGoBackBtnActionPerformed
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "homePanel");
     }//GEN-LAST:event_matchesGoBackBtnActionPerformed
+
+    private void addMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchBtnActionPerformed
+        String query = "SELECT team_id, name FROM team";
+        Statement stmt;
+        System.out.println(query);
+
+        teamNames = new Hashtable();
+        addMatchTeam1.setModel(new DefaultComboBoxModel());
+        addMatchTeam2.setModel(new DefaultComboBoxModel());
+        addMatchTossWinner.setModel(new DefaultComboBoxModel());
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+            String teamName="", teamID;
+            while (resultSet.next()) {
+                //Retrieving details from the database and storing it in the String variables
+                teamName = resultSet.getString(2);
+                teamID = resultSet.getString(1);
+                teamNames.put(teamName, teamID);
+                addMatchTeam1.addItem(teamName);
+                addMatchTeam2.addItem(teamName);
+                addMatchTossWinner.addItem(teamName);
+            }
+            addMatchTeam2.setSelectedItem(teamName);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "addMatchPanel");
+    }//GEN-LAST:event_addMatchBtnActionPerformed
+
+    private void addMatchGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "matchesPanel");
+    }//GEN-LAST:event_addMatchGoBackBtnActionPerformed
 
     private void addMatchSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchSubmitBtnActionPerformed
         String team1Name = addMatchTeam1.getSelectedItem().toString().toUpperCase();
@@ -1698,164 +2144,11 @@ public class Window extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addMatchSubmitBtnActionPerformed
 
-    private void addPlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerSubmitBtnActionPerformed
-        String fName = addPlayerFirstName.getText().toUpperCase();
-        String lName = addPlayerLastName.getText().toUpperCase();
-        String teamName = addPlayerTeam.getSelectedItem().toString().toUpperCase();
-        String day = addPlayerDOBDay.getSelectedItem().toString().toUpperCase();
-        String month = addPlayerDOBMonth.getSelectedItem().toString().toUpperCase();
-        String year = addPlayerDOBYear.getSelectedItem().toString().toUpperCase();
-        String battingHand = addPlayerBattingHand.getSelectedItem().toString().toUpperCase();
-        String bowlingSkill = addPlayerBowlingSkill.getSelectedItem().toString().toUpperCase();
-        String country = addPlayerCountry.getText().toUpperCase();
-        String jerseyNo = addPlayerJerseyNumber.getText().toUpperCase();
-        String runs = addPlayerRunsScored.getText().toUpperCase();
-        String wickets = addPlayerWicketsTaken.getText().toUpperCase();
-        
-        String teamID = (String)teamNames.get(teamName);
-        
-        String date = String.join("-", day, month, year);
-        String query = "INSERT INTO player (FNAME,LNAME,DOB,BATTING_HAND,BOWLING_SKILL,COUNTRY,JERSEY_NO,RUNS,WICKETS,TEAM_ID)"+
-                "VALUES('" + String.join("','", fName, lName, date, battingHand, bowlingSkill, country) + "'," + String.join(",", jerseyNo, runs, wickets, teamID) + ")";
-        Statement stmt;
-        System.out.println(query);
-        try {
-            stmt = connection.createStatement();
-            stmt.execute(query);
-            viewPlayersBtnActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_addPlayerSubmitBtnActionPerformed
-
-    private void addPlayerFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerFirstNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addPlayerFirstNameActionPerformed
-
-    private void addPlayerJerseyNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerJerseyNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addPlayerJerseyNumberActionPerformed
-
-    private void addPlayerDOBDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerDOBDayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addPlayerDOBDayActionPerformed
-
-    private void updateMatchChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchChangeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updateMatchChangeActionPerformed
-
-    private void addTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamSubmitBtnActionPerformed
-        String teamName = addTeamName.getText().toUpperCase();
-        String coachName = addTeamCoach.getText().toUpperCase();
-        String played = addTeamPlayed.getText().toUpperCase();
-        String wins = addTeamWins.getText().toUpperCase();
-        String loss = addTeamLoss.getText().toUpperCase();
-        String tied = addTeamTied.getText().toUpperCase();
-        String points = addTeamPoints.getText().toUpperCase();
-        String nullString = "null";
-        
-        String query = "INSERT INTO team (NAME,COACH,CAPTAIN,PLAYED,WINS,LOSS,TIED,POINTS)"+
-                "VALUES('" + String.join("','", teamName, coachName) + "'," + String.join(",", nullString, played, wins, loss, tied, points) + ")";
-        Statement stmt;
-        System.out.println(query);
-        try {
-            stmt = connection.createStatement();
-            stmt.execute(query);
-            viewPointsBtnActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_addTeamSubmitBtnActionPerformed
-
-    private void updateTeamChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamChangeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updateTeamChangeActionPerformed
-
-    private void addTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamBtnActionPerformed
-        String query = "**unknown";
-        Statement stmt;
-        System.out.println(query);
-        
-        teamNames = new Hashtable();
-        addTeamCaptain.setModel(new DefaultComboBoxModel());
-        /*try {
-            stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
-
-            while (resultSet.next()) {
-                //Retrieving details from the database and storing it in the String variables
-                String teamName = resultSet.getString(2);
-                String teamID = resultSet.getString(1);
-                teamNames.put(teamName, teamID);
-                addPlayerTeam.addItem(teamName);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }*/
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "addTeamPanel");
-    }//GEN-LAST:event_addTeamBtnActionPerformed
-
-    private void addMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchBtnActionPerformed
-        String query = "SELECT team_id, name FROM team";
-        Statement stmt;
-        System.out.println(query);
-        
-        teamNames = new Hashtable();
-        addMatchTeam1.setModel(new DefaultComboBoxModel());
-        addMatchTeam2.setModel(new DefaultComboBoxModel());
-        addMatchTossWinner.setModel(new DefaultComboBoxModel());
-        try {
-            stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
-            String teamName="", teamID;
-            while (resultSet.next()) {
-                //Retrieving details from the database and storing it in the String variables
-                teamName = resultSet.getString(2);
-                teamID = resultSet.getString(1);
-                teamNames.put(teamName, teamID);
-                addMatchTeam1.addItem(teamName);
-                addMatchTeam2.addItem(teamName);
-                addMatchTossWinner.addItem(teamName);
-            }
-            addMatchTeam2.setSelectedItem(teamName);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "addMatchPanel");
-    }//GEN-LAST:event_addMatchBtnActionPerformed
-
-    private void delMatchSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchSubmitBtnActionPerformed
-        String team1Name = delMatchTeam1.getSelectedItem().toString().toUpperCase();
-        String team2Name = delMatchTeam2.getSelectedItem().toString().toUpperCase();
-        
-        String day = delMatchDay.getSelectedItem().toString().toUpperCase();
-        String month = delMatchMonth.getSelectedItem().toString().toUpperCase();
-        String year = delMatchYear.getSelectedItem().toString().toUpperCase();
-        
-        String team1ID = (String)teamNames.get(team1Name);
-        String team2ID = (String)teamNames.get(team2Name);
-        
-        String date = String.join("-", day, month, year);
-        
-        String query = "DELETE FROM match WHERE team_1=" + team1ID + " AND team_2=" + team2ID + " AND match_date='" + date + "'";
-        Statement stmt;
-        System.out.println(query);
-        try {
-            stmt = connection.createStatement();
-            stmt.execute(query);
-              viewMatchesBtnActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_delMatchSubmitBtnActionPerformed
-
     private void delMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchBtnActionPerformed
         String query = "SELECT team_id, name FROM team";
         Statement stmt;
         System.out.println(query);
-        
+
         teamNames = new Hashtable();
         delMatchTeam1.setModel(new DefaultComboBoxModel());
         delMatchTeam2.setModel(new DefaultComboBoxModel());
@@ -1879,13 +2172,44 @@ public class Window extends javax.swing.JFrame {
         card.show(mainPanel, "delMatchPanel");
     }//GEN-LAST:event_delMatchBtnActionPerformed
 
-    private void addPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayersBtnActionPerformed
+    private void delMatchGoBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchGoBackButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "matchesPanel");
+    }//GEN-LAST:event_delMatchGoBackButtonActionPerformed
+
+    private void delMatchSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchSubmitBtnActionPerformed
+        String team1Name = delMatchTeam1.getSelectedItem().toString().toUpperCase();
+        String team2Name = delMatchTeam2.getSelectedItem().toString().toUpperCase();
+
+        String day = delMatchDay.getSelectedItem().toString().toUpperCase();
+        String month = delMatchMonth.getSelectedItem().toString().toUpperCase();
+        String year = delMatchYear.getSelectedItem().toString().toUpperCase();
+
+        String team1ID = (String)teamNames.get(team1Name);
+        String team2ID = (String)teamNames.get(team2Name);
+
+        String date = String.join("-", day, month, year);
+
+        String query = "DELETE FROM match WHERE team_1=" + team1ID + " AND team_2=" + team2ID + " AND match_date='" + date + "'";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewMatchesBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_delMatchSubmitBtnActionPerformed
+
+    private void updateMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchBtnActionPerformed
         String query = "SELECT team_id, name FROM team";
         Statement stmt;
         System.out.println(query);
-        
+
         teamNames = new Hashtable();
-        addPlayerTeam.setModel(new DefaultComboBoxModel());
+        updateMatchTeam1.setModel(new DefaultComboBoxModel());
+        updateMatchTeam2.setModel(new DefaultComboBoxModel());
         try {
             stmt = connection.createStatement();
             ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
@@ -1895,31 +2219,38 @@ public class Window extends javax.swing.JFrame {
                 String teamName = resultSet.getString(2);
                 String teamID = resultSet.getString(1);
                 teamNames.put(teamName, teamID);
-                addPlayerTeam.addItem(teamName);
+                updateMatchTeam1.addItem(teamName);
+                updateMatchTeam2.addItem(teamName);
+                updateMatchTeam2.setSelectedItem(teamName);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "addPlayerPanel");
-    }//GEN-LAST:event_addPlayersBtnActionPerformed
+        card.show(mainPanel, "updateMatchPanel");
+    }//GEN-LAST:event_updateMatchBtnActionPerformed
+
+    private void updateMatchGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "matchesPanel");
+    }//GEN-LAST:event_updateMatchGoBackBtnActionPerformed
 
     private void updateMatchSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchSubmitBtnActionPerformed
         String team1Name = updateMatchTeam1.getSelectedItem().toString().toUpperCase();
         String team2Name = updateMatchTeam2.getSelectedItem().toString().toUpperCase();
-        
+
         String team1ID = (String)teamNames.get(team1Name);
         String team2ID = (String)teamNames.get(team2Name);
-        
+
         String day = updatePlayerDOBDay.getSelectedItem().toString().toUpperCase();
         String month = updatePlayerDOBMonth.getSelectedItem().toString().toUpperCase();
         String year = updatePlayerDOBYear.getSelectedItem().toString().toUpperCase();
-        
+
         String date = String.join("-", day, month, year);
-        
+
         String field = updateMatchFieldChoice.getSelectedItem().toString().toUpperCase();
         String newValue = updateMatchChange.getText();
-        
+
         if(null != field)switch (field) {
             case "TEAM 1":
                 field = "team_1";
@@ -1969,301 +2300,6 @@ public class Window extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_updateMatchSubmitBtnActionPerformed
 
-    private void updatePlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "playersPanel");
-    }//GEN-LAST:event_updatePlayerGoBackBtnActionPerformed
-
-    private void addPlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "playersPanel");
-    }//GEN-LAST:event_addPlayerGoBackBtnActionPerformed
-
-    private void addPlayerDOBYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerDOBYearActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addPlayerDOBYearActionPerformed
-
-    private void delPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPlayersBtnActionPerformed
-        String query = "SELECT fname, lname FROM player";
-        Statement stmt;
-        System.out.println(query);
-        delPlayerName.setModel(new DefaultComboBoxModel());
-        firstNames = new Hashtable();
-        lastNames = new Hashtable();
-        
-        try {
-            stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
-
-            while (resultSet.next()) {
-                String fName = resultSet.getString(1);
-                String lName = resultSet.getString(2);
-                String playerName = String.join(" ", fName, lName);
-                System.out.println(playerName);
-                firstNames.put(playerName, fName);
-                lastNames.put(playerName, lName);
-                delPlayerName.addItem(playerName);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "delPlayerPanel");
-    }//GEN-LAST:event_delPlayersBtnActionPerformed
-
-    private void delPlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPlayerGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "playersPanel");
-    }//GEN-LAST:event_delPlayerGoBackBtnActionPerformed
-
-    private void delPlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPlayerSubmitBtnActionPerformed
-        String playerName = delPlayerName.getSelectedItem().toString().toUpperCase();
-        String fName = (String)firstNames.get(playerName);
-        String lName = (String)lastNames.get(playerName);
-        
-        String day = delPlayerDOBDay.getSelectedItem().toString().toUpperCase();
-        String month = delPlayerDOBMonth.getSelectedItem().toString().toUpperCase();
-        String year = delPlayerDOBYear.getSelectedItem().toString().toUpperCase();
-        
-        
-        String date = String.join("-", day, month, year);
-        
-        String query = "DELETE FROM PLAYER WHERE fname='" + fName + "' AND lname='" + lName + "' AND dob='" + date + "'";
-        Statement stmt;
-        System.out.println(query);
-        try {
-            stmt = connection.createStatement();
-            stmt.execute(query);
-            viewPlayersBtnActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_delPlayerSubmitBtnActionPerformed
-
-    private void updatePlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayersBtnActionPerformed
-        String query = "SELECT fname, lname FROM player";
-        Statement stmt;
-        System.out.println(query);
-        updatePlayerName.setModel(new DefaultComboBoxModel());
-        firstNames = new Hashtable();
-        lastNames = new Hashtable();
-        
-        try {
-            stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
-
-            while (resultSet.next()) {
-                String fName = resultSet.getString(1);
-                String lName = resultSet.getString(2);
-                String playerName = String.join(" ", fName, lName);
-                System.out.println(playerName);
-                firstNames.put(playerName, fName);
-                lastNames.put(playerName, lName);
-                updatePlayerName.addItem(playerName);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "updatePlayerPanel");
-    }//GEN-LAST:event_updatePlayersBtnActionPerformed
-
-    private void updatePlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerSubmitBtnActionPerformed
-        String playerName = updatePlayerName.getSelectedItem().toString().toUpperCase();
-        String fName = (String)firstNames.get(playerName);
-        String lName = (String)lastNames.get(playerName);
-        
-        String day = updatePlayerDOBDay.getSelectedItem().toString().toUpperCase();
-        String month = updatePlayerDOBMonth.getSelectedItem().toString().toUpperCase();
-        String year = updatePlayerDOBYear.getSelectedItem().toString().toUpperCase();
-        
-        String field = updatePlayerFieldChoice.getSelectedItem().toString().toUpperCase();
-        String newValue = updatePlayerChange.getText();
-        
-        String date = String.join("-", day, month, year);
-        if(null != field)switch (field) {
-            case "FIRST NAME":
-                field = "fname";
-                newValue = "'"+ newValue.toUpperCase() + "'";
-                break;
-            case "LAST NAME":
-                field = "lname";
-                newValue = "'"+ newValue.toUpperCase() + "'";
-                break;
-            case "DATE OF BIRTH":
-                field = "dob";
-                newValue = "'"+ newValue + "'";
-                break;
-            case "TEAM ID":
-                field="team_id";
-                break;
-            case "BATTING HAND":
-                field="batting_hand";
-                newValue = "'"+ newValue.toUpperCase() + "'";
-                break;
-            case "BOWLING SKILL":
-                field="bowling_skill";
-                newValue = "'"+ newValue.toUpperCase() + "'";
-                break;
-            case "COUNTRY":
-                field="country";
-                newValue = "'"+ newValue.toUpperCase() + "'";
-                break;
-            case "JERSEY NO":
-                field="jersey_no";
-                break;
-            default:
-                break;
-        }
-        String query = "UPDATE PLAYER SET " + field + "="+ newValue +" WHERE fname='" + fName + "' AND lname='" + lName + "' AND dob='" + date + "'";
-        Statement stmt;
-        System.out.println(query);
-        try {
-            stmt = connection.createStatement();
-            stmt.execute(query);
-            viewPlayersBtnActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_updatePlayerSubmitBtnActionPerformed
-
-    private void addTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "pointsPanel");
-    }//GEN-LAST:event_addTeamGoBackBtnActionPerformed
-
-    private void delTeamNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_delTeamNameActionPerformed
-
-    private void delTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "pointsPanel");
-    }//GEN-LAST:event_delTeamGoBackBtnActionPerformed
-
-    private void delTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamBtnActionPerformed
-        String query = "SELECT team_id, name FROM team";
-        Statement stmt;
-        System.out.println(query);
-        
-        teamNames = new Hashtable();
-        delTeamName.setModel(new DefaultComboBoxModel());
-        try {
-            stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
-
-            while (resultSet.next()) {
-                //Retrieving details from the database and storing it in the String variables
-                String teamName = resultSet.getString(2);
-                String teamID = resultSet.getString(1);
-                teamNames.put(teamName, teamID);
-                delTeamName.addItem(teamName);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "delTeamPanel");
-    }//GEN-LAST:event_delTeamBtnActionPerformed
-
-    private void delTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamSubmitBtnActionPerformed
-        String teamName = delTeamName.getSelectedItem().toString().toUpperCase();
-        String teamID = (String)teamNames.get(teamName);
-        String query = "DELETE FROM TEAM WHERE team_id=" + teamID;
-        Statement stmt;
-        System.out.println(query);
-        try {
-            stmt = connection.createStatement();
-            stmt.execute(query);
-            viewPointsBtnActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_delTeamSubmitBtnActionPerformed
-
-    private void updateTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamBtnActionPerformed
-        String query = "SELECT team_id, name FROM team";
-        Statement stmt;
-        System.out.println(query);
-        
-        teamNames = new Hashtable();
-        updateTeamName.setModel(new DefaultComboBoxModel());
-        try {
-            stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
-
-            while (resultSet.next()) {
-                //Retrieving details from the database and storing it in the String variables
-                String teamName = resultSet.getString(2);
-                String teamID = resultSet.getString(1);
-                teamNames.put(teamName, teamID);
-                updateTeamName.addItem(teamName);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        query = "SELECT player_id, fname, lname FROM player";
-        System.out.println(query);
-        playerNames = new Hashtable();
-        
-        try {
-            stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
-
-            while (resultSet.next()) {
-                String playerID= resultSet.getString(1);
-                String fName = resultSet.getString(2);
-                String lName = resultSet.getString(3);
-                String playerName = String.join(" ", fName, lName);
-                System.out.println(playerName);
-                playerNames.put(playerName, playerID);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "updateTeamPanel");
-    }//GEN-LAST:event_updateTeamBtnActionPerformed
-
-    private void updateTeamGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "pointsPanel");
-    }//GEN-LAST:event_updateTeamGoBackBtnActionPerformed
-
-    private void updateTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamSubmitBtnActionPerformed
-        String teamName = updateTeamName.getSelectedItem().toString().toUpperCase();
-        String teamID = (String)teamNames.get(teamName);
-        
-        String field = updateTeamFieldChoice.getSelectedItem().toString().toUpperCase();
-        String newValue = updateTeamChange.getText();
-        
-        if(null != field)switch (field) {
-            case "TEAM NAME":
-                field = "name";
-                newValue = "'"+ newValue.toUpperCase() + "'";
-                break;
-            case "CAPTAIN":
-                field = "captain";
-                newValue = (String)playerNames.get(newValue.toUpperCase());
-                break;
-            case "COACH":
-                field = "coach";
-                newValue = "'"+ newValue.toUpperCase() + "'";
-                break;
-            default:
-                break;
-        }
-        String query = "UPDATE team SET " + field + "="+ newValue +" WHERE team_id=" + teamID;
-        Statement stmt;
-        System.out.println(query);
-        try {
-            stmt = connection.createStatement();
-            stmt.execute(query);
-            viewPointsBtnActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_updateTeamSubmitBtnActionPerformed
     private void changeTossWinnerCombo(){
         addMatchTossWinner.setModel(new DefaultComboBoxModel());
         addMatchWinner.setModel(new DefaultComboBoxModel());
@@ -2274,10 +2310,6 @@ public class Window extends javax.swing.JFrame {
         addMatchWinner.addItem(team1);
         addMatchWinner.addItem(team2);
     }
-    private void addMatchGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "matchesPanel");
-    }//GEN-LAST:event_addMatchGoBackBtnActionPerformed
 
     private void addMatchTeam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchTeam1ActionPerformed
         changeTossWinnerCombo();
@@ -2287,43 +2319,33 @@ public class Window extends javax.swing.JFrame {
         changeTossWinnerCombo();
     }//GEN-LAST:event_addMatchTeam2ActionPerformed
 
-    private void delMatchGoBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delMatchGoBackButtonActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "matchesPanel");
-    }//GEN-LAST:event_delMatchGoBackButtonActionPerformed
+    private void addPlayerFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerFirstNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addPlayerFirstNameActionPerformed
 
-    private void updateMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchBtnActionPerformed
-        String query = "SELECT team_id, name FROM team";
-        Statement stmt;
-        System.out.println(query);
-        
-        teamNames = new Hashtable();
-        updateMatchTeam1.setModel(new DefaultComboBoxModel());
-        updateMatchTeam2.setModel(new DefaultComboBoxModel());
-        try {
-            stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+    private void addPlayerJerseyNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerJerseyNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addPlayerJerseyNumberActionPerformed
 
-            while (resultSet.next()) {
-                //Retrieving details from the database and storing it in the String variables
-                String teamName = resultSet.getString(2);
-                String teamID = resultSet.getString(1);
-                teamNames.put(teamName, teamID);
-                updateMatchTeam1.addItem(teamName);
-                updateMatchTeam2.addItem(teamName);
-                updateMatchTeam2.setSelectedItem(teamName);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "updateMatchPanel");
-    }//GEN-LAST:event_updateMatchBtnActionPerformed
+    private void addPlayerDOBDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerDOBDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addPlayerDOBDayActionPerformed
 
-    private void updateMatchGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchGoBackBtnActionPerformed
-        CardLayout card = (CardLayout)mainPanel.getLayout();
-        card.show(mainPanel, "matchesPanel");
-    }//GEN-LAST:event_updateMatchGoBackBtnActionPerformed
+    private void updateMatchChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMatchChangeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateMatchChangeActionPerformed
+
+    private void updateTeamChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeamChangeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateTeamChangeActionPerformed
+
+    private void addPlayerDOBYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerDOBYearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addPlayerDOBYearActionPerformed
+
+    private void delTeamNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delTeamNameActionPerformed
 
     /**
      * @param args the command line arguments
