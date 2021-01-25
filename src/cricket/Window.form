@@ -465,6 +465,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update match"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateMatchBtnActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -486,16 +489,16 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="addMatchGoBackBtn" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="team2Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="team1Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="venueLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="dateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tossWinnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tossDecisionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="innings1ScoreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="innings2ScoreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="winnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="winMarginLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchTeam2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchTeam1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchVenueLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchTossWinnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchTossDecisionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchInnings1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchInnings2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchWinnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addMatchWinMarginLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
@@ -505,20 +508,20 @@
                                   <Component id="addMatchInnings1Score" alignment="0" max="32767" attributes="0"/>
                                   <Component id="addMatchInnings2Score" alignment="0" max="32767" attributes="0"/>
                                   <Component id="addMatchWinMargin" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jComboBox1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox6" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox9" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox33" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addMatchDay" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addMatchTeam1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addMatchTeam2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addMatchTossWinner" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addMatchWinner" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addMatchTossDecision" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                      <Component id="addMatchMonth" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="265" max="32767" attributes="0"/>
+                      <Component id="addMatchYear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="232" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -532,54 +535,54 @@
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="team1Label" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTeam1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTeam1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="team2Label" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox5" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTeam2Label" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTeam2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="venueLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchVenueLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="addMatchVenue" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchYear" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tossWinnerLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox6" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTossWinnerLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTossWinner" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tossDecisionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox33" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTossDecisionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTossDecision" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="innings1ScoreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchInnings1Label" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="addMatchInnings1Score" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="innings2ScoreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchInnings2Label" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="addMatchInnings2Score" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="winnerLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchWinnerLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchWinner" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="winMarginLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchWinMarginLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="addMatchWinMargin" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="61" max="32767" attributes="0"/>
@@ -599,53 +602,56 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Go back"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMatchGoBackBtnActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="team1Label">
+            <Component class="javax.swing.JLabel" name="addMatchTeam1Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Team 1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="team2Label">
+            <Component class="javax.swing.JLabel" name="addMatchTeam2Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Team 2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="venueLabel">
+            <Component class="javax.swing.JLabel" name="addMatchVenueLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Venue"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="dateLabel">
+            <Component class="javax.swing.JLabel" name="addMatchDateLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Date"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="tossWinnerLabel">
+            <Component class="javax.swing.JLabel" name="addMatchTossWinnerLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Toss Winner"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="tossDecisionLabel">
+            <Component class="javax.swing.JLabel" name="addMatchTossDecisionLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Toss decision"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="innings1ScoreLabel">
+            <Component class="javax.swing.JLabel" name="addMatchInnings1Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Innings 1 score"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="innings2ScoreLabel">
+            <Component class="javax.swing.JLabel" name="addMatchInnings2Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Innings 2 score"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="winnerLabel">
+            <Component class="javax.swing.JLabel" name="addMatchWinnerLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Winner"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="winMarginLabel">
+            <Component class="javax.swing.JLabel" name="addMatchWinMarginLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Win margin"/>
               </Properties>
@@ -666,14 +672,41 @@
             </Component>
             <Component class="javax.swing.JTextField" name="addMatchWinMargin">
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
+            <Component class="javax.swing.JComboBox" name="addMatchDay">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="31">
+                    <StringItem index="0" value="1"/>
+                    <StringItem index="1" value="2"/>
+                    <StringItem index="2" value="3"/>
+                    <StringItem index="3" value="4"/>
+                    <StringItem index="4" value="5"/>
+                    <StringItem index="5" value="6"/>
+                    <StringItem index="6" value="7"/>
+                    <StringItem index="7" value="8"/>
+                    <StringItem index="8" value="9"/>
+                    <StringItem index="9" value="10"/>
+                    <StringItem index="10" value="11"/>
+                    <StringItem index="11" value="12"/>
+                    <StringItem index="12" value="13"/>
+                    <StringItem index="13" value="14"/>
+                    <StringItem index="14" value="15"/>
+                    <StringItem index="15" value="16"/>
+                    <StringItem index="16" value="17"/>
+                    <StringItem index="17" value="18"/>
+                    <StringItem index="18" value="19"/>
+                    <StringItem index="19" value="20"/>
+                    <StringItem index="20" value="21"/>
+                    <StringItem index="21" value="22"/>
+                    <StringItem index="22" value="23"/>
+                    <StringItem index="23" value="24"/>
+                    <StringItem index="24" value="25"/>
+                    <StringItem index="25" value="26"/>
+                    <StringItem index="26" value="27"/>
+                    <StringItem index="27" value="28"/>
+                    <StringItem index="28" value="29"/>
+                    <StringItem index="29" value="30"/>
+                    <StringItem index="30" value="31"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -681,14 +714,22 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox2">
+            <Component class="javax.swing.JComboBox" name="addMatchMonth">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="12">
+                    <StringItem index="0" value="January"/>
+                    <StringItem index="1" value="February"/>
+                    <StringItem index="2" value="March"/>
+                    <StringItem index="3" value="April"/>
+                    <StringItem index="4" value="May"/>
+                    <StringItem index="5" value="June"/>
+                    <StringItem index="6" value="July"/>
+                    <StringItem index="7" value="August"/>
+                    <StringItem index="8" value="September"/>
+                    <StringItem index="9" value="October"/>
+                    <StringItem index="10" value="November"/>
+                    <StringItem index="11" value="December"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -696,14 +737,51 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox3">
+            <Component class="javax.swing.JComboBox" name="addMatchYear">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="41">
+                    <StringItem index="0" value="1960"/>
+                    <StringItem index="1" value="1961"/>
+                    <StringItem index="2" value="1962"/>
+                    <StringItem index="3" value="1963"/>
+                    <StringItem index="4" value="1964"/>
+                    <StringItem index="5" value="1965"/>
+                    <StringItem index="6" value="1966"/>
+                    <StringItem index="7" value="1967"/>
+                    <StringItem index="8" value="1968"/>
+                    <StringItem index="9" value="1969"/>
+                    <StringItem index="10" value="1970"/>
+                    <StringItem index="11" value="1971"/>
+                    <StringItem index="12" value="1972"/>
+                    <StringItem index="13" value="1973"/>
+                    <StringItem index="14" value="1974"/>
+                    <StringItem index="15" value="1975"/>
+                    <StringItem index="16" value="1976"/>
+                    <StringItem index="17" value="1977"/>
+                    <StringItem index="18" value="1978"/>
+                    <StringItem index="19" value="1979"/>
+                    <StringItem index="20" value="1980"/>
+                    <StringItem index="21" value="1981"/>
+                    <StringItem index="22" value="1982"/>
+                    <StringItem index="23" value="1983"/>
+                    <StringItem index="24" value="1984"/>
+                    <StringItem index="25" value="1985"/>
+                    <StringItem index="26" value="1986"/>
+                    <StringItem index="27" value="1987"/>
+                    <StringItem index="28" value="1988"/>
+                    <StringItem index="29" value="1989"/>
+                    <StringItem index="30" value="1990"/>
+                    <StringItem index="31" value="1991"/>
+                    <StringItem index="32" value="1992"/>
+                    <StringItem index="33" value="1993"/>
+                    <StringItem index="34" value="1994"/>
+                    <StringItem index="35" value="1995"/>
+                    <StringItem index="36" value="1996"/>
+                    <StringItem index="37" value="1997"/>
+                    <StringItem index="38" value="1998"/>
+                    <StringItem index="39" value="1999"/>
+                    <StringItem index="40" value="2000"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -711,14 +789,56 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox4">
+            <Component class="javax.swing.JComboBox" name="addMatchTeam1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="[No Team]"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMatchTeam1ActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="addMatchTeam2">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="1">
+                    <StringItem index="0" value="[No Team]"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMatchTeam2ActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="addMatchTossWinner">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="1">
+                    <StringItem index="0" value="[No Team]"/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection component="addMatchTeam1" type="bean"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="addMatchWinner">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="1">
+                    <StringItem index="0" value="[No Team]"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -726,59 +846,12 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox5">
+            <Component class="javax.swing.JComboBox" name="addMatchTossDecision">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox6">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox9">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox33">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="2">
+                    <StringItem index="0" value="Bat"/>
+                    <StringItem index="1" value="Bowl"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -807,27 +880,27 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Team2Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Team1Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="delMatchTeam2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="delMatchTeam1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="delMatchDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="201" max="32767" attributes="0"/>
+                      <EmptySpace pref="202" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="delMatchSubmitBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="delMatchHeading" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jComboBox10" min="-2" max="-2" attributes="0"/>
+                              <Component id="delMatchDay" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jComboBox11" min="-2" max="-2" attributes="0"/>
+                              <Component id="delMatchMonth" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jComboBox12" min="-2" max="-2" attributes="0"/>
+                              <Component id="delMatchYear" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jComboBox13" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox14" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchTeam1" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchTeam2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="105" max="32767" attributes="0"/>
+                      <EmptySpace pref="107" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -841,20 +914,20 @@
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Team1Label" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchTeam1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchTeam1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Team2Label" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox14" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchTeam2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchTeam2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchYear" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="delMatchSubmitBtn" min="-2" max="-2" attributes="0"/>
@@ -873,13 +946,16 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Go back"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delMatchGoBackButtonActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="Team1Label">
+            <Component class="javax.swing.JLabel" name="delMatchTeam1Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Enter team 1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Team2Label">
+            <Component class="javax.swing.JLabel" name="delMatchTeam2Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Enter team 2"/>
               </Properties>
@@ -892,19 +968,46 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delMatchSubmitBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="delMatchDateLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Enter match date"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox10">
+            <Component class="javax.swing.JComboBox" name="delMatchDay">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="31">
+                    <StringItem index="0" value="1"/>
+                    <StringItem index="1" value="2"/>
+                    <StringItem index="2" value="3"/>
+                    <StringItem index="3" value="4"/>
+                    <StringItem index="4" value="5"/>
+                    <StringItem index="5" value="6"/>
+                    <StringItem index="6" value="7"/>
+                    <StringItem index="7" value="8"/>
+                    <StringItem index="8" value="9"/>
+                    <StringItem index="9" value="10"/>
+                    <StringItem index="10" value="11"/>
+                    <StringItem index="11" value="12"/>
+                    <StringItem index="12" value="13"/>
+                    <StringItem index="13" value="14"/>
+                    <StringItem index="14" value="15"/>
+                    <StringItem index="15" value="16"/>
+                    <StringItem index="16" value="17"/>
+                    <StringItem index="17" value="18"/>
+                    <StringItem index="18" value="19"/>
+                    <StringItem index="19" value="20"/>
+                    <StringItem index="20" value="21"/>
+                    <StringItem index="21" value="22"/>
+                    <StringItem index="22" value="23"/>
+                    <StringItem index="23" value="24"/>
+                    <StringItem index="24" value="25"/>
+                    <StringItem index="25" value="26"/>
+                    <StringItem index="26" value="27"/>
+                    <StringItem index="27" value="28"/>
+                    <StringItem index="28" value="29"/>
+                    <StringItem index="29" value="30"/>
+                    <StringItem index="30" value="31"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -912,14 +1015,22 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox11">
+            <Component class="javax.swing.JComboBox" name="delMatchMonth">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="12">
+                    <StringItem index="0" value="January"/>
+                    <StringItem index="1" value="February"/>
+                    <StringItem index="2" value="March"/>
+                    <StringItem index="3" value="April"/>
+                    <StringItem index="4" value="May"/>
+                    <StringItem index="5" value="June"/>
+                    <StringItem index="6" value="July"/>
+                    <StringItem index="7" value="August"/>
+                    <StringItem index="8" value="September"/>
+                    <StringItem index="9" value="October"/>
+                    <StringItem index="10" value="November"/>
+                    <StringItem index="11" value="December"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -927,14 +1038,51 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox12">
+            <Component class="javax.swing.JComboBox" name="delMatchYear">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="41">
+                    <StringItem index="0" value="1960"/>
+                    <StringItem index="1" value="1961"/>
+                    <StringItem index="2" value="1962"/>
+                    <StringItem index="3" value="1963"/>
+                    <StringItem index="4" value="1964"/>
+                    <StringItem index="5" value="1965"/>
+                    <StringItem index="6" value="1966"/>
+                    <StringItem index="7" value="1967"/>
+                    <StringItem index="8" value="1968"/>
+                    <StringItem index="9" value="1969"/>
+                    <StringItem index="10" value="1970"/>
+                    <StringItem index="11" value="1971"/>
+                    <StringItem index="12" value="1972"/>
+                    <StringItem index="13" value="1973"/>
+                    <StringItem index="14" value="1974"/>
+                    <StringItem index="15" value="1975"/>
+                    <StringItem index="16" value="1976"/>
+                    <StringItem index="17" value="1977"/>
+                    <StringItem index="18" value="1978"/>
+                    <StringItem index="19" value="1979"/>
+                    <StringItem index="20" value="1980"/>
+                    <StringItem index="21" value="1981"/>
+                    <StringItem index="22" value="1982"/>
+                    <StringItem index="23" value="1983"/>
+                    <StringItem index="24" value="1984"/>
+                    <StringItem index="25" value="1985"/>
+                    <StringItem index="26" value="1986"/>
+                    <StringItem index="27" value="1987"/>
+                    <StringItem index="28" value="1988"/>
+                    <StringItem index="29" value="1989"/>
+                    <StringItem index="30" value="1990"/>
+                    <StringItem index="31" value="1991"/>
+                    <StringItem index="32" value="1992"/>
+                    <StringItem index="33" value="1993"/>
+                    <StringItem index="34" value="1994"/>
+                    <StringItem index="35" value="1995"/>
+                    <StringItem index="36" value="1996"/>
+                    <StringItem index="37" value="1997"/>
+                    <StringItem index="38" value="1998"/>
+                    <StringItem index="39" value="1999"/>
+                    <StringItem index="40" value="2000"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -942,14 +1090,11 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox13">
+            <Component class="javax.swing.JComboBox" name="delMatchTeam1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="[No Team]"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -957,14 +1102,11 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox14">
+            <Component class="javax.swing.JComboBox" name="delMatchTeam2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="[No Team]"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -988,40 +1130,40 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                              <Component id="updateMatchGoBackBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                              <Component id="updateMatchHeadingLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateMatchChangeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateMatchFieldChoiceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateMatchTeam1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateMatchTeam2Label" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="246" max="32767" attributes="0"/>
-                                      <Component id="jComboBox18" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updateMatcheDateLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="239" max="32767" attributes="0"/>
+                                      <Component id="updateMatchDay" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBox15" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField23" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                                  <Component id="jComboBox16" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox17" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateMatchTeam1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateMatchFieldChoice" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateMatchChange" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Component id="updateMatchTeam2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateMatchMonth" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jComboBox19" min="-2" max="-2" attributes="0"/>
+                      <Component id="updateMatchYear" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                      <Component id="updateMatchSubmitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1031,95 +1173,104 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchTeam1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchTeam1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox16" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchTeam2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchTeam2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox17" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox18" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox19" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatcheDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchYear" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchFieldChoiceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchFieldChoice" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField23" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchChangeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchChange" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                      <Component id="updateMatchSubmitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="224" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel26">
+            <Component class="javax.swing.JLabel" name="updateMatchHeadingLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="UPDATE MATCH DETAILS"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="javax.swing.JButton" name="updateMatchGoBackBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Go back"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateMatchGoBackBtnActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel27">
+            <Component class="javax.swing.JLabel" name="updateMatchTeam1Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Enter team 1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel28">
+            <Component class="javax.swing.JLabel" name="updateMatchTeam2Label">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Enter team 2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel29">
+            <Component class="javax.swing.JLabel" name="updateMatchFieldChoiceLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Choose field to edit"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel30">
+            <Component class="javax.swing.JLabel" name="updateMatchChangeLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Changes"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
+            <Component class="javax.swing.JButton" name="updateMatchSubmitBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateMatchSubmitBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField23">
+            <Component class="javax.swing.JTextField" name="updateMatchChange">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField23ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateMatchChangeActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox7">
+            <Component class="javax.swing.JComboBox" name="updateMatchFieldChoice">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="10">
+                    <StringItem index="0" value="Team 1"/>
+                    <StringItem index="1" value="Team 2"/>
+                    <StringItem index="2" value="Match Date"/>
+                    <StringItem index="3" value="Venue"/>
+                    <StringItem index="4" value="Toss Winner"/>
+                    <StringItem index="5" value="Toss Decision"/>
+                    <StringItem index="6" value="Innings 1 Score"/>
+                    <StringItem index="7" value="Innings 2 Score"/>
+                    <StringItem index="8" value="Winner"/>
+                    <StringItem index="9" value="Win Margin"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1127,14 +1278,11 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox15">
+            <Component class="javax.swing.JComboBox" name="updateMatchTeam1">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="[No Team]"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1142,14 +1290,11 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox16">
+            <Component class="javax.swing.JComboBox" name="updateMatchTeam2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="[No Team]"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1157,19 +1302,27 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="updateMatcheDateLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Enter match date"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox17">
+            <Component class="javax.swing.JComboBox" name="updateMatchMonth">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="12">
+                    <StringItem index="0" value="January"/>
+                    <StringItem index="1" value="February"/>
+                    <StringItem index="2" value="March"/>
+                    <StringItem index="3" value="April"/>
+                    <StringItem index="4" value="May"/>
+                    <StringItem index="5" value="June"/>
+                    <StringItem index="6" value="July"/>
+                    <StringItem index="7" value="August"/>
+                    <StringItem index="8" value="September"/>
+                    <StringItem index="9" value="October"/>
+                    <StringItem index="10" value="November"/>
+                    <StringItem index="11" value="December"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1177,14 +1330,41 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox18">
+            <Component class="javax.swing.JComboBox" name="updateMatchDay">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="31">
+                    <StringItem index="0" value="1"/>
+                    <StringItem index="1" value="2"/>
+                    <StringItem index="2" value="3"/>
+                    <StringItem index="3" value="4"/>
+                    <StringItem index="4" value="5"/>
+                    <StringItem index="5" value="6"/>
+                    <StringItem index="6" value="7"/>
+                    <StringItem index="7" value="8"/>
+                    <StringItem index="8" value="9"/>
+                    <StringItem index="9" value="10"/>
+                    <StringItem index="10" value="11"/>
+                    <StringItem index="11" value="12"/>
+                    <StringItem index="12" value="13"/>
+                    <StringItem index="13" value="14"/>
+                    <StringItem index="14" value="15"/>
+                    <StringItem index="15" value="16"/>
+                    <StringItem index="16" value="17"/>
+                    <StringItem index="17" value="18"/>
+                    <StringItem index="18" value="19"/>
+                    <StringItem index="19" value="20"/>
+                    <StringItem index="20" value="21"/>
+                    <StringItem index="21" value="22"/>
+                    <StringItem index="22" value="23"/>
+                    <StringItem index="23" value="24"/>
+                    <StringItem index="24" value="25"/>
+                    <StringItem index="25" value="26"/>
+                    <StringItem index="26" value="27"/>
+                    <StringItem index="27" value="28"/>
+                    <StringItem index="28" value="29"/>
+                    <StringItem index="29" value="30"/>
+                    <StringItem index="30" value="31"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1192,14 +1372,51 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox19">
+            <Component class="javax.swing.JComboBox" name="updateMatchYear">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="41">
+                    <StringItem index="0" value="1960"/>
+                    <StringItem index="1" value="1961"/>
+                    <StringItem index="2" value="1962"/>
+                    <StringItem index="3" value="1963"/>
+                    <StringItem index="4" value="1964"/>
+                    <StringItem index="5" value="1965"/>
+                    <StringItem index="6" value="1966"/>
+                    <StringItem index="7" value="1967"/>
+                    <StringItem index="8" value="1968"/>
+                    <StringItem index="9" value="1969"/>
+                    <StringItem index="10" value="1970"/>
+                    <StringItem index="11" value="1971"/>
+                    <StringItem index="12" value="1972"/>
+                    <StringItem index="13" value="1973"/>
+                    <StringItem index="14" value="1974"/>
+                    <StringItem index="15" value="1975"/>
+                    <StringItem index="16" value="1976"/>
+                    <StringItem index="17" value="1977"/>
+                    <StringItem index="18" value="1978"/>
+                    <StringItem index="19" value="1979"/>
+                    <StringItem index="20" value="1980"/>
+                    <StringItem index="21" value="1981"/>
+                    <StringItem index="22" value="1982"/>
+                    <StringItem index="23" value="1983"/>
+                    <StringItem index="24" value="1984"/>
+                    <StringItem index="25" value="1985"/>
+                    <StringItem index="26" value="1986"/>
+                    <StringItem index="27" value="1987"/>
+                    <StringItem index="28" value="1988"/>
+                    <StringItem index="29" value="1989"/>
+                    <StringItem index="30" value="1990"/>
+                    <StringItem index="31" value="1991"/>
+                    <StringItem index="32" value="1992"/>
+                    <StringItem index="33" value="1993"/>
+                    <StringItem index="34" value="1994"/>
+                    <StringItem index="35" value="1995"/>
+                    <StringItem index="36" value="1996"/>
+                    <StringItem index="37" value="1997"/>
+                    <StringItem index="38" value="1998"/>
+                    <StringItem index="39" value="1999"/>
+                    <StringItem index="40" value="2000"/>
                   </StringArray>
                 </Property>
               </Properties>
