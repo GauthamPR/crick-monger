@@ -1667,12 +1667,31 @@ public class Window extends javax.swing.JFrame {
     private void delTeamSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delTeamSubmitBtnActionPerformed
         String teamName = delTeamName.getSelectedItem().toString().toUpperCase();
         String teamID = (String)teamNames.get(teamName);
-        String query = "DELETE FROM TEAM WHERE team_id=" + teamID;
+
+        String delTeamSql = "DELETE FROM TEAM WHERE team_id=" + teamID;
+        String delMatchesSql = "DELETE FROM MATCH WHERE team_1=" + teamID + " OR team_2=" + teamID;
+        String removeCaptainSql = "UPDATE TEAM SET CAPTAIN ='' WHERE team_id=" + teamID;
+        String removePlayersSql = "DELETE FROM PLAYER WHERE team_id=" + teamID;
         Statement stmt;
-        System.out.println(query);
+        System.out.println(delTeamSql + " " + delMatchesSql);
         try {
+
+            //deleting matches of team
             stmt = connection.createStatement();
-            stmt.execute(query);
+            stmt.execute(delMatchesSql);
+
+            //removing captain
+            stmt = connection.createStatement();
+            stmt.execute(removeCaptainSql);
+
+            //removing players
+            stmt = connection.createStatement();
+            stmt.execute(removePlayersSql);
+
+            //deleting team
+            stmt = connection.createStatement();
+            stmt.execute(delTeamSql);
+
             viewPointsBtnActionPerformed(evt);
         } catch (SQLException ex) {
             Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
@@ -1915,12 +1934,39 @@ public class Window extends javax.swing.JFrame {
 
         String date = String.join("-", day, month, year);
 
-        String query = "DELETE FROM PLAYER WHERE fname='" + fName + "' AND lname='" + lName + "' AND dob='" + date + "'";
+        String delQuery = "DELETE FROM PLAYER WHERE fname='" + fName + "' AND lname='" + lName + "' AND dob='" + date + "'";
+        String queryForID = "SELECT PLAYER_ID FROM PLAYER WHERE FNAME || ' ' || LNAME = '"+ playerName + "' AND DOB = '" + date +"'";
         Statement stmt;
-        System.out.println(query);
+        ResultSet resultSet;
+        System.out.println(delQuery);
+        String playerID;
+        String exists;
         try {
+            //querying for playerID
             stmt = connection.createStatement();
-            stmt.execute(query);
+            resultSet = stmt.executeQuery(queryForID);
+            resultSet.next();
+            playerID = resultSet.getString(1);
+
+            //checking if player is captain
+            stmt = connection.createStatement();
+            resultSet = stmt.executeQuery("SELECT CASE WHEN COUNT(1) > 0 THEN 1 ELSE 0 END " +
+                    "FROM TEAM " +
+                    "WHERE CAPTAIN = " + playerID);
+            resultSet.next();
+            exists = resultSet.getString(1);
+
+            if("1".equals(exists)){//if player is captain
+                stmt = connection.createStatement();
+                stmt.execute("UPDATE TEAM " +
+                        "SET CAPTAIN = '' " +
+                        "WHERE CAPTAIN = " + playerID);
+            }
+
+            //deleting Player
+            stmt = connection.createStatement();
+            stmt.execute(delQuery);
+
             viewPlayersBtnActionPerformed(evt);
         } catch (SQLException ex) {
             Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
