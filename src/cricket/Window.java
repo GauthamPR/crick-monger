@@ -166,19 +166,19 @@ public class Window extends javax.swing.JFrame {
         delPlayerDOBMonth = new javax.swing.JComboBox<>();
         delPlayerDOBYear = new javax.swing.JComboBox<>();
         updatePlayerPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jComboBox25 = new javax.swing.JComboBox<>();
-        jComboBox26 = new javax.swing.JComboBox<>();
-        jComboBox27 = new javax.swing.JComboBox<>();
-        jComboBox28 = new javax.swing.JComboBox<>();
-        jComboBox29 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
+        updatePlayerGoBackBtn = new javax.swing.JButton();
+        updatePlayerHeadingLabel = new javax.swing.JLabel();
+        updatePlayerNameLabel = new javax.swing.JLabel();
+        updatePlayerDOBLabel = new javax.swing.JLabel();
+        updatePlayerFieldChoiceLabel = new javax.swing.JLabel();
+        updatePlayerChangeLabel = new javax.swing.JLabel();
+        updatePlayerSubmitBtn = new javax.swing.JButton();
+        updatePlayerName = new javax.swing.JComboBox<>();
+        updatePlayerDOBDay = new javax.swing.JComboBox<>();
+        updatePlayerDOBMonth = new javax.swing.JComboBox<>();
+        updatePlayerDOBYear = new javax.swing.JComboBox<>();
+        updatePlayerFieldChoice = new javax.swing.JComboBox<>();
+        updatePlayerChange = new javax.swing.JTextField();
         addTeamPanel = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
@@ -380,6 +380,11 @@ public class Window extends javax.swing.JFrame {
         });
 
         updatePlayersBtn.setText("Update player");
+        updatePlayersBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatePlayersBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout playersPanelLayout = new javax.swing.GroupLayout(playersPanel);
         playersPanel.setLayout(playersPanelLayout);
@@ -1086,34 +1091,39 @@ public class Window extends javax.swing.JFrame {
 
         mainPanel.add(delPlayerPanel, "delPlayerPanel");
 
-        jButton1.setText("Go back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        updatePlayerGoBackBtn.setText("Go back");
+        updatePlayerGoBackBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                updatePlayerGoBackBtnActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("UPDATE PLAYER DETAILS");
+        updatePlayerHeadingLabel.setText("UPDATE PLAYER DETAILS");
 
-        jLabel4.setText("Enter name");
+        updatePlayerNameLabel.setText("Enter name");
 
-        jLabel5.setText("Enter date of birth");
+        updatePlayerDOBLabel.setText("Enter date of birth");
 
-        jLabel6.setText("Choose field to edit");
+        updatePlayerFieldChoiceLabel.setText("Choose field to edit");
 
-        jLabel7.setText("Changes");
+        updatePlayerChangeLabel.setText("Changes");
 
-        jButton2.setText("SUBMIT");
+        updatePlayerSubmitBtn.setText("SUBMIT");
+        updatePlayerSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatePlayerSubmitBtnActionPerformed(evt);
+            }
+        });
 
-        jComboBox25.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        updatePlayerName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[NO PLAYER]" }));
 
-        jComboBox26.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        updatePlayerDOBDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jComboBox27.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        updatePlayerDOBMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        updatePlayerDOBYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000" }));
 
-        jComboBox29.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        updatePlayerFieldChoice.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "fname", "lname", "DOB", "team_id", "batting_hand", "bowling_skill", "country", "jersey_no", "runs", "wickets" }));
 
         javax.swing.GroupLayout updatePlayerPanelLayout = new javax.swing.GroupLayout(updatePlayerPanel);
         updatePlayerPanel.setLayout(updatePlayerPanelLayout);
@@ -1123,65 +1133,65 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(updatePlayerPanelLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jButton1)
+                        .addComponent(updatePlayerGoBackBtn)
                         .addGap(90, 90, 90)
-                        .addComponent(jLabel3))
+                        .addComponent(updatePlayerHeadingLabel))
                     .addGroup(updatePlayerPanelLayout.createSequentialGroup()
                         .addGap(135, 135, 135)
                         .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(updatePlayerPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
+                                .addComponent(updatePlayerDOBLabel)
                                 .addGap(58, 58, 58)
-                                .addComponent(jComboBox26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(updatePlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(updatePlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(updatePlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(updatePlayerPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(updatePlayerNameLabel)
                                 .addGap(145, 145, 145)
-                                .addComponent(jComboBox25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(updatePlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(updatePlayerPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addComponent(updatePlayerFieldChoiceLabel)
                                 .addGap(99, 99, 99)
-                                .addComponent(jComboBox29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(updatePlayerFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(updatePlayerPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
+                                .addComponent(updatePlayerChangeLabel)
                                 .addGap(132, 132, 132)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(updatePlayerChange, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(updatePlayerPanelLayout.createSequentialGroup()
                         .addGap(257, 257, 257)
-                        .addComponent(jButton2)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                        .addComponent(updatePlayerSubmitBtn)))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         updatePlayerPanelLayout.setVerticalGroup(
             updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updatePlayerPanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updatePlayerGoBackBtn)
+                    .addComponent(updatePlayerHeadingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
                 .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jComboBox25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updatePlayerNameLabel)
+                    .addComponent(updatePlayerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
+                    .addComponent(updatePlayerDOBLabel)
                     .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(updatePlayerDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updatePlayerDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updatePlayerDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jComboBox29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updatePlayerFieldChoiceLabel)
+                    .addComponent(updatePlayerFieldChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(updatePlayerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(updatePlayerChangeLabel)
+                    .addComponent(updatePlayerChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(updatePlayerSubmitBtn)
                 .addContainerGap(248, Short.MAX_VALUE))
         );
 
@@ -1708,9 +1718,10 @@ public class Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void updatePlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerGoBackBtnActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "playersPanel");
+    }//GEN-LAST:event_updatePlayerGoBackBtnActionPerformed
 
     private void addPlayerGoBackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlayerGoBackBtnActionPerformed
         CardLayout card = (CardLayout)mainPanel.getLayout();
@@ -1776,6 +1787,59 @@ public class Window extends javax.swing.JFrame {
             Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_delPlayerSubmitBtnActionPerformed
+
+    private void updatePlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayersBtnActionPerformed
+        String query = "SELECT fname, lname FROM player";
+        Statement stmt;
+        System.out.println(query);
+        updatePlayerName.setModel(new DefaultComboBoxModel());
+        firstNames = new Hashtable();
+        lastNames = new Hashtable();
+        
+        try {
+            stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query);//executing query and storing result in ResultSet
+
+            while (resultSet.next()) {
+                String fName = resultSet.getString(1);
+                String lName = resultSet.getString(2);
+                String playerName = String.join(" ", fName, lName);
+                firstNames.put(playerName, fName);
+                lastNames.put(playerName, lName);
+                updatePlayerName.addItem(playerName);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "updatePlayerPanel");
+    }//GEN-LAST:event_updatePlayersBtnActionPerformed
+
+    private void updatePlayerSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerSubmitBtnActionPerformed
+        String playerName = updatePlayerName.getSelectedItem().toString().toUpperCase();
+        String fName = (String)firstNames.get(playerName);
+        String lName = (String)lastNames.get(playerName);
+        
+        String day = updatePlayerDOBDay.getSelectedItem().toString().toUpperCase();
+        String month = updatePlayerDOBMonth.getSelectedItem().toString().toUpperCase();
+        String year = updatePlayerDOBYear.getSelectedItem().toString().toUpperCase();
+        
+        String field = updatePlayerFieldChoice.getSelectedItem().toString().toUpperCase();
+        String newValue = updatePlayerChange.getText();
+        
+        String date = String.join("-", day, month, year);
+        
+        String query = "UPDATE PLAYER SET " + field + "='"+ newValue +"' WHERE fname='" + fName + "' AND lname='" + lName + "' AND dob='" + date + "'";
+        Statement stmt;
+        System.out.println(query);
+        try {
+            stmt = connection.createStatement();
+            stmt.execute(query);
+            viewPlayersBtnActionPerformed(evt);
+        } catch (SQLException ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updatePlayerSubmitBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1875,14 +1939,12 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JPanel homePanel;
     private javax.swing.JLabel innings1ScoreLabel;
     private javax.swing.JLabel innings2ScoreLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -1897,11 +1959,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox18;
     private javax.swing.JComboBox<String> jComboBox19;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox25;
-    private javax.swing.JComboBox<String> jComboBox26;
-    private javax.swing.JComboBox<String> jComboBox27;
-    private javax.swing.JComboBox<String> jComboBox28;
-    private javax.swing.JComboBox<String> jComboBox29;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox30;
     private javax.swing.JComboBox<String> jComboBox31;
@@ -1919,7 +1976,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
@@ -1927,7 +1983,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -1937,10 +1992,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField28;
@@ -1972,7 +2023,20 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel tossWinnerLabel;
     private javax.swing.JButton updateMatchBtn;
     private javax.swing.JPanel updateMatchPanel;
+    private javax.swing.JTextField updatePlayerChange;
+    private javax.swing.JLabel updatePlayerChangeLabel;
+    private javax.swing.JComboBox<String> updatePlayerDOBDay;
+    private javax.swing.JLabel updatePlayerDOBLabel;
+    private javax.swing.JComboBox<String> updatePlayerDOBMonth;
+    private javax.swing.JComboBox<String> updatePlayerDOBYear;
+    private javax.swing.JComboBox<String> updatePlayerFieldChoice;
+    private javax.swing.JLabel updatePlayerFieldChoiceLabel;
+    private javax.swing.JButton updatePlayerGoBackBtn;
+    private javax.swing.JLabel updatePlayerHeadingLabel;
+    private javax.swing.JComboBox<String> updatePlayerName;
+    private javax.swing.JLabel updatePlayerNameLabel;
     private javax.swing.JPanel updatePlayerPanel;
+    private javax.swing.JButton updatePlayerSubmitBtn;
     private javax.swing.JButton updatePlayersBtn;
     private javax.swing.JButton updateTeamBtn;
     private javax.swing.JPanel updateTeamPanel;
