@@ -2043,9 +2043,9 @@ public class Window extends javax.swing.JFrame {
         defaultTableModel.addColumn("Win Margin");
         try {
             Statement statement = connection.createStatement();//crating statement object
-            String query = "SELECT A.NAME,B.NAME,C.MATCH_DATE,C.VENUE,D.NAME AS TOSS_WINNER,C.TOSS_DECISION,C.INNINGS_1_SCORE,C.INNINGS_2_SCORE,E.NAME AS WINNER,C.WIN_MARGIN " +
-                    "FROM TEAM A " +
-                    "LEFT OUTER JOIN MATCH C " +
+            String query = "SELECT A.NAME,B.NAME,C.MATCH_DATE,C.VENUE,D.NAME AS TOSS_WINNER,C.TOSS_DECISION,C.INNINGS_1_SCORE,C.INNINGS_2_SCORE,E.NAME AS WINNER,C.WIN_MARGIN\n" +
+                    "FROM MATCH C " +
+                    "LEFT OUTER JOIN TEAM A " +
                     "ON A.TEAM_ID = C.TEAM_1 " +
                     "LEFT OUTER JOIN TEAM B " +
                     "ON B.TEAM_ID = C.TEAM_2 " +
