@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="1036" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="1145" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -36,7 +36,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="549" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="872" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -63,34 +63,32 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="loginPasswordLabel" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                                      <Component id="loginBtn" min="-2" pref="91" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="resetBtn" min="-2" pref="105" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="loginPasswordLabel" min="-2" pref="114" max="-2" attributes="0"/>
+                                          <Component id="loginUserNameLabel" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="loginUserName" max="32767" attributes="0"/>
+                                          <Component id="loginPassword" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="loginPassword" pref="361" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="loginHeading" min="-2" pref="622" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="loginUserNameLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="loginHeading" min="-2" pref="331" max="-2" attributes="0"/>
-                                  <Component id="loginUserName" max="32767" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="370" max="-2" attributes="0"/>
+                              <Component id="loginBtn" linkSize="1" min="-2" pref="97" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="resetBtn" linkSize="1" min="-2" pref="135" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="483" max="32767" attributes="0"/>
+                      <EmptySpace pref="307" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -98,23 +96,23 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                      <Component id="loginHeading" min="-2" pref="27" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                      <Component id="loginHeading" min="-2" pref="77" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="loginUserName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="loginUserName" linkSize="2" alignment="3" pref="33" max="32767" attributes="0"/>
                           <Component id="loginUserNameLabel" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="loginPasswordLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="loginPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="loginPasswordLabel" max="32767" attributes="0"/>
+                          <Component id="loginPassword" linkSize="2" pref="33" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="loginBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="resetBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="332" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="resetBtn" linkSize="3" alignment="2" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="loginBtn" linkSize="3" alignment="2" min="-2" pref="55" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="281" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="237" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -123,7 +121,7 @@
             <Component class="javax.swing.JLabel" name="loginHeading">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Comic Sans MS" size="18" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="CRICKET DATABASE LOGIN PAGE"/>
@@ -131,6 +129,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="loginUserNameLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Franklin Gothic Demi" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Username :"/>
               </Properties>
             </Component>
@@ -138,6 +139,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="loginPasswordLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Franklin Gothic Demi" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Password  :"/>
               </Properties>
             </Component>
@@ -145,6 +149,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="loginBtn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="LOGIN"/>
               </Properties>
               <Events>
@@ -153,6 +160,9 @@
             </Component>
             <Component class="javax.swing.JToggleButton" name="resetBtn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="RESET"/>
               </Properties>
               <Events>
@@ -172,37 +182,36 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="welcomeLabel" min="-2" pref="413" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="viewPointsBtn" max="32767" attributes="0"/>
-                                  <Component id="viewPlayersBtn" max="32767" attributes="0"/>
-                                  <Component id="viewMatchesBtn" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="logoutBtn" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
+                      <Component id="welcomeLabel" min="-2" pref="793" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="456" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="viewPointsBtn" alignment="1" max="32767" attributes="0"/>
+                          <Component id="viewPlayersBtn" alignment="1" pref="234" max="32767" attributes="0"/>
+                          <Component id="viewMatchesBtn" alignment="1" max="32767" attributes="0"/>
+                          <Component id="logoutBtn" alignment="1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="434" max="32767" attributes="0"/>
+                      <EmptySpace min="455" pref="455" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Component id="welcomeLabel" min="-2" pref="113" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="viewPointsBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="viewPlayersBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="viewMatchesBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                      <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="167" max="32767" attributes="0"/>
+                      <Component id="viewPointsBtn" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="viewPlayersBtn" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="viewMatchesBtn" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                      <Component id="logoutBtn" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace pref="325" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -210,41 +219,22 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="viewPointsBtn">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="32" green="28" red="1e" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="View points table"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Franklin Gothic Demi" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="View Points Table"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewPointsBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="viewPlayersBtn">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="View players"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewPlayersBtnActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="viewMatchesBtn">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="View matches"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewMatchesBtnActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="welcomeLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="1"/>
+                  <Font name="ROG Fonts" size="24" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Welcome to Cricket Database!!!"/>
@@ -252,13 +242,44 @@
             </Component>
             <Component class="javax.swing.JButton" name="logoutBtn">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="32" green="28" red="1e" type="rgb"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="DejaVu Sans" size="14" style="0"/>
+                  <Font name="Franklin Gothic Demi" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Logout"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="viewMatchesBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="32" green="28" red="1e" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Franklin Gothic Demi" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="View Match Details"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewMatchesBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="viewPlayersBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="32" green="28" red="1e" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Franklin Gothic Demi" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="View Player Details"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewPlayersBtnActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -273,22 +294,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="pointsScrollPane" alignment="0" pref="1036" max="32767" attributes="0"/>
+                  <Component id="pointsScrollPane" alignment="0" pref="1145" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="pointsGoBackBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="pointsHeadingLabel" min="-2" pref="467" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="pointsGoBackBtn" min="-2" pref="135" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="pointsHeadingLabel" min="-2" pref="861" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                              <Component id="addTeamBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
-                              <Component id="delTeamBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="264" max="-2" attributes="0"/>
+                              <Component id="addTeamBtn" min="-2" pref="132" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                               <Component id="updateTeamBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                              <Component id="delTeamBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -298,19 +318,19 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="pointsHeadingLabel" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="pointsGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="pointsHeadingLabel" pref="70" max="32767" attributes="0"/>
+                          <Component id="pointsGoBackBtn" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="pointsScrollPane" min="-2" pref="108" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="pointsScrollPane" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addTeamBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="delTeamBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="updateTeamBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamBtn" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="updateTeamBtn" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="delTeamBtn" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="430" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -319,7 +339,7 @@
             <Component class="javax.swing.JLabel" name="pointsHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="POINTS TABLE"/>
@@ -327,7 +347,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="pointsGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pointsGoBackBtnActionPerformed"/>
@@ -357,7 +380,10 @@
             </Container>
             <Component class="javax.swing.JButton" name="addTeamBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Add team"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add Team"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addTeamBtnActionPerformed"/>
@@ -365,7 +391,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="delTeamBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Delete team"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Delete Team"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delTeamBtnActionPerformed"/>
@@ -373,7 +402,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="updateTeamBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Update team"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Update Team"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateTeamBtnActionPerformed"/>
@@ -395,21 +427,20 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="playersGoBackBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="playersHeadingLabel" min="-2" pref="548" max="-2" attributes="0"/>
+                              <Component id="playersGoBackBtn" min="-2" pref="135" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="playersHeadingLabel" min="-2" pref="802" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
-                              <Component id="addPlayersBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="delPlayersBtn" min="-2" pref="108" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="updatePlayersBtn" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
+                              <Component id="addPlayersBtn" min="-2" pref="131" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="delPlayersBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="updatePlayersBtn" min="-2" pref="159" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="325" max="32767" attributes="0"/>
+                      <EmptySpace pref="161" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -418,17 +449,17 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="playersHeadingLabel" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="playersGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="playersGoBackBtn" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="playersScrollPane" min="-2" pref="112" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="playersScrollPane" min="-2" pref="140" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="delPlayersBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="updatePlayersBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayersBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delPlayersBtn" linkSize="6" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="updatePlayersBtn" linkSize="6" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="addPlayersBtn" linkSize="6" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace pref="516" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -437,7 +468,7 @@
             <Component class="javax.swing.JLabel" name="playersHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="PLAYER DETAILS"/>
@@ -445,7 +476,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="playersGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playersGoBackBtnActionPerformed"/>
@@ -475,7 +509,10 @@
             </Container>
             <Component class="javax.swing.JButton" name="addPlayersBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Add player"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add Player"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPlayersBtnActionPerformed"/>
@@ -483,7 +520,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="delPlayersBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Delete player"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Delete Player"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delPlayersBtnActionPerformed"/>
@@ -491,7 +531,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="updatePlayersBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Update player"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Update Player"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updatePlayersBtnActionPerformed"/>
@@ -509,25 +552,24 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="matchesScrollPane" alignment="0" pref="1036" max="32767" attributes="0"/>
+                  <Component id="matchesScrollPane" alignment="0" pref="1145" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="matchesGoBackBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="matchesHeadingLabel" min="-2" pref="513" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="matchesGoBackBtn" min="-2" pref="135" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="matchesHeadingLabel" min="-2" pref="782" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Component id="addMatchBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                               <Component id="delMatchBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                               <Component id="updateMatchBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="223" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -536,15 +578,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="matchesHeadingLabel" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="matchesGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="matchesGoBackBtn" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="matchesScrollPane" min="-2" pref="108" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="matchesScrollPane" min="-2" pref="140" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addMatchBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="delMatchBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="updateMatchBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchBtn" linkSize="7" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="delMatchBtn" linkSize="7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchBtn" linkSize="7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
@@ -555,7 +597,7 @@
             <Component class="javax.swing.JLabel" name="matchesHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="MATCH DETAILS"/>
@@ -563,6 +605,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="matchesGoBackBtn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Go back"/>
               </Properties>
               <Events>
@@ -593,7 +638,10 @@
             </Container>
             <Component class="javax.swing.JButton" name="addMatchBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Add match"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add Match"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMatchBtnActionPerformed"/>
@@ -601,7 +649,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="delMatchBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Delete match"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Delete Match"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delMatchBtnActionPerformed"/>
@@ -609,7 +660,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="updateMatchBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Update match"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Update Match"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateMatchBtnActionPerformed"/>
@@ -629,69 +683,65 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="addMatchTeam2Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchTeam1Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchVenueLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchTossWinnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchTossDecisionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchInnings1Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchInnings2Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchWinnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchWinMarginLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addMatchGoBackBtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="addMatchVenue" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="addMatchInnings1Score" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="addMatchInnings2Score" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="addMatchWinMargin" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="addMatchTeam1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="addMatchTeam2" min="-2" max="-2" attributes="0"/>
-                                              <Component id="addMatchTossWinner" min="-2" max="-2" attributes="0"/>
-                                              <Component id="addMatchWinner" min="-2" max="-2" attributes="0"/>
-                                              <Component id="addMatchTossDecision" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="addMatchDay" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="addMatchMonth" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="addMatchYear" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="addMatchHeadingLabel" min="-2" pref="474" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="addMatchGoBackBtn" min="-2" pref="111" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addMatchHeadingLabel" min="-2" pref="866" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
-                              <Component id="addMatchSubmitBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="485" max="-2" attributes="0"/>
+                              <Component id="addMatchSubmitBtn" min="-2" pref="140" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="436" max="32767" attributes="0"/>
+                      <EmptySpace pref="163" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="addMatchTeam2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTeam1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchVenueLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTossWinnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchTossDecisionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchInnings1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchInnings2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchWinnerLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addMatchWinMarginLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="addMatchVenue" alignment="0" max="32767" attributes="0"/>
+                              <Component id="addMatchInnings1Score" alignment="0" max="32767" attributes="0"/>
+                              <Component id="addMatchInnings2Score" alignment="0" max="32767" attributes="0"/>
+                              <Component id="addMatchWinMargin" alignment="0" max="32767" attributes="0"/>
+                              <Component id="addMatchTeam1" min="-2" max="-2" attributes="0"/>
+                              <Component id="addMatchTeam2" min="-2" max="-2" attributes="0"/>
+                              <Component id="addMatchTossWinner" min="-2" max="-2" attributes="0"/>
+                              <Component id="addMatchWinner" min="-2" max="-2" attributes="0"/>
+                              <Component id="addMatchTossDecision" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="addMatchDay" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="addMatchMonth" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="addMatchYear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="338" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addMatchHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addMatchGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="addMatchGoBackBtn" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="addMatchHeadingLabel" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="addMatchTeam1Label" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="addMatchTeam1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -743,9 +793,9 @@
                           <Component id="addMatchWinMarginLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="addMatchWinMargin" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="addMatchSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
+                      <Component id="addMatchSubmitBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -754,7 +804,7 @@
             <Component class="javax.swing.JLabel" name="addMatchHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="ADD MATCH"/>
@@ -762,7 +812,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="addMatchGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMatchGoBackBtnActionPerformed"/>
@@ -770,56 +823,89 @@
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchTeam1Label">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Team 1"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchTeam2Label">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Team 2"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchVenueLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Venue"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchDateLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Date"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchTossWinnerLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Toss Winner"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchTossDecisionLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Toss decision"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchInnings1Label">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Innings 1 score"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchInnings2Label">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Innings 2 score"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchWinnerLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Winner"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addMatchWinMarginLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Win margin"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="addMatchSubmitBtn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
               <Events>
@@ -1034,92 +1120,72 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="delMatchGoBackButton" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                      <Component id="delMatchHeading" min="-2" pref="661" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="186" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="delMatchGoBackButton" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="413" max="-2" attributes="0"/>
+                              <Component id="delMatchSubmitBtn" min="-2" pref="181" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="delMatchDateLabel" max="32767" attributes="0"/>
+                                  <Component id="delMatchTeam2Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="delMatchTeam1Label" alignment="0" min="-2" pref="154" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="delMatchTeam2Label" min="-2" pref="86" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="delMatchDateLabel" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="delMatchTeam1Label" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="delMatchTeam1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="delMatchTeam2" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="delMatchDay" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="delMatchMonth" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="delMatchYear" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="delMatchHeading" min="-2" pref="404" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="464" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="delMatchTeam1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="delMatchTeam2" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="delMatchDay" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="delMatchMonth" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="delMatchSubmitBtn" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="delMatchYear" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="delMatchGoBackButton" min="-2" max="-2" attributes="0"/>
-                          <Component id="delMatchHeading" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="delMatchHeading" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="delMatchGoBackButton" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="delMatchTeam1Label" min="-2" pref="35" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="delMatchTeam1Label" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace pref="3" max="-2" attributes="0"/>
                               <Component id="delMatchTeam1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="delMatchTeam2" min="-2" max="-2" attributes="0"/>
-                          <Component id="delMatchTeam2Label" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="delMatchTeam2Label" linkSize="9" min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="delMatchDay" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="delMatchDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="delMatchYear" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="delMatchMonth" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="delMatchDateLabel" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="delMatchDay" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="delMatchSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="344" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                      <Component id="delMatchSubmitBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace pref="529" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1128,7 +1194,7 @@
             <Component class="javax.swing.JLabel" name="delMatchHeading">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="DELETE MATCH"/>
@@ -1136,6 +1202,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="delMatchGoBackButton">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Go back"/>
               </Properties>
               <Events>
@@ -1144,16 +1213,25 @@
             </Component>
             <Component class="javax.swing.JLabel" name="delMatchTeam1Label">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Select team 1    :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="delMatchTeam2Label">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Select team 2    :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="delMatchSubmitBtn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
               <Events>
@@ -1162,6 +1240,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="delMatchDateLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Match date       :"/>
               </Properties>
             </Component>
@@ -1302,6 +1383,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delMatchTeam2ActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -1319,51 +1403,54 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="updateMatchTeam1Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updateMatchTeam2Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updateMatcheDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updateMatchFieldChoiceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updateMatchChangeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="updateMatchChange" min="-2" pref="70" max="-2" attributes="0"/>
-                                  <Component id="updateMatchFieldChoice" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updateMatchTeam2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updateMatchTeam1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="updateMatchDay" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="updateMatchMonth" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="updateMatchYear" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="updateMatchTeam1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updateMatchTeam2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updateMatcheDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updateMatchFieldChoiceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updateMatchChangeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="updateMatchSubmitBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="updateMatchChange" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="updateMatchFieldChoice" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updateMatchTeam2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updateMatchTeam1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="updateMatchDay" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="updateMatchMonth" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="updateMatchYear" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="updateMatchGoBackBtn" min="-2" pref="113" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+                                  <Component id="updateMatchHeadingLabel" min="-2" pref="592" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="updateMatchGoBackBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="updateMatchHeadingLabel" min="-2" pref="452" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="413" max="-2" attributes="0"/>
+                              <Component id="updateMatchSubmitBtn" min="-2" pref="152" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="353" pref="361" max="32767" attributes="0"/>
+                      <EmptySpace pref="174" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="updateMatchGoBackBtn" min="-2" max="-2" attributes="0"/>
-                          <Component id="updateMatchHeadingLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="updateMatchHeadingLabel" min="-2" pref="77" max="-2" attributes="0"/>
+                          <Component id="updateMatchGoBackBtn" min="-2" pref="56" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="updateMatchTeam1Label" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="updateMatchTeam1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1390,9 +1477,9 @@
                           <Component id="updateMatchChangeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="updateMatchChange" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="updateMatchSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="299" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                      <Component id="updateMatchSubmitBtn" min="-2" pref="51" max="-2" attributes="0"/>
+                      <EmptySpace pref="457" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1401,14 +1488,18 @@
             <Component class="javax.swing.JLabel" name="updateMatchHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="UPDATE MATCH DETAILS"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="updateMatchGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateMatchGoBackBtnActionPerformed"/>
@@ -1416,27 +1507,42 @@
             </Component>
             <Component class="javax.swing.JLabel" name="updateMatchTeam1Label">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Enter team 1"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Enter team 1                       :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="updateMatchTeam2Label">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Enter team 2"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Enter team 2                       :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="updateMatchFieldChoiceLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Choose field to edit"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Choose field to edit              :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="updateMatchChangeLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Changes"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Changes                             :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="updateMatchSubmitBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="SUBMIT"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Save Changes"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateMatchSubmitBtnActionPerformed"/>
@@ -1491,7 +1597,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="updateMatcheDateLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Enter match date"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Enter match date                 :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="updateMatchMonth">
@@ -1623,125 +1732,192 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="addPlayerGoBackBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="addPlayerLastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="addPlayerFirstNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="addPlayerTeamLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="addPlayerDOBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="addPlayerBattingHandLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="addPlayerBowlingSkillLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="addPlayerCountryLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="addPlayerJerseyLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="addPlayerRunsScoredLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="addPlayerWicketsTakenLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="addPlayerFirstName" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="addPlayerLastName" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="addPlayerCountry" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="addPlayerJerseyNumber" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="addPlayerRunsScored" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="addPlayerWicketsTaken" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="467" max="-2" attributes="0"/>
+                              <Component id="addPlayerSubmitBtn" min="-2" pref="140" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="addPlayerGoBackBtn" min="-2" pref="97" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                                  <Component id="addPlayerHeadingLabel" min="-2" pref="694" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="addPlayerTeam" min="-2" max="-2" attributes="0"/>
-                                          <Component id="addPlayerBattingHand" min="-2" max="-2" attributes="0"/>
-                                          <Component id="addPlayerBowlingSkill" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addPlayerRunsScoredLabel" min="-2" pref="178" max="-2" attributes="0"/>
+                                          <Component id="addPlayerWicketsTakenLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addPlayerCountryLabel" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+                                          <Component id="addPlayerJerseyLabel" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel9" alignment="1" min="-2" pref="7" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="addPlayerWicketsTaken" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="addPlayerCountry" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="addPlayerRunsScored" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="addPlayerJerseyNumber" alignment="0" min="-2" pref="259" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="addPlayerLastNameLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addPlayerFirstNameLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addPlayerTeamLabel" min="-2" pref="148" max="-2" attributes="0"/>
+                                          <Component id="addPlayerBattingHandLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addPlayerDOBLabel" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                                          <Component id="addPlayerBowlingSkillLabel" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabel1" max="32767" attributes="0"/>
+                                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="addPlayerBattingHand" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="addPlayerTeam" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="addPlayerFirstName" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                                                  <Component id="addPlayerLastName" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                                                  <Component id="addPlayerBowlingSkill" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                               <Component id="addPlayerDOBDay" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Component id="addPlayerDOBMonth" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="addPlayerDOBYear" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="addPlayerHeadingLabel" min="-2" pref="349" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="533" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="326" max="-2" attributes="0"/>
-                      <Component id="addPlayerSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="259" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPlayerHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPlayerFirstNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPlayerLastNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerLastName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPlayerTeamLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerTeam" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPlayerDOBLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerDOBDay" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerDOBMonth" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerDOBYear" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="addPlayerBattingHandLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerBattingHand" min="-2" max="-2" attributes="0"/>
+                          <Component id="addPlayerGoBackBtn" min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="addPlayerHeadingLabel" min="-2" pref="119" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="addPlayerBowlingSkillLabel" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="addPlayerBowlingSkill" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPlayerCountryLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerCountry" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="addPlayerFirstName" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                      <Component id="addPlayerLastName" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="addPlayerTeam" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel1" min="-2" pref="24" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" pref="24" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" min="-2" pref="24" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel10" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Component id="addPlayerBattingHand" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="addPlayerDOBDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addPlayerDOBMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addPlayerDOBYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel5" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Component id="addPlayerBowlingSkill" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="addPlayerFirstNameLabel" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addPlayerLastNameLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addPlayerTeamLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addPlayerBattingHandLabel" min="-2" pref="29" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="addPlayerDOBLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="addPlayerBowlingSkillLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPlayerJerseyLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerJerseyNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPlayerRunsScoredLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerRunsScored" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="addPlayerWicketsTakenLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="addPlayerWicketsTaken" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel6" min="-2" pref="24" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" pref="24" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel8" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Component id="addPlayerCountry" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel9" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Component id="addPlayerWicketsTaken" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                              <Component id="addPlayerJerseyNumber" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addPlayerRunsScored" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="addPlayerRunsScoredLabel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="addPlayerCountryLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="addPlayerJerseyLabel" min="-2" pref="32" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="addPlayerWicketsTakenLabel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="addPlayerSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="140" max="32767" attributes="0"/>
+                      <EmptySpace pref="70" max="32767" attributes="0"/>
+                      <Component id="addPlayerSubmitBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1750,7 +1926,7 @@
             <Component class="javax.swing.JLabel" name="addPlayerHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="ADD PLAYER"/>
@@ -1758,7 +1934,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="addPlayerGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPlayerGoBackBtnActionPerformed"/>
@@ -1766,56 +1945,89 @@
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerFirstNameLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="First name"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="First Name         "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerLastNameLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Last name"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Last Name         "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerTeamLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Team"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerDOBLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Date of birth"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Date of Birth      "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerBattingHandLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Batting hand"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Batting Hand   "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerBowlingSkillLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Bowling skilll"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Bowling Skill    "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerCountryLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Country"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Country         "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerJerseyLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Jersey number"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Jersey Number   "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerRunsScoredLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Runs scored"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Runs Scored    "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addPlayerWicketsTakenLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Wickets taken"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Wickets Taken   "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="addPlayerSubmitBtn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
               <Events>
@@ -1990,6 +2202,86 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel8">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel9">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel10">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="delPlayerPanel">
@@ -2005,47 +2297,46 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="264" max="-2" attributes="0"/>
-                              <Component id="delPlayerSubmitBtn" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="delPlayerGoBackBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
-                              <Component id="delPlayerHeadingLabel" min="-2" pref="359" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="delPlayerNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="delPlayerDOBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="delPlayerGoBackBtn" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="delPlayerDOBDay" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="delPlayerDOBMonth" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="delPlayerDOBYear" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="delPlayerNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="delPlayerDOBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="delPlayerDOBDay" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="delPlayerDOBMonth" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="delPlayerDOBYear" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="delPlayerName" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <Component id="delPlayerName" min="-2" max="-2" attributes="0"/>
+                                  <Component id="delPlayerHeadingLabel" min="-2" pref="551" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="479" max="-2" attributes="0"/>
+                              <Component id="delPlayerSubmitBtn" min="-2" pref="140" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="311" max="32767" attributes="0"/>
+                      <EmptySpace pref="289" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="delPlayerHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="delPlayerGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="delPlayerGoBackBtn" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="delPlayerHeadingLabel" min="-2" pref="85" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="delPlayerNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="delPlayerName" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2057,9 +2348,9 @@
                           <Component id="delPlayerDOBMonth" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="delPlayerDOBYear" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="delPlayerSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="379" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                      <Component id="delPlayerSubmitBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace pref="493" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2068,14 +2359,18 @@
             <Component class="javax.swing.JLabel" name="delPlayerHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="DELETE PLAYER"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="delPlayerGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delPlayerGoBackBtnActionPerformed"/>
@@ -2083,17 +2378,26 @@
             </Component>
             <Component class="javax.swing.JLabel" name="delPlayerNameLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Enter player name"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Enter Player Name         :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="delPlayerDOBLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Enter date of birth"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Enter Date of Birth        :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="delPlayerSubmitBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="SUBMIT"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Delete"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delPlayerSubmitBtnActionPerformed"/>
@@ -2242,55 +2546,59 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="updatePlayerGoBackBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="updatePlayerHeadingLabel" min="-2" pref="360" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="updatePlayerGoBackBtn" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="updatePlayerNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updatePlayerDOBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updatePlayerFieldChoiceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updatePlayerChangeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="updatePlayerChange" min="-2" pref="141" max="-2" attributes="0"/>
-                                  <Component id="updatePlayerFieldChoice" min="-2" max="-2" attributes="0"/>
-                                  <Component id="updatePlayerName" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="updatePlayerDOBDay" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="updatePlayerFieldChoiceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="updatePlayerChangeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel11" max="32767" attributes="0"/>
+                                              <Component id="updatePlayerDOBLabel" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="updatePlayerChange" min="-2" pref="141" max="-2" attributes="0"/>
+                                          <Component id="updatePlayerFieldChoice" min="-2" max="-2" attributes="0"/>
+                                          <Component id="updatePlayerName" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="updatePlayerDOBDay" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="updatePlayerDOBMonth" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="updatePlayerDOBYear" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="updatePlayerDOBMonth" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="updatePlayerDOBYear" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updatePlayerNameLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="updatePlayerHeadingLabel" min="-2" pref="622" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="303" max="-2" attributes="0"/>
-                              <Component id="updatePlayerSubmitBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="493" max="-2" attributes="0"/>
+                              <Component id="updatePlayerSubmitBtn" min="-2" pref="141" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="452" max="32767" attributes="0"/>
+                      <EmptySpace pref="203" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="updatePlayerGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="updatePlayerHeadingLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="updatePlayerHeadingLabel" min="-2" pref="99" max="-2" attributes="0"/>
+                          <Component id="updatePlayerGoBackBtn" min="-2" pref="74" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="updatePlayerNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="updatePlayerName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -2311,9 +2619,9 @@
                           <Component id="updatePlayerChangeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="updatePlayerChange" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="updatePlayerSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="294" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                      <Component id="updatePlayerSubmitBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace pref="467" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2321,7 +2629,10 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="updatePlayerGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updatePlayerGoBackBtnActionPerformed"/>
@@ -2330,7 +2641,7 @@
             <Component class="javax.swing.JLabel" name="updatePlayerHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="UPDATE PLAYER DETAILS"/>
@@ -2338,26 +2649,41 @@
             </Component>
             <Component class="javax.swing.JLabel" name="updatePlayerNameLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Select Name"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="updatePlayerDOBLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Select DOB"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Select DOB                    :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="updatePlayerFieldChoiceLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Sellect Field"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Sellect Field                   :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="updatePlayerChangeLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Changes"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Changes                       :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="updatePlayerSubmitBtn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
               <Events>
@@ -2516,6 +2842,14 @@
             </Component>
             <Component class="javax.swing.JTextField" name="updatePlayerChange">
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel11">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Player Name                  :"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="addTeamPanel">
@@ -2529,99 +2863,139 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="addTeamGoBackBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="addTeamNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addTeamCoachLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addTeamPlayedLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addTeamWinsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addTeamLossLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addTeamTiedLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addTeamPointsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                      <Component id="jLabel14" min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="addTeamName" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Component id="addTeamCoach" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Component id="addTeamPlayed" min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Component id="addTeamWins" min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Component id="addTeamLoss" min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Component id="addTeamTied" min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="addTeamPoints" min="-2" pref="64" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
-                                      <Component id="addTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Component id="addTeamLossLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamWinsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamPlayedLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamCoachLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamPointsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="addTeamTiedLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel19" min="-2" pref="16" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="addTeamTied" min="-2" pref="367" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="addTeamHeadingLabel" min="-2" pref="545" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel18" min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="jLabel16" min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="jLabel15" min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="jLabel13" min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="jLabel17" min="-2" pref="16" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="addTeamName" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamCoach" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamPlayed" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addTeamWins" alignment="0" min="-2" pref="367" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="addTeamLoss" min="-2" pref="367" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel12" min="-2" pref="16" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="addTeamSubmitBtn" min="-2" pref="139" max="-2" attributes="0"/>
+                                  <Component id="addTeamPoints" min="-2" pref="367" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="329" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="addTeamGoBackBtn" min="-2" pref="110" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="addTeamHeadingLabel" min="-2" pref="765" max="-2" attributes="0"/>
+                      <EmptySpace pref="213" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addTeamHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addTeamGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addTeamName" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addTeamNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addTeamCoachLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addTeamCoach" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addTeamPlayedLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addTeamPlayed" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addTeamWinsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addTeamWins" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addTeamLossLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addTeamLoss" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addTeamTiedLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addTeamTied" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addTeamHeadingLabel" min="-2" pref="60" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="addTeamGoBackBtn" min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="addTeamPointsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addTeamPoints" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
+                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="42" max="32767" attributes="0"/>
-                              <Component id="addTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="addTeamName" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="addTeamCoach" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="addTeamPlayed" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="addTeamWins" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="addTeamLoss" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="addTeamTied" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="addTeamTiedLabel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                                  <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="addTeamPoints" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="addTeamPointsLabel" alignment="3" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="addTeamNameLabel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                          <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="addTeamCoachLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="addTeamPlayedLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="addTeamWinsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="addTeamLossLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                              <Component id="addTeamSubmitBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -2632,7 +3006,7 @@
             <Component class="javax.swing.JLabel" name="addTeamHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="ADD TEAM"/>
@@ -2640,7 +3014,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="addTeamGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addTeamGoBackBtnActionPerformed"/>
@@ -2648,41 +3025,65 @@
             </Component>
             <Component class="javax.swing.JLabel" name="addTeamNameLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addTeamCoachLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Coach"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addTeamPlayedLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Played"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addTeamWinsLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Wins"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addTeamLossLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Loss"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addTeamTiedLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Tied"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="addTeamPointsLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Points"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="addTeamSubmitBtn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
               <Events>
@@ -2703,6 +3104,70 @@
             </Component>
             <Component class="javax.swing.JTextField" name="addTeamPlayed">
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel12">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel13">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel14">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel15">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel16">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel17">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel18">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel19">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=":"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="delTeamPanel">
@@ -2715,43 +3180,43 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
+                              <Component id="delTeamGoBackBtn" min="-2" pref="97" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                              <Component id="delTeamHeadingLabel" min="-2" pref="408" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="258" max="-2" attributes="0"/>
                               <Component id="delTeamTeamNameLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="delTeamName" min="-2" pref="125" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="delTeamGoBackBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="delTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
-                                  <Component id="delTeamHeadingLabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="375" max="-2" attributes="0"/>
+                              <Component id="delTeamSubmitBtn" min="-2" pref="140" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="553" max="32767" attributes="0"/>
+                      <EmptySpace pref="325" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="delTeamHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="delTeamGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="delTeamHeadingLabel" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="delTeamGoBackBtn" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="delTeamTeamNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="delTeamName" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="delTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="405" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      <Component id="delTeamSubmitBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace pref="560" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2760,14 +3225,18 @@
             <Component class="javax.swing.JLabel" name="delTeamHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="DELETE TEAM"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="delTeamGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delTeamGoBackBtnActionPerformed"/>
@@ -2775,11 +3244,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="delTeamTeamNameLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Enter team"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Enter Team                    :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="delTeamSubmitBtn">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="SUBMIT"/>
               </Properties>
               <Events>
@@ -2811,37 +3286,39 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                      <Component id="updateTeamGoBackBtn" min="-2" pref="105" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      <Component id="updateTeamHeadingLabel" min="-2" pref="677" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="165" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="updateTeamGoBackBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="updateTeamHeadingLabel" min="-2" pref="465" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="335" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="updateTeamNameLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="62" max="32767" attributes="0"/>
+                                      <Component id="updateTeamName" min="-2" pref="117" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="updateTeamFieldChoiceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="updateTeamChangeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="updateTeamFieldChoice" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
+                                          <Component id="updateTeamChange" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="updateTeamNameLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="26" max="32767" attributes="0"/>
-                                  <Component id="updateTeamName" min="-2" pref="117" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="updateTeamFieldChoiceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="updateTeamChangeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="updateTeamFieldChoice" pref="117" max="32767" attributes="0"/>
-                                      <Component id="updateTeamChange" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="406" max="-2" attributes="0"/>
+                              <Component id="updateTeamSubmitBtn" min="-2" pref="140" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="418" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="315" max="-2" attributes="0"/>
-                      <Component id="updateTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -2849,12 +3326,11 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="updateTeamHeadingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="updateTeamGoBackBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="updateTeamHeadingLabel" min="-2" pref="82" max="-2" attributes="0"/>
+                          <Component id="updateTeamGoBackBtn" min="-2" pref="54" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="updateTeamNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="updateTeamName" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2869,9 +3345,9 @@
                           <Component id="updateTeamChangeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="updateTeamChange" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="updateTeamSubmitBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="322" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                      <Component id="updateTeamSubmitBtn" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace pref="482" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2880,7 +3356,7 @@
             <Component class="javax.swing.JLabel" name="updateTeamHeadingLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="0"/>
+                  <Font name="ROG Fonts" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="UPDATE TEAM DETAILS"/>
@@ -2888,7 +3364,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="updateTeamGoBackBtn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Go back"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateTeamGoBackBtnActionPerformed"/>
@@ -2896,17 +3375,26 @@
             </Component>
             <Component class="javax.swing.JLabel" name="updateTeamNameLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Select team"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Select Team   :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="updateTeamFieldChoiceLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Select Field"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Select Field    :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="updateTeamChangeLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Changes"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Changes        :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="updateTeamSubmitBtn">
